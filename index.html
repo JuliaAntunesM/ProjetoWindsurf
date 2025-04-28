@@ -6,8 +6,8 @@
     <title>NatáliaFit Quiz</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/testimonial-styles.css">
-    <link rel="stylesheet" href="css/headline-styles.css">
-    <link rel="stylesheet" href="css/creative-headline.css">
+    <link rel="stylesheet" href="css/sub-headline-styles.css">
+    <link rel="stylesheet" href="css/visual-elements.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -436,61 +436,40 @@
                 </div>
             </div>
             <div class="content sales-content">
-                <!-- Headline Criativa -->
-                <div class="creative-headline animate__animated animate__fadeIn">
-                    <div class="headline-badge">
-                        <span class="headline-badge-text">EXCLUSIVO</span>
-                    </div>
-                    
-                    <div class="headline-container">
-                        <i class="fas fa-star headline-icon"></i>
-                        <h1 class="headline-title">Descubra o Segredo das Mulheres que Transformaram seus Corpos em Casa</h1>
-                        <p class="headline-subtitle">Um método revolucionário que usa apenas a parede da sua casa para tonificar, definir e modelar seu corpo em tempo recorde</p>
-                        
-                        <div class="feature-cards">
-                            <div class="feature-card animate__animated animate__fadeIn animate__delay-1s">
-                                <i class="fas fa-stopwatch feature-icon"></i>
-                                <h3 class="feature-title">Treinos de 10 Minutos</h3>
-                                <p class="feature-text">Exercícios rápidos e eficientes que cabem na sua rotina diária</p>
-                            </div>
-                            
-                            <div class="feature-card animate__animated animate__fadeIn animate__delay-1s">
-                                <i class="fas fa-home feature-icon"></i>
-                                <h3 class="feature-title">Sem Equipamentos</h3>
-                                <p class="feature-text">Use apenas a parede da sua casa para transformar seu corpo</p>
-                            </div>
-                            
-                            <div class="feature-card animate__animated animate__fadeIn animate__delay-1s">
-                                <i class="fas fa-female feature-icon"></i>
-                                <h3 class="feature-title">Resultados Reais</h3>
-                                <p class="feature-text">Barriga definida, bumbum empinado e cintura fina em poucas semanas</p>
-                            </div>
-                        </div>
-                        
-                        <div class="headline-cta">
-                            <button class="headline-btn pulse-animation" onclick="window.location.href='#plano-personalizado'">
-                                Quero Meu Plano Personalizado
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Sub-headline de apoio -->
+
+                <!-- Sub-headline de apoio com ícones -->
                 <div class="sales-section sub-headline-section animate__animated animate__fadeIn animate__delay-1s">
-                    <h3 class="support-text">
-                        Sem academia. Sem equipamentos caros. Sem desculpas.
-                    </h3>
-                    <p>Tudo o que você precisa é da parede da sua casa e alguns minutos por dia para começar a ver resultados visíveis.</p>
+                    <h3 class="support-text">Sem academia. Sem equipamentos. Sem desculpas.</h3>
+                    
+                    <div class="feature-icons">
+                        <div class="feature-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="icon-text">Treinos em casa</div>
+                        </div>
+                        
+                        <div class="feature-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-stopwatch"></i>
+                            </div>
+                            <div class="icon-text">10 minutos</div>
+                        </div>
+                        
+                        <div class="feature-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="icon-text">Resultados reais</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Identificação com a dor -->
+                <!-- Identificação com a dor (reduzida) -->
                 <div class="sales-section pain-section animate__animated animate__fadeIn animate__delay-2s">
-                    <h3 class="section-title">🔥 VAMOS FALAR A VERDADE...</h3>
-                    <p>Você se sente cada vez mais insatisfeita ao se olhar no espelho?</p>
-                    <p>Nota a barriga mais flácida, o bumbum sem firmeza, e a cintura sumindo?</p>
-                    <p>Ou pior: já sentiu aquele medo silencioso de perder a autoestima... e talvez até a atenção do seu parceiro?</p>
-                    <p><strong>Você não está sozinha.</strong></p>
-                    <p>Milhares de mulheres entre 40 e 50 anos enfrentam exatamente os mesmos desafios — e a verdade é que a maioria nem sabe como reverter esse quadro sem precisar se matar em academias lotadas e cansativas.</p>
+                    <h3 class="pain-title">Insatisfeita com seu corpo?</h3>
+                    <p class="pain-text">Milhares de mulheres como você conseguiram transformar seus corpos sem precisar de academia ou equipamentos caros.</p>
                 </div>
 
                 <!-- Apresentação da solução -->
@@ -530,35 +509,86 @@
                     </button>
                 </div>
 
-                <!-- Sobre o Método -->
-                <div class="sales-section about-section animate__animated animate__fadeIn animate__delay-4s">
-                    <h3 class="section-title">🔍 SOBRE O MÉTODO</h3>
-                    <h4>O que é o Método Parede Fit?</h4>
-                    <p>Um programa exclusivo de treinos para mulheres que querem modelar o corpo em casa, sem precisar de academia, equipamentos caros ou horas de treino!</p>
-                    
-                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
-                        <img src="images/imagem3.png" alt="Método Parede Fit em ação" class="rounded-image">
+                <!-- Sobre o Método - Visual Cards -->
+                <div class="method-banner animate__animated animate__fadeIn animate__delay-2s">
+                    <i class="fas fa-gem method-icon"></i>
+                    <h2 class="method-title">Método Parede Fit</h2>
+                    <p class="method-description">Transforme seu corpo usando apenas a parede da sua casa</p>
+                </div>
+                
+                <div class="visual-cards-container animate__animated animate__fadeIn animate__delay-3s">
+                    <div class="visual-card">
+                        <div class="icon-container">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <h3 class="card-title">Treinos Rápidos</h3>
+                        <p>Apenas 10 minutos por dia para resultados incríveis</p>
                     </div>
                     
-                    <ul class="check-list">
-                        <li>✅ Apenas 10 minutos por dia</li>
-                        <li>✅ Exercícios seguros para seu corpo</li>
-                        <li>✅ Tonifique barriga, bumbum e cintura</li>
-                        <li>✅ Perfeito para iniciantes</li>
-                    </ul>
-                    <p><strong>Tudo que você precisa?</strong><br>👉 Uma parede na sua casa. Só isso.</p>
+                    <div class="visual-card">
+                        <div class="icon-container">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="card-title">Sem Academia</h3>
+                        <p>Treine no conforto da sua casa, sem equipamentos</p>
+                    </div>
+                    
+                    <div class="visual-card">
+                        <div class="icon-container">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="card-title">Para Iniciantes</h3>
+                        <p>Exercícios seguros e adaptados para qualquer nível</p>
+                    </div>
                 </div>
 
-                <!-- Resultados Esperados -->
+                <!-- Resultados Esperados - Visual Grid -->
                 <div class="sales-section results-section animate__animated animate__fadeIn animate__delay-4s">
-                    <h3 class="section-title">✨ RESULTADOS QUE VOCÊ PODE ESPERAR</h3>
-                    <ul class="results-list">
-                        <li>Redução de flacidez na barriga</li>
-                        <li>Cintura mais definida</li>
-                        <li>Bumbum mais firme e empinado</li>
-                        <li>Redução de celulite e retenção de líquido</li>
-                        <li>Mais autoestima e segurança no espelho (e na vida a dois)</li>
-                    </ul>
+                    <h3 class="section-title">✨ RESULTADOS TRANSFORMADORES</h3>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-1s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-venus"></i>
+                            </div>
+                            <div class="benefit-text">Barriga mais definida e tonificada</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-1s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-hourglass"></i>
+                            </div>
+                            <div class="benefit-text">Cintura mais fina e marcada</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="benefit-text">Bumbum mais firme e empinado</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-tint-slash"></i>
+                            </div>
+                            <div class="benefit-text">Redução de celulite e retenção</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-3s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="benefit-text">Mais autoestima e confiança</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-3s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="benefit-text">Mais energia e disposição no dia a dia</div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Mais Depoimentos -->
