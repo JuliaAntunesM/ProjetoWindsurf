@@ -218,3 +218,21 @@ p {
 .results-container {
     text-align: center;
 }
+
+/* Estilo para o destaque de emoji */
+.emoji-highlight {
+    font-size: 5rem;
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8fff9;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #01f92a;
+}
