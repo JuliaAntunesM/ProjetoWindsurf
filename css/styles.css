@@ -7,23 +7,31 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
     color: #333;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .quiz-container {
     max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    position: relative;
 }
 
 .screen {
     display: none;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    min-height: 500px;
 }
 
 .screen.active {
@@ -31,70 +39,91 @@ body {
 }
 
 .header {
-    background-color: #fff;
-    padding: 15px;
+    background: linear-gradient(to right, #01f92a, #2cfc1d);
+    padding: 20px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
 }
 
-.header h1 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
+.logo-container {
+    margin-bottom: 15px;
+}
+
+.logo-container h1 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .progress-bar {
     height: 10px;
-    background-color: #eee;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .progress {
     height: 100%;
-    background: linear-gradient(to right, #01f92a, #2cfc1d);
-    transition: width 0.5s ease;
+    background: white;
+    border-radius: 10px;
+    transition: width 0.8s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .content {
-    padding: 20px;
+    padding: 30px 25px;
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
     text-align: center;
     color: #333;
+    font-weight: 600;
 }
 
 p {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 25px;
     text-align: center;
+    color: #666;
 }
 
 .image-container {
-    margin: 20px 0;
+    margin: 25px 0;
     text-align: center;
+    overflow: hidden;
 }
 
-.image-container img {
+.rounded-image {
     max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.rounded-image:hover {
+    transform: scale(1.02);
 }
 
 .benefits {
-    background-color: #f8f8f8;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 20px 0;
+    background-color: #f8fff9;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(1, 249, 42, 0.1);
+    border-left: 4px solid #01f92a;
 }
 
 .benefits h3 {
-    color: #09dc17;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    color: #01b91f;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .benefits ul {
@@ -102,43 +131,52 @@ p {
 }
 
 .benefits li {
-    padding: 5px 0;
+    padding: 8px 0;
     position: relative;
-    padding-left: 25px;
+    padding-left: 30px;
+    font-size: 1rem;
 }
 
 .benefits li:before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #09dc17;
+    color: #01f92a;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .btn {
     display: block;
     width: 100%;
-    padding: 15px;
+    padding: 16px;
     border: none;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 50px;
+    font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
     transition: all 0.3s ease;
-    margin-top: 20px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .primary-btn {
-    background-color: #01f92a;
+    background: linear-gradient(to right, #01f92a, #2cfc1d);
     color: white;
-    box-shadow: 0 4px 0 #07c00a;
+    box-shadow: 0 4px 15px rgba(1, 249, 42, 0.3);
 }
 
 .primary-btn:hover {
-    background-color: #00e025;
-    transform: translateY(2px);
-    box-shadow: 0 2px 0 #07c00a;
+    background: linear-gradient(to right, #00e025, #25e01a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(1, 249, 42, 0.4);
+}
+
+.primary-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(1, 249, 42, 0.2);
 }
 
 .pulse {
@@ -159,45 +197,153 @@ p {
 
 /* Quiz Options */
 .quiz-options {
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 .option {
     display: flex;
     align-items: center;
-    padding: 15px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
 }
 
 .option:hover {
     border-color: #01f92a;
     background-color: #f8fff9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(1, 249, 42, 0.1);
 }
 
 .option.selected {
     border-color: #01f92a;
     background-color: #f0fff0;
+    box-shadow: 0 5px 15px rgba(1, 249, 42, 0.15);
 }
 
 .emoji {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-right: 15px;
-    min-width: 30px;
+    min-width: 40px;
     text-align: center;
+    background-color: #f8fff9;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
 .option-text {
     flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* Loading Animation */
 .loading-container {
     text-align: center;
-    padding: 30px 0;
+    padding: 40px 0;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #01f92a;
+    border-radius: 50%;
+    margin: 30px auto;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 15px rgba(1, 249, 42, 0.2);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.emoji-highlight {
+    font-size: 5rem;
+    text-align: center;
+    margin: 25px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8fff9, #e6ffe8);
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(1, 249, 42, 0.15);
+    border: 3px solid #01f92a;
+    transition: transform 0.3s ease;
+}
+
+.emoji-highlight:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* Animações adicionais */
+.animate__animated {
+    animation-duration: 0.8s;
+}
+
+.animate__delay-1s {
+    animation-delay: 0.3s;
+}
+
+.animate__delay-2s {
+    animation-delay: 0.6s;
+}
+
+.animate__delay-3s {
+    animation-delay: 0.9s;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .quiz-container {
+        border-radius: 15px;
+    }
+    
+    .header {
+        padding: 15px;
+    }
+    
+    .logo-container h1 {
+        font-size: 1.8rem;
+    }
+    
+    .content {
+        padding: 20px 15px;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+    
+    .option {
+        padding: 15px;
+    }
+    
+    .emoji {
+        font-size: 1.8rem;
+        min-width: 35px;
+    }
+    
+    .option-text {
+        font-size: 0.9rem;
+    }
 }
 
 .spinner {

@@ -6,23 +6,29 @@
     <title>NatáliaFit Quiz</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <div class="quiz-container">
-        <!-- Welcome Screen -->
+        <!-- Tela de Boas-vindas (Página 1) -->
         <div id="welcome-screen" class="screen active">
             <div class="header">
-                <h1>NatáliaFit Quiz</h1>
+                <div class="logo-container">
+                    <h1>NatáliaFit</h1>
+                </div>
                 <div class="progress-bar">
                     <div class="progress" style="width: 0%"></div>
                 </div>
             </div>
             <div class="content">
-                <h2>Bem-vinda ao Desafio NatáliaFit!</h2>
-                <p>Descubra como transformar seu corpo em apenas 15 minutos por dia!</p>
-                <!-- Conteúdo sem imagem -->
-                <div class="emoji-highlight">💪</div>
-                <div class="benefits">
+                <h2 class="animate__animated animate__fadeIn">Transforme seu corpo em apenas 15 minutos por dia!</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Descubra o método que já ajudou mais de 10.000 mulheres a conquistarem o corpo dos sonhos</p>
+                
+                <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="images/fitness-woman.jpg" alt="Mulher Fitness" class="rounded-image">
+                </div>
+                
+                <div class="benefits animate__animated animate__fadeIn animate__delay-2s">
                     <h3>🔥 Transformação Garantida:</h3>
                     <ul>
                         <li>Adeus flacidez e celulite!</li>
@@ -30,42 +36,44 @@
                         <li>Sem dietas malucas, sem academia!</li>
                     </ul>
                 </div>
-                <button class="btn primary-btn pulse" onclick="showScreen('question-screen')">COMEÇAR AGORA</button>
+                <button class="btn primary-btn pulse animate__animated animate__fadeIn animate__delay-3s" onclick="nextPage('insecurity-screen')">QUERO DESCOBRIR COMO</button>
             </div>
         </div>
 
-        <!-- Question Screen -->
-        <div id="question-screen" class="screen">
+        <!-- Tela de Inseguranças (Página 2) -->
+        <div id="insecurity-screen" class="screen">
             <div class="header">
-                <h1>NatáliaFit Quiz</h1>
+                <div class="logo-container">
+                    <h1>NatáliaFit</h1>
+                </div>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 50%"></div>
+                    <div class="progress" style="width: 33%"></div>
                 </div>
             </div>
             <div class="content">
-                <h2>O que mais te incomoda no seu corpo hoje?</h2>
-                <p>Selecione todas as opções que já te fizeram sentir insegura</p>
+                <h2 class="animate__animated animate__fadeIn">O que mais te incomoda no seu corpo hoje?</h2>
+                <p class="animate__animated animate__fadeIn">Selecione todas as opções que já te fizeram sentir insegura</p>
                 
                 <div class="quiz-options">
-                    <div class="option" onclick="selectOption(this)">
+                    <div class="option animate__animated animate__fadeIn animate__delay-1s" onclick="selectOption(this)">
                         <span class="emoji">🙁</span>
                         <div class="option-text">
                             <strong>Minha barriga está flácida e caída</strong>... As roupas marcam e eu evito usar biquíni. 😞
                         </div>
                     </div>
-                    <div class="option" onclick="selectOption(this)">
+                    <div class="option animate__animated animate__fadeIn animate__delay-1s" onclick="selectOption(this)">
                         <span class="emoji">🚨</span>
                         <div class="option-text">
                             <strong>Meu bumbum perdeu volume e está com celulite</strong>... Quando vejo no espelho, só penso em cobrir. 🍑
                         </div>
                     </div>
-                    <div class="option" onclick="selectOption(this)">
+                    <div class="option animate__animated animate__fadeIn animate__delay-2s" onclick="selectOption(this)">
                         <span class="emoji">🫣</span>
                         <div class="option-text">
                             <strong>Já tentei de tudo e nada resolveu</strong>... Dietas, academia, cremes, mas minha pele continua flácida! 😩
                         </div>
                     </div>
-                    <div class="option" onclick="selectOption(this)">
+                    <div class="option animate__animated animate__fadeIn animate__delay-2s" onclick="selectOption(this)">
                         <span class="emoji">👙</span>
                         <div class="option-text">
                             <strong>Me sinto menos atraente no meu relacionamento</strong>... Meu marido/namorado já não me olha como antes. 💔
@@ -73,43 +81,76 @@
                     </div>
                 </div>
                 
-                <p><strong>Se você marcou pelo menos uma opção, já está na hora de mudar!</strong></p>
-                <button class="btn primary-btn pulse" onclick="showScreen('results-screen')">QUERO ACABAR COM ISSO!</button>
+                <p class="animate__animated animate__fadeIn animate__delay-3s"><strong>Se você marcou pelo menos uma opção, já está na hora de mudar!</strong></p>
+                <button class="btn primary-btn pulse animate__animated animate__fadeIn animate__delay-3s" onclick="nextPage('dream-screen')">QUERO ACABAR COM ISSO!</button>
             </div>
         </div>
 
-        <!-- Results Screen -->
-        <div id="results-screen" class="screen">
+        <!-- Tela de Sonhos (Página 3) -->
+        <div id="dream-screen" class="screen">
             <div class="header">
-                <h1>NatáliaFit Quiz</h1>
+                <div class="logo-container">
+                    <h1>NatáliaFit</h1>
+                </div>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
+                    <div class="progress" style="width: 66%"></div>
                 </div>
             </div>
             <div class="content">
-                <div id="loading" class="loading-container">
+                <h2 class="animate__animated animate__fadeIn">Qual seria o seu sonho ao finalizar esse desafio?</h2>
+                <p class="animate__animated animate__fadeIn">Seja totalmente sincera em sua resposta...</p>
+                
+                <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="images/dream-body.jpg" alt="Corpo dos Sonhos" class="rounded-image">
+                </div>
+                
+                <div class="quiz-options">
+                    <div class="option animate__animated animate__fadeIn animate__delay-1s" onclick="selectOption(this)">
+                        <span class="emoji">🙂</span>
+                        <div class="option-text">
+                            <strong>Me olhar no espelho e amar o que vejo.</strong>
+                        </div>
+                    </div>
+                    <div class="option animate__animated animate__fadeIn animate__delay-1s" onclick="selectOption(this)">
+                        <span class="emoji">👙</span>
+                        <div class="option-text">
+                            <strong>Usar um biquíni sem vergonha do meu corpo.</strong>
+                        </div>
+                    </div>
+                    <div class="option animate__animated animate__fadeIn animate__delay-2s" onclick="selectOption(this)">
+                        <span class="emoji">💃</span>
+                        <div class="option-text">
+                            <strong>Sentir minha cintura mais fina e minha barriga menos flácida.</strong>
+                        </div>
+                    </div>
+                    <div class="option animate__animated animate__fadeIn animate__delay-2s" onclick="selectOption(this)">
+                        <span class="emoji">❤️</span>
+                        <div class="option-text">
+                            <strong>Voltaria a me sentir desejada pelo meu marido/namorado, e não teria insegurança em nossa relação.</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="animate__animated animate__fadeIn animate__delay-3s"><strong>Com apenas 10 minutos por dia, você elimina flacidez e conquista um corpo firme em casa!</strong></p>
+                <button class="btn primary-btn pulse animate__animated animate__fadeIn animate__delay-3s" onclick="showLoading()">QUERO TRANSFORMAR MEU CORPO!</button>
+            </div>
+        </div>
+
+        <!-- Tela de Carregamento/Análise -->
+        <div id="loading-screen" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <h1>NatáliaFit</h1>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="loading-container animate__animated animate__fadeIn">
                     <h2>Analisando...</h2>
                     <p>Estamos analisando suas respostas...</p>
                     <div class="spinner"></div>
-                </div>
-                
-                <div id="results" class="results-container" style="display: none;">
-                    <h2>Seu plano de exercícios está pronto! 🎉</h2>
-                    <p>Baseado nas suas respostas, você pode <strong>alcançar seu corpo dos sonhos</strong> com <strong>apenas 15 minutos por dia!</strong></p>
-                    
-                        <!-- Conteúdo sem imagem -->
-                    <div class="emoji-highlight">🎯</div>
-                    
-                    <div class="benefits">
-                        <h3>🔥 Transformação Garantida:</h3>
-                        <ul>
-                            <li>Adeus flacidez e celulite!</li>
-                            <li>Bumbum durinho e cintura fina!</li>
-                            <li>Sem dietas malucas, sem academia!</li>
-                        </ul>
-                    </div>
-                    
-                    <button class="btn primary-btn pulse">QUERO PARTICIPAR DO DESAFIO</button>
                 </div>
             </div>
         </div>

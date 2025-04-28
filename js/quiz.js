@@ -1,54 +1,122 @@
 // Quiz functionality for NatáliaFit
 
-// Function to show a specific screen
-function showScreen(screenId) {
-    // Hide all screens
+// Variáveis para armazenar as respostas do usuário
+let userAnswers = {
+    insecurities: [],
+    dream: null
+};
+
+// Função para navegar entre as páginas
+function nextPage(screenId) {
+    // Esconde todas as telas
     document.querySelectorAll('.screen').forEach(screen => {
         screen.classList.remove('active');
     });
     
-    // Show the selected screen
+    // Mostra a tela selecionada
     document.getElementById(screenId).classList.add('active');
     
-    // If showing results screen, simulate loading
-    if (screenId === 'results-screen') {
-        document.getElementById('results').style.display = 'none';
-        document.getElementById('loading').style.display = 'block';
-        
-        // After 3 seconds, show results
-        setTimeout(() => {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('results').style.display = 'block';
-        }, 3000);
-    }
+    // Adiciona animação de entrada para os elementos
+    animateElements(screenId);
+    
+    // Rola para o topo da página
+    window.scrollTo(0, 0);
 }
 
-// Function to select/deselect quiz options
+// Função para animar os elementos da página
+function animateElements(screenId) {
+    const screen = document.getElementById(screenId);
+    const animatedElements = screen.querySelectorAll('.animate__animated');
+    
+    // Remove as classes de animação para reiniciar
+    animatedElements.forEach(element => {
+        const animationClass = Array.from(element.classList).find(cls => cls.startsWith('animate__') && cls !== 'animate__animated' && !cls.startsWith('animate__delay'));
+        if (animationClass) {
+            element.classList.remove(animationClass);
+            void element.offsetWidth; // Força um reflow para reiniciar a animação
+            element.classList.add(animationClass);
+        }
+    });
+}
+
+// Função para selecionar/desselecionar opções do quiz
 function selectOption(option) {
-    // Toggle selected class
-    option.classList.toggle('selected');
+    const screenId = option.closest('.screen').id;
+    
+    // Se estiver na tela de inseguranças, permite selecionar múltiplas opções
+    if (screenId === 'insecurity-screen') {
+        option.classList.toggle('selected');
+        
+        // Atualiza as respostas do usuário
+        const optionText = option.querySelector('.option-text').textContent.trim();
+        if (option.classList.contains('selected')) {
+            if (!userAnswers.insecurities.includes(optionText)) {
+                userAnswers.insecurities.push(optionText);
+            }
+        } else {
+            userAnswers.insecurities = userAnswers.insecurities.filter(text => text !== optionText);
+        }
+    } 
+    // Se estiver na tela de sonhos, permite selecionar apenas uma opção
+    else if (screenId === 'dream-screen') {
+        // Remove a classe 'selected' de todas as opções
+        option.closest('.quiz-options').querySelectorAll('.option').forEach(opt => {
+            opt.classList.remove('selected');
+        });
+        
+        // Adiciona a classe 'selected' apenas à opção clicada
+        option.classList.add('selected');
+        
+        // Atualiza a resposta do usuário
+        userAnswers.dream = option.querySelector('.option-text').textContent.trim();
+    }
+    
+    console.log('Respostas atuais:', userAnswers);
 }
 
-// Load quiz data from JSON file
+// Função para mostrar a tela de carregamento e depois redirecionar
+function showLoading() {
+    // Mostra a tela de carregamento
+    nextPage('loading-screen');
+    
+    // Após 3 segundos, poderia redirecionar para uma página de resultados ou vendas
+    setTimeout(() => {
+        // Por enquanto, vamos apenas exibir um alerta
+        alert('Seu plano personalizado está pronto! Baseado nas suas respostas, você pode alcançar seu corpo dos sonhos com apenas 15 minutos por dia!');
+        
+        // Aqui você poderia redirecionar para uma página de resultados ou vendas
+        // window.location.href = 'resultados.html';
+    }, 3000);
+}
+
+// Função para carregar dados do quiz do arquivo JSON
 async function loadQuizData() {
     try {
         const response = await fetch('quiz-data.json');
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Error loading quiz data:', error);
+        console.error('Erro ao carregar dados do quiz:', error);
         return null;
     }
 }
 
-// Initialize the quiz when the page loads
+// Inicializa o quiz quando a página carrega
 document.addEventListener('DOMContentLoaded', async () => {
-    // We're using a simplified version for now, but this could be expanded
-    // to dynamically generate the quiz from the JSON data
-    
-    // For demonstration purposes, we'll just log the data if it loads successfully
+    // Carrega os dados do quiz
     const quizData = await loadQuizData();
     if (quizData) {
-        console.log('Quiz data loaded successfully:', quizData);
+        console.log('Dados do quiz carregados com sucesso:', quizData);
     }
+    
+    // Adiciona efeitos de hover para as imagens
+    document.querySelectorAll('.rounded-image').forEach(img => {
+        img.addEventListener('mouseover', () => {
+            img.style.transform = 'scale(1.02)';
+        });
+        
+        img.addEventListener('mouseout', () => {
+            img.style.transform = 'scale(1)';
+        });
+    });
 });
