@@ -2,8 +2,15 @@
 
 // Variáveis para armazenar as respostas do usuário
 let userAnswers = {
-    insecurities: [],
-    dream: null
+    question1: null,
+    question3: [],
+    question4: null,
+    question5: null,
+    question6: null,
+    question7: null,
+    question8: null,
+    question10: [],
+    userName: ''
 };
 
 // Função para navegar entre as páginas
@@ -39,39 +46,63 @@ function animateElements(screenId) {
     });
 }
 
-// Função para selecionar/desselecionar opções do quiz
+// Função para selecionar/desselecionar opções do quiz (opção única)
 function selectOption(option) {
     const screenId = option.closest('.screen').id;
+    const questionNumber = screenId.split('-')[0];
     
-    // Se estiver na tela de inseguranças, permite selecionar múltiplas opções
-    if (screenId === 'insecurity-screen') {
-        option.classList.toggle('selected');
-        
-        // Atualiza as respostas do usuário
-        const optionText = option.querySelector('.option-text').textContent.trim();
-        if (option.classList.contains('selected')) {
-            if (!userAnswers.insecurities.includes(optionText)) {
-                userAnswers.insecurities.push(optionText);
-            }
-        } else {
-            userAnswers.insecurities = userAnswers.insecurities.filter(text => text !== optionText);
+    // Remove a classe 'selected' de todas as opções na mesma tela
+    option.closest('.quiz-options').querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+    
+    // Adiciona a classe 'selected' apenas à opção clicada
+    option.classList.add('selected');
+    
+    // Atualiza a resposta do usuário
+    const optionText = option.querySelector('.option-text').textContent.trim();
+    userAnswers[questionNumber] = optionText;
+    
+    console.log('Respostas atuais:', userAnswers);
+}
+
+// Função para selecionar/desselecionar opções de checkbox (múltipla escolha)
+function toggleCheckbox(option) {
+    const screenId = option.closest('.screen').id;
+    const questionNumber = screenId.split('-')[0];
+    
+    // Alterna a classe 'selected' na opção clicada
+    option.classList.toggle('selected');
+    
+    // Atualiza as respostas do usuário
+    const optionText = option.querySelector('.option-text').textContent.trim();
+    
+    if (!userAnswers[questionNumber]) {
+        userAnswers[questionNumber] = [];
+    }
+    
+    if (option.classList.contains('selected')) {
+        if (!userAnswers[questionNumber].includes(optionText)) {
+            userAnswers[questionNumber].push(optionText);
         }
-    } 
-    // Se estiver na tela de sonhos, permite selecionar apenas uma opção
-    else if (screenId === 'dream-screen') {
-        // Remove a classe 'selected' de todas as opções
-        option.closest('.quiz-options').querySelectorAll('.option').forEach(opt => {
-            opt.classList.remove('selected');
-        });
-        
-        // Adiciona a classe 'selected' apenas à opção clicada
-        option.classList.add('selected');
-        
-        // Atualiza a resposta do usuário
-        userAnswers.dream = option.querySelector('.option-text').textContent.trim();
+    } else {
+        userAnswers[questionNumber] = userAnswers[questionNumber].filter(text => text !== optionText);
     }
     
     console.log('Respostas atuais:', userAnswers);
+}
+
+// Função para salvar o nome do usuário
+function saveName() {
+    const nameInput = document.getElementById('user-name');
+    if (nameInput && nameInput.value.trim() !== '') {
+        userAnswers.userName = nameInput.value.trim();
+        // Atualiza o nome na tela de carregamento
+        const nameDisplay = document.getElementById('user-name-display');
+        if (nameDisplay) {
+            nameDisplay.textContent = userAnswers.userName;
+        }
+    }
 }
 
 // Função para mostrar a tela de carregamento e depois redirecionar
@@ -79,14 +110,10 @@ function showLoading() {
     // Mostra a tela de carregamento
     nextPage('loading-screen');
     
-    // Após 3 segundos, poderia redirecionar para uma página de resultados ou vendas
+    // Após 4 segundos, redireciona para a página de resultados (vendas)
     setTimeout(() => {
-        // Por enquanto, vamos apenas exibir um alerta
-        alert('Seu plano personalizado está pronto! Baseado nas suas respostas, você pode alcançar seu corpo dos sonhos com apenas 15 minutos por dia!');
-        
-        // Aqui você poderia redirecionar para uma página de resultados ou vendas
-        // window.location.href = 'resultados.html';
-    }, 3000);
+        nextPage('results-screen');
+    }, 4000);
 }
 
 // Função para carregar dados do quiz do arquivo JSON
