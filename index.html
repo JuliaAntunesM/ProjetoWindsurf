@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatáliaFit Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="header">
+                <h1>NatáliaFit Quiz</h1>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Bem-vinda ao Desafio NatáliaFit!</h2>
+                <p>Descubra como transformar seu corpo em apenas 15 minutos por dia!</p>
+                <div class="image-container">
+                    <img src="images/welcome.jpg" alt="NatáliaFit Bem-vinda">
+                </div>
+                <div class="benefits">
+                    <h3>🔥 Transformação Garantida:</h3>
+                    <ul>
+                        <li>Adeus flacidez e celulite!</li>
+                        <li>Bumbum durinho e cintura fina!</li>
+                        <li>Sem dietas malucas, sem academia!</li>
+                    </ul>
+                </div>
+                <button class="btn primary-btn pulse" onclick="showScreen('question-screen')">COMEÇAR AGORA</button>
+            </div>
+        </div>
+
+        <!-- Question Screen -->
+        <div id="question-screen" class="screen">
+            <div class="header">
+                <h1>NatáliaFit Quiz</h1>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2>O que mais te incomoda no seu corpo hoje?</h2>
+                <p>Selecione todas as opções que já te fizeram sentir insegura</p>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🙁</span>
+                        <div class="option-text">
+                            <strong>Minha barriga está flácida e caída</strong>... As roupas marcam e eu evito usar biquíni. 😞
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🚨</span>
+                        <div class="option-text">
+                            <strong>Meu bumbum perdeu volume e está com celulite</strong>... Quando vejo no espelho, só penso em cobrir. 🍑
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🫣</span>
+                        <div class="option-text">
+                            <strong>Já tentei de tudo e nada resolveu</strong>... Dietas, academia, cremes, mas minha pele continua flácida! 😩
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">👙</span>
+                        <div class="option-text">
+                            <strong>Me sinto menos atraente no meu relacionamento</strong>... Meu marido/namorado já não me olha como antes. 💔
+                        </div>
+                    </div>
+                </div>
+                
+                <p><strong>Se você marcou pelo menos uma opção, já está na hora de mudar!</strong></p>
+                <button class="btn primary-btn pulse" onclick="showScreen('results-screen')">QUERO ACABAR COM ISSO!</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="header">
+                <h1>NatáliaFit Quiz</h1>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <div id="loading" class="loading-container">
+                    <h2>Analisando...</h2>
+                    <p>Estamos analisando suas respostas...</p>
+                    <div class="spinner"></div>
+                </div>
+                
+                <div id="results" class="results-container" style="display: none;">
+                    <h2>Seu plano de exercícios está pronto! 🎉</h2>
+                    <p>Baseado nas suas respostas, você pode <strong>alcançar seu corpo dos sonhos</strong> com <strong>apenas 15 minutos por dia!</strong></p>
+                    
+                    <div class="image-container">
+                        <img src="images/results.jpg" alt="Resultados">
+                    </div>
+                    
+                    <div class="benefits">
+                        <h3>🔥 Transformação Garantida:</h3>
+                        <ul>
+                            <li>Adeus flacidez e celulite!</li>
+                            <li>Bumbum durinho e cintura fina!</li>
+                            <li>Sem dietas malucas, sem academia!</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn primary-btn pulse">QUERO PARTICIPAR DO DESAFIO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>
