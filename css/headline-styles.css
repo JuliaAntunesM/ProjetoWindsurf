@@ -1,0 +1,159 @@
+/* Estilos para a headline da página de vendas */
+.headline-section {
+    background: linear-gradient(135deg, #fff0f5, #ffecf1);
+    padding: 35px 30px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.15);
+    margin-bottom: 25px;
+}
+
+.headline-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.2) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.headline-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.15) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.headline {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: #ff69b4;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.sub-headline {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.results-graphic {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.result-stat {
+    text-align: center;
+    padding: 15px;
+    flex: 1;
+    min-width: 150px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(255, 105, 180, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.result-stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff69b4;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #555;
+    display: block;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: #ff69b4;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.time-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgba(255, 105, 180, 0.1);
+}
+
+.time-icon {
+    font-size: 1.8rem;
+    color: #ff69b4;
+    margin-right: 15px;
+}
+
+.time-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.guarantee-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(255, 105, 180, 0.15);
+    max-width: 400px;
+}
+
+.guarantee-icon {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-right: 15px;
+}
+
+.guarantee-text {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .headline {
+        font-size: 1.8rem;
+    }
+    
+    .sub-headline {
+        font-size: 1.1rem;
+    }
+    
+    .result-stat {
+        min-width: 120px;
+    }
+}
