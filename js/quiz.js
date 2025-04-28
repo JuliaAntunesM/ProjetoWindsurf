@@ -64,6 +64,21 @@ function selectOption(option) {
     userAnswers[questionNumber] = optionText;
     
     console.log('Respostas atuais:', userAnswers);
+    
+    // Avança automaticamente para a próxima página após um curto delay
+    setTimeout(() => {
+        // Obtém o número atual da questão e calcula o próximo
+        const currentQuestionNumber = parseInt(screenId.replace('question-', ''));
+        const nextQuestionNumber = currentQuestionNumber + 1;
+        
+        // Se for a última questão, mostra a tela de carregamento
+        if (nextQuestionNumber > 11) {
+            showLoading();
+        } else {
+            // Caso contrário, avança para a próxima questão
+            nextPage('question-' + nextQuestionNumber);
+        }
+    }, 500); // Delay de 500ms para dar tempo do usuário ver a seleção
 }
 
 // Função para selecionar/desselecionar opções de checkbox (múltipla escolha)
@@ -102,6 +117,9 @@ function saveName() {
         if (nameDisplay) {
             nameDisplay.textContent = userAnswers.userName;
         }
+        
+        // Avança automaticamente para a tela de carregamento
+        showLoading();
     }
 }
 
@@ -145,5 +163,32 @@ document.addEventListener('DOMContentLoaded', async () => {
         img.addEventListener('mouseout', () => {
             img.style.transform = 'scale(1)';
         });
+    });
+    
+    // Adiciona botões "CONTINUAR" nas telas de múltipla escolha (telas 3 e 10)
+    const multipleChoiceScreens = ['question-3', 'question-10'];
+    
+    multipleChoiceScreens.forEach(screenId => {
+        const screen = document.getElementById(screenId);
+        if (screen) {
+            const content = screen.querySelector('.content');
+            if (content) {
+                // Verifica se já existe um botão
+                const existingButton = content.querySelector('.btn.primary-btn');
+                if (!existingButton) {
+                    // Cria o botão CONTINUAR
+                    const button = document.createElement('button');
+                    button.className = 'btn primary-btn pulse animate__animated animate__fadeIn animate__delay-3s';
+                    button.textContent = 'CONTINUAR';
+                    
+                    // Configura o evento de clique para avançar para a próxima tela
+                    const nextScreenNumber = parseInt(screenId.replace('question-', '')) + 1;
+                    button.onclick = () => nextPage('question-' + nextScreenNumber);
+                    
+                    // Adiciona o botão à tela
+                    content.appendChild(button);
+                }
+            }
+        }
     });
 });
