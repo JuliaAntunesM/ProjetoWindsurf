@@ -530,30 +530,30 @@
                         <h4 class="countdown-title">Esta oferta expira em:</h4>
                         <div class="countdown-timer">
                             <div class="countdown-item">
-                                <span class="countdown-number">01</span>
+                                <span class="countdown-number" id="countdown-days">00</span>
                                 <span class="countdown-label">Dias</span>
                             </div>
                             <div class="countdown-item">
-                                <span class="countdown-number">12</span>
+                                <span class="countdown-number" id="countdown-hours">00</span>
                                 <span class="countdown-label">Horas</span>
                             </div>
                             <div class="countdown-item">
-                                <span class="countdown-number">45</span>
+                                <span class="countdown-number" id="countdown-minutes">05</span>
                                 <span class="countdown-label">Min</span>
                             </div>
                             <div class="countdown-item">
-                                <span class="countdown-number">30</span>
+                                <span class="countdown-number" id="countdown-seconds">00</span>
                                 <span class="countdown-label">Seg</span>
                             </div>
                         </div>
                     </div>
                     <h3 class="cta-title">Está na hora de transformar sua saúde!</h3>
                     <div class="price-container">
-                        <span class="original-price">R$ 197,00</span>
-                        <span class="discount-price">R$ 97,00</span>
+                        <span class="original-price">R$ 99,99</span>
+                        <span class="discount-price">R$ 19,99</span>
                         <span class="installment-info">ou em até 12x no cartão</span>
                     </div>
-                    <button class="btn primary-btn large-btn pulse glow-effect" onclick="window.location.href='https://pay.kiwify.com.br/fbVOj48'">
+                    <button class="btn primary-btn large-btn pulse glow-effect" onclick="window.location.href='https://pay.kiwify.com.br/lT2Uy7S'">
                         QUERO COMEÇAR MEU DETOX AGORA 🌿
                     </button>
                     <p class="guarantee"><strong>🔐 Pagamento 100% seguro</strong> | Satisfação garantida ou seu dinheiro de volta</p>
@@ -566,6 +566,29 @@
     <script>
         // Script para adicionar efeitos interativos
         document.addEventListener('DOMContentLoaded', function() {
+            // Cronômetro de 5 minutos
+            let totalSeconds = 5 * 60; // 5 minutos em segundos
+            
+            function updateCountdown() {
+                const days = Math.floor(totalSeconds / (24 * 60 * 60));
+                const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
+                const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+                const seconds = Math.floor(totalSeconds % 60);
+                
+                document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+                
+                if (totalSeconds > 0) {
+                    totalSeconds--;
+                    setTimeout(updateCountdown, 1000);
+                }
+            }
+            
+            // Iniciar o cronômetro
+            updateCountdown();
+            
             // Efeito de cursor seguindo elementos
             const cursorEffect = document.createElement('div');
             cursorEffect.className = 'cursor-effect';
