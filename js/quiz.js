@@ -44,6 +44,30 @@ function animateElements(screenId) {
             element.classList.add(animationClass);
         }
     });
+    
+    // Anima as opções sequencialmente
+    animateOptionsSequentially(screen);
+}
+
+// Função para animar as opções sequencialmente (efeito cascata)
+function animateOptionsSequentially(screen) {
+    const options = screen.querySelectorAll('.quiz-options .option');
+    if (options.length === 0) return;
+    
+    // Esconde todas as opções inicialmente
+    options.forEach(option => {
+        option.style.opacity = '0';
+        option.style.transform = 'translateY(20px)';
+    });
+    
+    // Mostra cada opção sequencialmente
+    options.forEach((option, index) => {
+        setTimeout(() => {
+            option.style.opacity = '1';
+            option.style.transform = 'translateY(0)';
+            option.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        }, 200 * index); // 200ms de atraso entre cada opção
+    });
 }
 
 // Função para selecionar/desselecionar opções do quiz (opção única)
@@ -178,8 +202,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (!existingButton) {
                     // Cria o botão CONTINUAR
                     const button = document.createElement('button');
-                    button.className = 'btn primary-btn pulse animate__animated animate__fadeIn animate__delay-3s';
+                    button.className = 'btn primary-btn pulse';
                     button.textContent = 'CONTINUAR';
+                    button.style.opacity = '0';
+                    button.style.transform = 'translateY(20px)';
                     
                     // Configura o evento de clique para avançar para a próxima tela
                     const nextScreenNumber = parseInt(screenId.replace('question-', '')) + 1;
@@ -187,6 +213,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                     
                     // Adiciona o botão à tela
                     content.appendChild(button);
+                    
+                    // Mostra o botão após um atraso para que apareça depois das opções
+                    setTimeout(() => {
+                        button.style.opacity = '1';
+                        button.style.transform = 'translateY(0)';
+                        button.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    }, 1200); // Atraso maior para aparecer depois das opções
                 }
             }
         }
