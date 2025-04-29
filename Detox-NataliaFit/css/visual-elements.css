@@ -1,0 +1,545 @@
+/* Estilos para elementos visuais do Detox Alimentar NatáliaFit */
+
+/* Elementos decorativos */
+.leaf-decoration {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="%2300d084" d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20a4,4,0,0,0,4-4,4,4,0,0,0-4-4,4.28,4.28,0,0,0-1.34.24l3-5.34C11.88,8.15,14,8,17,8Z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.3;
+    z-index: 0;
+    filter: drop-shadow(0 5px 15px rgba(0, 208, 132, 0.2));
+    animation: floatLeaf 8s infinite ease-in-out;
+}
+
+.left-leaf {
+    top: 20px;
+    left: 20px;
+    transform: rotate(-30deg) scale(1);
+    animation-delay: 0s;
+}
+
+.right-leaf {
+    top: 40px;
+    right: 20px;
+    transform: rotate(30deg) scale(0.8);
+    animation-delay: 2s;
+}
+
+/* Adiciona mais folhas decorativas */
+.content::before,
+.content::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="%2300d08410" d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20a4,4,0,0,0,4-4,4,4,0,0,0-4-4,4.28,4.28,0,0,0-1.34.24l3-5.34C11.88,8.15,14,8,17,8Z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.content::before {
+    bottom: 50px;
+    left: -50px;
+    transform: rotate(-45deg) scale(1.5);
+    animation: floatSlow 15s infinite ease-in-out;
+}
+
+.content::after {
+    bottom: 100px;
+    right: -70px;
+    transform: rotate(60deg) scale(2);
+    animation: floatSlow 18s infinite ease-in-out reverse;
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: rotate(-45deg) scale(1.5) translateY(0); }
+    50% { transform: rotate(-40deg) scale(1.5) translateY(-20px); }
+}
+
+@keyframes floatLeaf {
+    0% { transform: rotate(-30deg) translateY(0) scale(1); }
+    25% { transform: rotate(-25deg) translateY(-15px) scale(1.05); }
+    50% { transform: rotate(-20deg) translateY(-20px) scale(1.1); }
+    75% { transform: rotate(-25deg) translateY(-10px) scale(1.05); }
+    100% { transform: rotate(-30deg) translateY(0) scale(1); }
+}
+
+.section-icon {
+    font-size: 32px;
+    width: 70px;
+    height: 70px;
+    background-image: var(--gradient-vibrant);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 25px rgba(0, 208, 132, 0.25);
+    border: 3px solid white;
+    position: relative;
+    z-index: 2;
+    margin-top: -50px;
+    animation: pulse-icon 3s infinite;
+    overflow: hidden;
+}
+
+.section-icon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: rotate 4s linear infinite;
+    z-index: -1;
+}
+
+@keyframes pulse-icon {
+    0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(0, 208, 132, 0.25); }
+    50% { transform: scale(1.1); box-shadow: 0 15px 35px rgba(0, 208, 132, 0.35), 0 0 20px rgba(0, 208, 132, 0.2); }
+}
+
+.badge-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Elementos de confete para a tela de resultados */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Adiciona efeito de brilho na tela de resultados */
+#results-screen .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(0, 208, 132, 0.1) 0%, transparent 60%);
+    z-index: -1;
+}
+
+#results-screen .content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 80%, rgba(0, 184, 217, 0.1) 0%, transparent 60%);
+    z-index: -1;
+}
+
+.confetti {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: var(--gradient-vibrant);
+    opacity: 0.8;
+    animation: confettiFall 5s infinite ease-out;
+    border-radius: 2px;
+    box-shadow: 0 3px 10px rgba(0, 208, 132, 0.2);
+    transform-origin: center center;
+}
+
+.confetti:nth-child(1) {
+    left: 10%;
+    top: -10%;
+    background-image: var(--gradient-primary);
+    animation-delay: 0s;
+    animation-duration: 4s;
+    transform: rotate(15deg);
+}
+
+.confetti:nth-child(2) {
+    left: 30%;
+    top: -5%;
+    background-image: var(--gradient-secondary);
+    animation-delay: 0.5s;
+    animation-duration: 4.5s;
+    transform: rotate(30deg);
+    width: 10px;
+    height: 20px;
+}
+
+.confetti:nth-child(3) {
+    left: 50%;
+    top: -8%;
+    background-image: var(--gradient-accent);
+    animation-delay: 1s;
+    animation-duration: 5s;
+    transform: rotate(45deg);
+    border-radius: 50%;
+}
+
+.confetti:nth-child(4) {
+    left: 70%;
+    top: -12%;
+    background-image: var(--gradient-neon);
+    animation-delay: 1.5s;
+    animation-duration: 5.5s;
+    transform: rotate(60deg);
+    width: 20px;
+    height: 10px;
+}
+
+.confetti:nth-child(5) {
+    left: 90%;
+    top: -7%;
+    background-image: var(--gradient-vibrant);
+    animation-delay: 2s;
+    animation-duration: 6s;
+    transform: rotate(75deg);
+    border-radius: 4px;
+}
+
+/* Adiciona mais confetes para um efeito mais rico */
+.confetti-container::before,
+.confetti-container::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-image: var(--gradient-primary);
+    opacity: 0.6;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 208, 132, 0.2);
+}
+
+.confetti-container::before {
+    left: 25%;
+    top: -15%;
+    animation: confettiFall 7s infinite ease-out 1s;
+}
+
+.confetti-container::after {
+    left: 75%;
+    top: -10%;
+    animation: confettiFall 6s infinite ease-out 2s;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.8; }
+    25% { transform: translateY(250px) rotate(90deg) scale(1.1); opacity: 0.9; }
+    50% { transform: translateY(500px) rotate(180deg) scale(1); opacity: 0.7; }
+    75% { transform: translateY(750px) rotate(270deg) scale(0.9); opacity: 0.5; }
+    100% { transform: translateY(1000px) rotate(360deg) scale(0.8); opacity: 0; }
+}
+
+/* Ícones e elementos decorativos */
+.icon-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.1);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.icon-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15);
+}
+
+.icon {
+    font-size: 26px;
+    color: white;
+    margin-right: 15px;
+    min-width: 40px;
+    height: 40px;
+    background-image: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2);
+    transition: var(--transition);
+}
+
+.icon-box:hover .icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.icon-content {
+    flex: 1;
+}
+
+.icon-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--primary-dark);
+}
+
+.icon-description {
+    font-size: 14px;
+    color: var(--light-text);
+}
+
+/* Badges e etiquetas */
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 6px 15px rgba(0, 208, 132, 0.15);
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 208, 132, 0.25);
+}
+
+.badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.badge:hover::before {
+    opacity: 1;
+}
+
+.badge:hover::after {
+    left: 100%;
+    transition: 0.8s;
+}
+
+.badge-primary {
+    background-image: var(--gradient-primary);
+    color: white;
+}
+
+.badge-secondary {
+    background-image: var(--gradient-secondary);
+    color: white;
+}
+
+.badge-accent {
+    background-image: var(--gradient-accent);
+    color: white;
+}
+
+/* Cards informativos */
+.info-card {
+    padding: 25px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.12);
+    margin-bottom: 25px;
+    border-left: 5px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(46, 204, 113, 0.18);
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-image: var(--gradient-primary);
+    opacity: 0.05;
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+}
+
+.info-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+
+.info-card-content {
+    font-size: 15px;
+    color: var(--light-text);
+}
+
+/* Separadores */
+.divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 30px 0;
+    position: relative;
+}
+
+.divider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 0 15px;
+    font-size: 14px;
+    color: var(--light-text);
+    font-style: italic;
+}
+
+/* Listas com ícones */
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.check-list li {
+    position: relative;
+    padding: 12px 12px 12px 40px;
+    margin-bottom: 0;
+    font-size: 16px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.08);
+    transition: var(--transition);
+}
+
+.check-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 15px rgba(46, 204, 113, 0.12);
+}
+
+.check-list li::before {
+    content: '✅';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+/* Caixas de destaque */
+.highlight-box {
+    background-color: var(--primary-light);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
+    position: relative;
+}
+
+.highlight-box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--primary-light);
+}
+
+.highlight-box-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+
+.highlight-box-content {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .icon {
+        font-size: 20px;
+    }
+    
+    .info-card {
+        padding: 15px;
+    }
+    
+    .info-card-title {
+        font-size: 16px;
+    }
+    
+    .info-card-content {
+        font-size: 14px;
+    }
+    
+    .check-list li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .badge {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+    
+    .highlight-box {
+        padding: 15px;
+    }
+    
+    .highlight-box-title {
+        font-size: 16px;
+    }
+    
+    .highlight-box-content {
+        font-size: 14px;
+    }
+}
