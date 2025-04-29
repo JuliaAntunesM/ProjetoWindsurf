@@ -339,16 +339,20 @@ p {
     background-color: var(--white);
 }
 
+.option.selected .checkbox {
+    background-color: var(--primary-color);
+}
+
 .option.selected .checkbox::after {
     content: '';
     position: absolute;
-    top: 3px;
-    left: 7px;
+    top: 50%;
+    left: 50%;
     width: 6px;
-    height: 12px;
-    border: solid var(--primary-color);
+    height: 10px;
+    border: solid white;
     border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+    transform: translate(-50%, -60%) rotate(45deg);
 }
 
 /* Botões */
