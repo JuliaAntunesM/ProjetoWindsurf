@@ -42,6 +42,38 @@ function animateElements(screenId) {
             element.classList.add(animationClass);
         }
     });
+    
+    // Animação em cascata para os botões de opções
+    animateOptionsSequentially(screenId);
+}
+
+// Função para animar os botões de opções sequencialmente (efeito cascata)
+function animateOptionsSequentially(screenId) {
+    const screen = document.getElementById(screenId);
+    const options = screen.querySelectorAll('.option');
+    
+    // Esconde todas as opções primeiro
+    options.forEach(option => {
+        option.style.opacity = '0';
+        option.style.transform = 'translateY(20px)';
+        option.style.transition = 'none';
+        
+        // Remove classes de animação existentes
+        option.classList.remove('animate__fadeIn');
+        // Remove classes de delay
+        Array.from(option.classList)
+            .filter(cls => cls.startsWith('animate__delay'))
+            .forEach(cls => option.classList.remove(cls));
+    });
+    
+    // Mostra as opções uma por uma com um pequeno atraso entre elas
+    options.forEach((option, index) => {
+        setTimeout(() => {
+            option.style.opacity = '1';
+            option.style.transform = 'translateY(0)';
+            option.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        }, 200 * (index + 1)); // 200ms de atraso entre cada botão
+    });
 }
 
 // Função para selecionar/desselecionar opções do quiz (opção única)
@@ -176,8 +208,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (!existingButton) {
                     // Cria o botão CONTINUAR
                     const button = document.createElement('button');
-                    button.className = 'btn primary-btn pulse animate__animated animate__fadeIn animate__delay-3s';
+                    button.className = 'btn primary-btn pulse';
                     button.textContent = 'CONTINUAR';
+                    button.style.opacity = '0';
+                    button.style.transform = 'translateY(20px)';
                     
                     // Configura o evento de clique para avançar para a próxima tela
                     const nextScreenNumber = parseInt(screenId.replace('question-', '')) + 1;
@@ -185,6 +219,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                     
                     // Adiciona o botão à tela
                     content.appendChild(button);
+                    
+                    // Mostra o botão após um atraso para que apareça depois das opções
+                    setTimeout(() => {
+                        button.style.opacity = '1';
+                        button.style.transform = 'translateY(0)';
+                        button.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    }, 1200); // Atraso maior para aparecer depois das opções
                 }
             }
         }
