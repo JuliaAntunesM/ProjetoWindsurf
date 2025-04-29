@@ -80,23 +80,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
     box-shadow: 0 10px 25px rgba(0, 208, 132, 0.25);
     border: 3px solid white;
     position: relative;
     z-index: 2;
-    margin-top: -50px;
+    margin-top: 0px;
     animation: pulse-icon 3s infinite;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .section-icon::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: -25%;
+    left: -25%;
+    width: 150%;
+    height: 150%;
     background: conic-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
     animation: rotate 4s linear infinite;
     z-index: -1;
@@ -105,6 +105,19 @@
 @keyframes pulse-icon {
     0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(0, 208, 132, 0.25); }
     50% { transform: scale(1.1); box-shadow: 0 15px 35px rgba(0, 208, 132, 0.35), 0 0 20px rgba(0, 208, 132, 0.2); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilo específico para o ícone de presente na seção de ofertas */
+.offer-section .section-icon {
+    margin-top: 0px;
+    padding: 10px;
+    position: relative;
+    top: 10px;
 }
 
 .badge-container {
