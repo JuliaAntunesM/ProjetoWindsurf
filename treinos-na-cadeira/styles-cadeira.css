@@ -407,14 +407,17 @@ body::after {
     background-repeat: no-repeat;
     background-position: center;
     transform-origin: center center;
+    animation: float-move 25s infinite linear;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .floating-image:nth-child(1) {
     top: 5%;
     left: 5%;
-    animation-delay: 0s;
     width: 100px;
     height: 100px;
+    animation: float-move-1 30s infinite linear;
 }
 
 .floating-image:nth-child(2) {
@@ -422,7 +425,7 @@ body::after {
     right: 8%;
     width: 80px;
     height: 80px;
-    animation-delay: 2s;
+    animation: float-move-2 35s infinite linear;
 }
 
 .floating-image:nth-child(3) {
@@ -430,7 +433,7 @@ body::after {
     left: 15%;
     width: 90px;
     height: 90px;
-    animation-delay: 4s;
+    animation: float-move-3 40s infinite linear;
 }
 
 .floating-image:nth-child(4) {
@@ -438,7 +441,7 @@ body::after {
     left: 20%;
     width: 70px;
     height: 70px;
-    animation-delay: 1s;
+    animation: float-move-4 38s infinite linear;
 }
 
 .floating-image:nth-child(5) {
@@ -446,7 +449,7 @@ body::after {
     right: 15%;
     width: 110px;
     height: 110px;
-    animation-delay: 3s;
+    animation: float-move-5 42s infinite linear;
 }
 
 .floating-image:nth-child(6) {
@@ -454,7 +457,7 @@ body::after {
     left: 5%;
     width: 85px;
     height: 85px;
-    animation-delay: 2.5s;
+    animation: float-move-6 37s infinite linear;
 }
 
 .floating-image:nth-child(7) {
@@ -462,7 +465,7 @@ body::after {
     right: 25%;
     width: 95px;
     height: 95px;
-    animation-delay: 1.5s;
+    animation: float-move-7 33s infinite linear;
 }
 
 .floating-image:nth-child(8) {
@@ -470,7 +473,7 @@ body::after {
     right: 10%;
     width: 75px;
     height: 75px;
-    animation-delay: 3.5s;
+    animation: float-move-8 36s infinite linear;
 }
 
 @keyframes float-image {
@@ -479,6 +482,72 @@ body::after {
     50% { transform: translateY(0) rotate(0deg) scale(1) perspective(1000px); }
     75% { transform: translateY(15px) rotate(-2deg) scale(0.95) perspective(1000px); }
     100% { transform: translateY(0) rotate(0deg) scale(1) perspective(1000px); }
+}
+
+/* Animações para as cadeiras flutuantes se moverem pela tela */
+@keyframes float-move-1 {
+    0% { top: 5%; left: 5%; transform: rotate(0deg); }
+    25% { top: 20%; left: 40%; transform: rotate(45deg); }
+    50% { top: 70%; left: 65%; transform: rotate(90deg); }
+    75% { top: 40%; left: 30%; transform: rotate(180deg); }
+    100% { top: 5%; left: 5%; transform: rotate(360deg); }
+}
+
+@keyframes float-move-2 {
+    0% { top: 40%; right: 8%; transform: rotate(0deg); }
+    25% { top: 10%; right: 40%; transform: rotate(-30deg); }
+    50% { top: 60%; right: 60%; transform: rotate(-60deg); }
+    75% { top: 80%; right: 30%; transform: rotate(-180deg); }
+    100% { top: 40%; right: 8%; transform: rotate(-360deg); }
+}
+
+@keyframes float-move-3 {
+    0% { bottom: 10%; left: 15%; transform: rotate(0deg) scale(1); }
+    20% { bottom: 40%; left: 45%; transform: rotate(72deg) scale(1.1); }
+    40% { bottom: 70%; left: 75%; transform: rotate(144deg) scale(1); }
+    60% { bottom: 60%; left: 55%; transform: rotate(216deg) scale(0.9); }
+    80% { bottom: 30%; left: 25%; transform: rotate(288deg) scale(1); }
+    100% { bottom: 10%; left: 15%; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes float-move-4 {
+    0% { top: 25%; left: 20%; transform: rotate(0deg) scale(1); }
+    33% { top: 65%; left: 65%; transform: rotate(120deg) scale(1.1); }
+    66% { top: 45%; left: 85%; transform: rotate(240deg) scale(0.9); }
+    100% { top: 25%; left: 20%; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes float-move-5 {
+    0% { top: 70%; right: 15%; transform: rotate(0deg); }
+    20% { top: 50%; right: 45%; transform: rotate(-72deg); }
+    40% { top: 20%; right: 65%; transform: rotate(-144deg); }
+    60% { top: 10%; right: 35%; transform: rotate(-216deg); }
+    80% { top: 40%; right: 10%; transform: rotate(-288deg); }
+    100% { top: 70%; right: 15%; transform: rotate(-360deg); }
+}
+
+@keyframes float-move-6 {
+    0% { bottom: 30%; left: 5%; transform: rotate(0deg) scale(1); }
+    25% { bottom: 60%; left: 35%; transform: rotate(90deg) scale(1.1); }
+    50% { bottom: 40%; left: 75%; transform: rotate(180deg) scale(1); }
+    75% { bottom: 10%; left: 45%; transform: rotate(270deg) scale(0.9); }
+    100% { bottom: 30%; left: 5%; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes float-move-7 {
+    0% { top: 15%; right: 25%; transform: rotate(0deg); }
+    33% { top: 45%; right: 55%; transform: rotate(-120deg); }
+    66% { top: 75%; right: 15%; transform: rotate(-240deg); }
+    100% { top: 15%; right: 25%; transform: rotate(-360deg); }
+}
+
+@keyframes float-move-8 {
+    0% { bottom: 20%; right: 10%; transform: rotate(0deg) scale(1); }
+    20% { bottom: 40%; right: 40%; transform: rotate(72deg) scale(1.1); }
+    40% { bottom: 60%; right: 60%; transform: rotate(144deg) scale(0.9); }
+    60% { bottom: 80%; right: 40%; transform: rotate(216deg) scale(1.1); }
+    80% { bottom: 60%; right: 20%; transform: rotate(288deg) scale(0.9); }
+    100% { bottom: 20%; right: 10%; transform: rotate(360deg) scale(1); }
 }
 
 @keyframes floating-bg {
