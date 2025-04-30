@@ -256,20 +256,21 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    background-image: url('../images/cadeiraflutuante/cadeira.png');
+    background-image: url('../cadeiraflutuante/1.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.7;
     animation: chair-float 20s infinite linear;
-    filter: drop-shadow(0 5px 15px rgba(77, 166, 255, 0.2));
+    filter: drop-shadow(0 5px 15px rgba(77, 166, 255, 0.4));
     transition: all 0.5s ease;
+    transform-origin: center center;
 }
 
 .floating-chair:hover {
-    opacity: 0.4;
-    transform: scale(1.1);
-    filter: drop-shadow(0 8px 20px rgba(77, 166, 255, 0.4));
+    opacity: 1;
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 8px 20px rgba(77, 166, 255, 0.6));
 }
 
 .chair-1 {
@@ -379,6 +380,78 @@
     animation-delay: 7.5s;
 }
 
+.chair-13 {
+    top: 20%;
+    left: 55%;
+    width: 75px;
+    height: 75px;
+    animation-duration: 28s;
+    animation-delay: 3.2s;
+}
+
+.chair-14 {
+    top: 65%;
+    left: 85%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 32s;
+    animation-delay: 5.5s;
+}
+
+.chair-15 {
+    top: 90%;
+    left: 45%;
+    width: 85px;
+    height: 85px;
+    animation-duration: 36s;
+    animation-delay: 1.8s;
+}
+
+.chair-16 {
+    top: 15%;
+    left: 75%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 29s;
+    animation-delay: 6.2s;
+}
+
+.chair-17 {
+    top: 55%;
+    left: 25%;
+    width: 65px;
+    height: 65px;
+    animation-duration: 33s;
+    animation-delay: 4.7s;
+}
+
+.chair-18 {
+    top: 30%;
+    left: 90%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 31s;
+    animation-delay: 2.3s;
+}
+
+.chair-19 {
+    top: 80%;
+    left: 5%;
+    width: 55px;
+    height: 55px;
+    animation-duration: 27s;
+    animation-delay: 8.1s;
+}
+
+.chair-20 {
+    top: 45%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 35s;
+    animation-delay: 0.5s;
+}
+
 @keyframes chair-float {
     0% {
         transform: translate(0, 0) rotate(0deg);
@@ -395,4 +468,44 @@
     100% {
         transform: translate(0, 0) rotate(0deg);
     }
+}
+
+/* Sombra para todas as cadeiras */
+.floating-chair {
+    filter: drop-shadow(0 5px 15px rgba(77, 166, 255, 0.4));
+}
+
+/* Efeito de brilho nas cadeiras */
+@keyframes chair-glow-1 {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
+@keyframes chair-glow-2 {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.chair-1, .chair-5, .chair-9, .chair-13, .chair-17 {
+    animation: chair-float 20s infinite linear, chair-glow-1 4s infinite alternate;
+}
+
+.chair-2, .chair-6, .chair-10, .chair-14, .chair-18 {
+    animation: chair-float 25s infinite linear reverse, chair-glow-2 5s infinite alternate-reverse;
+}
+
+.chair-3, .chair-7, .chair-11, .chair-15, .chair-19 {
+    animation: chair-float 22s infinite linear, chair-glow-1 6s infinite alternate;
+}
+
+.chair-4, .chair-8, .chair-12, .chair-16, .chair-20 {
+    animation: chair-float 28s infinite linear reverse, chair-glow-2 7s infinite alternate-reverse;
 }
