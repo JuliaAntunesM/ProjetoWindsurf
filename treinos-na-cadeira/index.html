@@ -375,12 +375,47 @@
                     
                     <p class="sub-headline">Descubra como transformar seu corpo com apenas <strong>uma cadeira</strong> e <strong>20 minutos por dia</strong>!</p>
                     
-                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
-                        <div class="image-badge">TRANSFORMAÇÃO</div>
-                        <img src="resultados/1.png" alt="Resultados do Método Cadeira Fit" class="rounded-image">
-                        <div class="image-overlay">
-                            <div class="overlay-content">
-                                <i class="fas fa-search-plus"></i>
+                    <div class="results-carousel-container animate__animated animate__fadeIn animate__delay-1s">
+                        <div class="results-badge">TRANSFORMAÇÃO</div>
+                        
+                        <div class="results-carousel">
+                            <div class="results-slides">
+                                <div class="results-slide active" data-index="0">
+                                    <img src="resultados/1.png" alt="Resultados do Método Cadeira Fit 1" class="result-image">
+                                </div>
+                                <div class="results-slide" data-index="1">
+                                    <img src="resultados/2.png" alt="Resultados do Método Cadeira Fit 2" class="result-image">
+                                </div>
+                                <div class="results-slide" data-index="2">
+                                    <img src="resultados/3.png" alt="Resultados do Método Cadeira Fit 3" class="result-image">
+                                </div>
+                                <div class="results-slide" data-index="3">
+                                    <img src="resultados/4.png" alt="Resultados do Método Cadeira Fit 4" class="result-image">
+                                </div>
+                                <div class="results-slide" data-index="4">
+                                    <img src="resultados/5.png" alt="Resultados do Método Cadeira Fit 5" class="result-image">
+                                </div>
+                                <div class="results-slide" data-index="5">
+                                    <img src="resultados/6.png" alt="Resultados do Método Cadeira Fit 6" class="result-image">
+                                </div>
+                            </div>
+                            
+                            <div class="results-controls">
+                                <button class="results-control prev" aria-label="Anterior">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="results-control next" aria-label="Próximo">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="results-indicators">
+                                <button class="results-indicator active" data-index="0" aria-label="Resultado 1"></button>
+                                <button class="results-indicator" data-index="1" aria-label="Resultado 2"></button>
+                                <button class="results-indicator" data-index="2" aria-label="Resultado 3"></button>
+                                <button class="results-indicator" data-index="3" aria-label="Resultado 4"></button>
+                                <button class="results-indicator" data-index="4" aria-label="Resultado 5"></button>
+                                <button class="results-indicator" data-index="5" aria-label="Resultado 6"></button>
                             </div>
                         </div>
                     </div>
@@ -792,8 +827,8 @@
                         
                         <div class="cta-price-container">
                             <div class="price-tag">
-                                <div class="original-price">De <span>R$197</span></div>
-                                <div class="current-price">Por apenas <span>R$97</span></div>
+                                <div class="original-price">De <span>R$97</span></div>
+                                <div class="current-price">Por apenas <span>R$19,99</span></div>
                             </div>
                             <div class="price-info">Pagamento único - Acesso vitalício</div>
                         </div>
@@ -835,5 +870,6 @@
     <script src="quiz-cadeira.js"></script>
     <script src="testimonials.js"></script>
     <script src="feature-carousel.js"></script>
+    <script src="results-carousel.js"></script>
 </body>
 </html>
