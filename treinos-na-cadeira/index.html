@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatáliaFit - Exercícios na Cadeira</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/chair-exercises.css">
+    <link rel="stylesheet" href="css/modern-elements.css">
+    <link rel="stylesheet" href="css/styles-fix.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Elementos flutuantes de cadeira -->
+    <div class="floating-chairs">
+        <div class="floating-chair chair-1"></div>
+        <div class="floating-chair chair-2"></div>
+        <div class="floating-chair chair-3"></div>
+        <div class="floating-chair chair-4"></div>
+        <div class="floating-chair chair-5"></div>
+        <div class="floating-chair chair-6"></div>
+        <div class="floating-chair chair-7"></div>
+        <div class="floating-chair chair-8"></div>
+        <div class="floating-chair chair-9"></div>
+        <div class="floating-chair chair-10"></div>
+        <div class="floating-chair chair-11"></div>
+        <div class="floating-chair chair-12"></div>
+    </div>
+    <div class="quiz-container glass-effect">
+        <!-- Tela 1: Boas-vindas -->
+        <div id="question-1" class="screen active">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn gradient-text">🪑 Exercícios na Cadeira: Combata a Flacidez e Celulite sem Sair de Casa!</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Você gostaria de descobrir como combater a flacidez e celulite com exercícios simples na cadeira?</p>
+                
+                <div class="quiz-options">
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">✨</span>
+                        <div class="option-text">
+                            <strong>Sim, preciso disso!</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">🤔</span>
+                        <div class="option-text">
+                            <strong>Talvez... se for prático.</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">🧐</span>
+                        <div class="option-text">
+                            <strong>Estou curiosa para saber mais.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 2: Informação motivacional -->
+        <div id="question-2" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 9%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Mais de 60.000 mulheres já combateram a flacidez, reduziram a celulite e recuperaram sua autoestima com exercícios simples na cadeira!</h2>
+                
+                <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="MulheresTreinandoNaCadeira/1.png" alt="Mulher fazendo exercício na cadeira" class="rounded-image">
+                </div>
+                
+                <button class="btn primary-btn smooth-pulse modern-btn glow-effect" onclick="nextPage('question-3')">QUERO CONHECER OS EXERCÍCIOS</button>
+            </div>
+        </div>
+
+        <!-- Tela 3: Principais problemas -->
+        <div id="question-3" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 18%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Quais destas situações mais te incomodam atualmente?</h2>
+                <p class="animate__animated animate__fadeIn">Selecione todas as opções que se aplicam a você</p>
+                
+                <div class="quiz-options checkbox-options">
+                    <div class="option highlight-effect card-3d" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Celulite nas pernas e glúteos</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Flacidez nos braços e abdome</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Sensação de inchaço constante</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Baixa autoestima com meu corpo</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Não me sinto atraente</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 4: Tempo sentado -->
+        <div id="question-4" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 27%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Quantas horas por dia você passa sentada?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">⏱️</span>
+                        <div class="option-text">
+                            <strong>Menos de 4 horas</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">⏰</span>
+                        <div class="option-text">
+                            <strong>Entre 4 e 8 horas</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">🕰️</span>
+                        <div class="option-text">
+                            <strong>Mais de 8 horas</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 5: Pausas para exercícios -->
+        <div id="question-5" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 36%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Com que frequência você faz pausas para se movimentar durante o dia?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">🔄</span>
+                        <div class="option-text">
+                            <strong>Faço pausas regulares a cada hora</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">⏳</span>
+                        <div class="option-text">
+                            <strong>Às vezes me lembro de fazer pausas</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">🪑</span>
+                        <div class="option-text">
+                            <strong>Raramente faço pausas</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 6: Objetivo com exercícios -->
+        <div id="question-6" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 45%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Qual seu principal objetivo com exercícios na cadeira?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">✨</span>
+                        <div class="option-text">
+                            <strong>Reduzir a celulite</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">💪</span>
+                        <div class="option-text">
+                            <strong>Combater a flacidez</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">💗</span>
+                        <div class="option-text">
+                            <strong>Melhorar minha autoestima</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">💋</span>
+                        <div class="option-text">
+                            <strong>Me sentir mais atraente</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 7: Tempo disponível -->
+        <div id="question-7" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 54%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Quanto tempo você teria disponível para exercícios na cadeira?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">⏱️</span>
+                        <div class="option-text">
+                            <strong>Apenas 2-3 minutos por vez</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">⏰</span>
+                        <div class="option-text">
+                            <strong>5-10 minutos por vez</strong>
+                        </div>
+                    </div>
+                    <div class="option highlight-effect card-3d" onclick="selectOption(this)">
+                        <span class="emoji">🕰️</span>
+                        <div class="option-text">
+                            <strong>15 minutos ou mais</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 8: Nome do usuário -->
+        <div id="question-8" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Estamos quase lá! Como podemos te chamar?</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Digite seu nome para recebermos seu programa personalizado de exercícios na cadeira</p>
+                
+                <div class="form-group animate__animated animate__fadeIn animate__delay-2s">
+                    <input type="text" id="user-name" class="form-input" placeholder="Seu nome" required>
+                    <button class="btn primary-btn" onclick="saveName()">RECEBER MEU PROGRAMA</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Carregamento -->
+        <div id="loading-screen" class="screen">
+            <div class="content loading-content">
+                <h2>Preparando seu programa personalizado, <span id="user-name-display">amiga</span>!</h2>
+                <div class="loading-animation">
+                    <div class="loading-spinner"></div>
+                </div>
+                <p>Estamos analisando suas respostas para criar o programa ideal para você...</p>
+            </div>
+        </div>
+
+        <!-- Tela de Resultados (Vendas) -->
+        <div id="results-screen" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+            </div>
+            <div class="content results-container">
+                <!-- Headline Principal -->
+                <div class="sales-section glass-effect soft-shadow headline-section animate__animated animate__fadeIn">
+                    <h1 class="gradient-text">Seus Resultados Personalizados</h1>
+                    <p class="sub-headline">Transforme sua rotina de trabalho com exercícios simples e eficazes</p>
+                </div>
+
+                <!-- Benefícios -->
+                <div class="sales-section glass-effect soft-shadow benefits-section animate__animated animate__fadeIn animate__delay-1s">
+                    <h3 class="section-title">🌟 BENEFÍCIOS DO PROGRAMA</h3>
+                    <div class="benefits">
+                        <ul class="benefits-list">
+                            <li>Redução visível da celulite em apenas 3 semanas</li>
+                            <li>Combate eficaz à flacidez nos braços, pernas e abdome</li>
+                            <li>Melhora significativa da autoestima e confiança</li>
+                            <li>Redução da sensação de inchaço</li>
+                            <li>Exercícios simples que podem ser feitos em qualquer cadeira da sua casa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Depoimentos -->
+                <div class="sales-section glass-effect soft-shadow testimonials-section animate__animated animate__fadeIn animate__delay-2s">
+                    <h3 class="section-title">💬 O QUE DIZEM NOSSOS ALUNOS</h3>
+                    
+                    <div class="testimonial glass-effect soft-shadow">
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Eu tinha muita celulite nas coxas e glúteos, e já tinha tentado de tudo. Com os exercícios na cadeira da Natália, vi uma redução visível em apenas 3 semanas! Meu marido notou a diferença e minha autoestima melhorou muito."</strong></p>
+                                <cite>— Mariana S., 42 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial glass-effect soft-shadow">
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"A flacidez nos braços me incomodava tanto que eu evitava usar blusas sem mangas. Com os exercícios na cadeira, consegui tonificar os braços e agora me sinto muito mais confiante e atraente!"</strong></p>
+                                <cite>— Carla M., 38 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial glass-effect soft-shadow">
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Eu sempre me sentia inchada e desconfortável com meu corpo, o que afetava meu relacionamento. Os exercícios da Natália são perfeitos para minha rotina em casa e já notei uma grande diferença na minha silhueta e na minha confiança."</strong></p>
+                                <cite>— Patrícia L., 45 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O que você vai receber -->
+                <div class="sales-section glass-effect soft-shadow offer-section animate__animated animate__fadeIn animate__delay-3s">
+                    <h3 class="section-title">🎯 O QUE VOCÊ VAI RECEBER</h3>
+                    
+                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="MulheresTreinandoNaCadeira/2.png" alt="Mulher fazendo exercício na cadeira" class="rounded-image">
+                </div>
+                    
+                    <ul class="offer-list">
+                        <li>Programa completo com 20 exercícios focados em combater celulite e flacidez</li>
+                        <li>3 rotinas diferentes: para redução de celulite, combate à flacidez e aumento da autoestima</li>
+                        <li>Guia nutricional anti-inchaço</li>
+                        <li>Aplicativo com lembretes para exercícios e afirmações de autoestima</li>
+                        <li>Acesso a comunidade exclusiva de mulheres em transformação</li>
+                    </ul>
+                </div>
+
+                <!-- Galeria de Imagens -->
+                <div class="sales-section glass-effect soft-shadow gallery-section animate__animated animate__fadeIn animate__delay-3s">
+                    <h3 class="section-title">📸 VEJA COMO SÃO OS EXERCÍCIOS NA CADEIRA</h3>
+                    
+                    <div class="image-gallery">
+                        <div class="gallery-item">
+                            <img src="MulheresTreinandoNaCadeira/1.png" alt="Mulher fazendo exercício na cadeira 1" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="MulheresTreinandoNaCadeira/2.png" alt="Mulher fazendo exercício na cadeira 2" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="MulheresTreinandoNaCadeira/3.png" alt="Mulher fazendo exercício na cadeira 3" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="MulheresTreinandoNaCadeira/4.png" alt="Mulher fazendo exercício na cadeira 4" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="MulheresTreinandoNaCadeira/5.png" alt="Mulher fazendo exercício na cadeira 5" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="MulheresTreinandoNaCadeira/6.png" alt="Mulher fazendo exercício na cadeira 6" class="gallery-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Final -->
+                <div class="sales-section glass-effect soft-shadow final-cta animate__animated animate__fadeIn animate__delay-4s">
+                    <h3 class="cta-title">Comece hoje mesmo a transformar seu corpo e sua autoestima!</h3>
+                    <button class="btn primary-btn large-btn smooth-pulse modern-btn glow-effect gradient-border" onclick="window.location.href='https://pay.kiwify.com.br/fbVOj48'">
+                        QUERO COMBATER CELULITE E FLACIDEZ AGORA ✨
+                    </button>
+                    <p class="guarantee"><strong>🔐 Pagamento 100% seguro</strong> | Satisfação garantida ou seu dinheiro de volta</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/chair-quiz.js"></script>
+</body>
+</html>
