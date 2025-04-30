@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatáliaFit - Treinos na Cadeira</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/testimonial-styles.css">
+    <link rel="stylesheet" href="../css/sub-headline-styles.css">
+    <link rel="stylesheet" href="../css/visual-elements.css">
+    <link rel="stylesheet" href="styles-cadeira.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Imagens flutuantes de fundo -->
+    <div class="floating-image"></div>
+    <div class="floating-image"></div>
+    <div class="floating-image"></div>
+    
+    <div class="quiz-container">
+        <!-- Tela 1: Boas-vindas -->
+        <div id="question-1" class="screen active">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">🪑 Transforme Seu Corpo Com Apenas Uma Cadeira!</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Você gostaria de descobrir como tonificar seu corpo, eliminar a flacidez e conquistar um bumbum durinho usando apenas uma cadeira?</p>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">✨</span>
+                        <div class="option-text">
+                            <strong>Sim, quero muito!</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🤔</span>
+                        <div class="option-text">
+                            <strong>Talvez... depende do que for preciso.</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🧐</span>
+                        <div class="option-text">
+                            <strong>Não sei, estou curiosa.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 2: Informação motivacional -->
+        <div id="question-2" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 9%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Mais de 50.000 mulheres já transformaram seu corpo com o Método Cadeira Fit!</h2>
+                
+                <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="imagens/mulher-exercicio-cadeira.jpg" alt="Mulher fazendo exercício com cadeira" class="rounded-image">
+                </div>
+                
+                <button class="btn primary-btn pulse" onclick="nextPage('question-3')">QUERO SABER COMO</button>
+            </div>
+        </div>
+
+        <!-- Tela 3: Motivação para treino -->
+        <div id="question-3" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 18%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">O que mais te motivaria a começar um treino em casa com cadeira?</h2>
+                <p class="animate__animated animate__fadeIn">Selecione todas as opções que te motivam</p>
+                
+                <div class="quiz-options checkbox-options">
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Ter um bumbum mais durinho e empinado</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Eliminar a flacidez dos braços</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Conseguir uma cintura mais fina</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Aumentar minha massa muscular</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Melhorar minha autoestima</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 4: Insatisfação física -->
+        <div id="question-4" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 27%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Qual é a sua principal insatisfação física hoje?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🍑</span>
+                        <div class="option-text">
+                            <strong>Meu bumbum está caído e sem forma</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">💪</span>
+                        <div class="option-text">
+                            <strong>Meus braços estão flácidos e com "tchauzinho"</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">👗</span>
+                        <div class="option-text">
+                            <strong>Minha cintura não é definida</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🔄</span>
+                        <div class="option-text">
+                            <strong>Quero mudar tudo!</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 5: Tempo disponível -->
+        <div id="question-5" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 36%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Quanto tempo você tem disponível para treinar por dia?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">⏱️</span>
+                        <div class="option-text">
+                            <strong>Menos de 15 minutos</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">⏱️</span>
+                        <div class="option-text">
+                            <strong>Entre 15 e 30 minutos</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">⏱️</span>
+                        <div class="option-text">
+                            <strong>Mais de 30 minutos</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🤷‍♀️</span>
+                        <div class="option-text">
+                            <strong>Não tenho tempo, mas quero resultados</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 6: Experiência com exercícios -->
+        <div id="question-6" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 45%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Qual é a sua experiência com exercícios físicos?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🔰</span>
+                        <div class="option-text">
+                            <strong>Sou iniciante, nunca treinei regularmente</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🏃‍♀️</span>
+                        <div class="option-text">
+                            <strong>Já fiz exercícios, mas parei há algum tempo</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">💪</span>
+                        <div class="option-text">
+                            <strong>Treino regularmente, mas quero melhorar</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🏆</span>
+                        <div class="option-text">
+                            <strong>Sou avançada, busco novos desafios</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 7: Idade -->
+        <div id="question-7" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 54%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Qual é a sua faixa etária?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">👩</span>
+                        <div class="option-text">
+                            <strong>18 a 30 anos</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">👩</span>
+                        <div class="option-text">
+                            <strong>31 a 40 anos</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">👩</span>
+                        <div class="option-text">
+                            <strong>41 a 50 anos</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">👩</span>
+                        <div class="option-text">
+                            <strong>Acima de 50 anos</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela 8: Nome -->
+        <div id="question-8" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 63%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Como podemos te chamar?</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Digite seu primeiro nome para personalizarmos seu plano de treinos</p>
+                
+                <div class="form-group animate__animated animate__fadeIn animate__delay-2s">
+                    <input type="text" id="user-name" class="form-input" placeholder="Seu nome aqui..." autocomplete="off">
+                    <button class="btn primary-btn" onclick="saveName()">CONTINUAR</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Carregamento -->
+        <div id="loading-screen" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Preparando seu plano personalizado...</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Estamos analisando suas respostas, <span id="user-name-display">amiga</span>!</p>
+                
+                <div class="loading-animation">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-bar">
+                        <div class="loading-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="loading-text">
+                    <p>Criando seu plano de treinos com cadeira...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Resultados (Página de Vendas) -->
+        <div id="results-screen" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="content results-container">
+                <!-- Headline Principal -->
+                <div class="headline-section animate__animated animate__fadeIn">
+                    <h2 class="headline">Seu Plano de Treinos na Cadeira Está Pronto!</h2>
+                    <p class="sub-headline">Descubra como transformar seu corpo com apenas <strong>uma cadeira</strong> e <strong>20 minutos por dia</strong>!</p>
+                    
+                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                        <img src="imagens/resultado-exercicio-cadeira.jpg" alt="Resultados do Método Cadeira Fit" class="rounded-image">
+                    </div>
+                </div>
+                
+                <!-- Benefícios -->
+                <div class="sales-section benefits-section animate__animated animate__fadeIn animate__delay-2s">
+                    <h3 class="section-title">✨ BENEFÍCIOS DO MÉTODO CADEIRA FIT</h3>
+                    
+                    <ul class="benefits-list">
+                        <li>Bumbum mais durinho e empinado em apenas 21 dias</li>
+                        <li>Braços definidos e sem "tchauzinho"</li>
+                        <li>Cintura mais fina e definida</li>
+                        <li>Aumento da massa muscular e redução da flacidez</li>
+                        <li>Treinos rápidos de 20 minutos que cabem na sua rotina</li>
+                        <li>Zero equipamentos caros - apenas uma cadeira comum!</li>
+                    </ul>
+                </div>
+                
+                <!-- Depoimentos -->
+                <div class="sales-section testimonials-section animate__animated animate__fadeIn animate__delay-3s">
+                    <h3 class="section-title">👑 TRANSFORMAÇÕES REAIS</h3>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Depois dos 45 anos, achei que não conseguiria mais ter um bumbum bonito. Com o Método Cadeira Fit, em apenas 3 semanas já notei a diferença! Está mais durinho e empinado!"</strong></p>
+                                <cite>— Márcia S., 47 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Meus braços sempre foram meu maior complexo. Com os exercícios na cadeira, a flacidez diminuiu muito e agora uso blusas sem manga sem vergonha!"</strong></p>
+                                <cite>— Renata L., 39 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Nunca imaginei que poderia ter resultados tão bons treinando em casa com uma simples cadeira. Minha cintura diminuiu 5cm em apenas um mês!"</strong></p>
+                                <cite>— Patrícia M., 52 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O que você vai receber -->
+                <div class="sales-section offer-section animate__animated animate__fadeIn animate__delay-4s">
+                    <h3 class="section-title">🎯 O QUE VOCÊ VAI RECEBER</h3>
+                    
+                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                        <img src="imagens/kit-treino-cadeira.jpg" alt="Kit completo do Método Cadeira Fit" class="rounded-image">
+                    </div>
+                    
+                    <ul class="offer-list">
+                        <li>Programa completo de Treinos na Cadeira (4 semanas)</li>
+                        <li>15 exercícios focados em bumbum, braços e cintura</li>
+                        <li>Vídeos explicativos de cada exercício</li>
+                        <li>Guia de alimentação para potencializar resultados</li>
+                        <li>Suporte exclusivo no grupo VIP</li>
+                    </ul>
+                </div>
+
+                <!-- CTA Final -->
+                <div class="sales-section final-cta animate__animated animate__fadeIn animate__delay-5s">
+                    <h3 class="cta-title">Está na hora de investir em você!</h3>
+                    <button class="btn primary-btn large-btn pulse" onclick="window.location.href='https://pay.kiwify.com.br/fbVOj48'">
+                        QUERO COMEÇAR AGORA MESMO 🔥
+                    </button>
+                    <p class="guarantee"><strong>🔐 Pagamento 100% seguro</strong> | Satisfação garantida ou seu dinheiro de volta</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz-cadeira.js"></script>
+</body>
+</html>

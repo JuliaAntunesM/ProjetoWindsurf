@@ -1,0 +1,65 @@
+{
+  "name": "NatáliaFit - Treinos na Cadeira",
+  "pages": [
+    {
+      "id": "welcome",
+      "title": "Bem-vinda ao Desafio Cadeira Fit!",
+      "subtitle": "Descubra como transformar seu corpo com apenas uma cadeira!",
+      "progress": 0,
+      "content": {
+        "benefits": [
+          "Bumbum durinho e empinado!",
+          "Braços definidos sem flacidez!",
+          "Cintura fina e definida!"
+        ],
+        "buttonText": "COMEÇAR AGORA"
+      }
+    },
+    {
+      "id": "question",
+      "title": "O que mais te incomoda no seu corpo hoje?",
+      "subtitle": "Selecione todas as opções que já te fizeram sentir insegura",
+      "progress": 50,
+      "content": {
+        "options": [
+          {
+            "emoji": "🍑",
+            "text": "<strong>Meu bumbum está caído e sem forma</strong>... Quero ele mais durinho e empinado!"
+          },
+          {
+            "emoji": "💪",
+            "text": "<strong>Meus braços estão flácidos</strong>... Tenho vergonha de usar blusas sem manga."
+          },
+          {
+            "emoji": "👗",
+            "text": "<strong>Minha cintura não é definida</strong>... Quero uma silhueta mais marcada."
+          },
+          {
+            "emoji": "🔄",
+            "text": "<strong>Quero aumentar minha massa muscular</strong>... Estou muito magra ou sem definição."
+          }
+        ],
+        "footer": "Se você marcou pelo menos uma opção, nosso método é perfeito para você!",
+        "buttonText": "QUERO TRANSFORMAR MEU CORPO!"
+      }
+    },
+    {
+      "id": "results",
+      "title": "Seu plano de treinos na cadeira está pronto! 🎉",
+      "subtitle": "Baseado nas suas respostas, você pode <strong>transformar seu corpo</strong> com <strong>apenas uma cadeira e 20 minutos por dia!</strong>",
+      "progress": 100,
+      "content": {
+        "loading": {
+          "title": "Analisando...",
+          "subtitle": "Estamos analisando suas respostas..."
+        },
+        "benefits": [
+          "Bumbum durinho e empinado!",
+          "Braços definidos sem flacidez!",
+          "Cintura fina e definida!"
+        ],
+        "buttonText": "QUERO COMEÇAR AGORA MESMO"
+      }
+    }
+  ]
+}
