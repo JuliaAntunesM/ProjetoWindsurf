@@ -38,24 +38,7 @@
             opacity: 0.3;
         }
         
-        /* Efeito de cursor personalizado */
-        .cursor-effect {
-            position: fixed;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 208, 132, 0.3) 0%, rgba(0, 208, 132, 0) 70%);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            transition: width 0.3s, height 0.3s, background 0.3s;
-        }
-        
-        .cursor-effect.active {
-            width: 50px;
-            height: 50px;
-            background: radial-gradient(circle, rgba(0, 208, 132, 0.5) 0%, rgba(0, 208, 132, 0) 70%);
-        }
+        /* Efeito de cursor personalizado removido */
     </style>
 </head>
 <body>
@@ -566,7 +549,7 @@
                     <h3 class="cta-title">Está na hora de transformar sua saúde!</h3>
                     <div class="price-container">
                         <span class="original-price">R$ 99,99</span>
-                        <span class="discount-price">R$ 19,99</span>
+                        <span class="discount-price">R$ 37,00</span>
                         <span class="installment-info">ou em até 12x no cartão</span>
                     </div>
                     <button class="btn primary-btn large-btn pulse glow-effect" onclick="window.location.href='https://pay.kiwify.com.br/lT2Uy7S'">
@@ -605,52 +588,10 @@
             // Iniciar o cronômetro
             updateCountdown();
             
-            // Efeito de cursor seguindo elementos
-            const cursorEffect = document.createElement('div');
-            cursorEffect.className = 'cursor-effect';
-            document.body.appendChild(cursorEffect);
-            
-            document.addEventListener('mousemove', function(e) {
-                // Efeito suave de seguir o cursor
-                setTimeout(function() {
-                    cursorEffect.style.left = e.pageX + 'px';
-                    cursorEffect.style.top = e.pageY + 'px';
-                }, 50);
-            });
-            
-            // Adiciona efeito de hover nos elementos interativos
-            const interactiveElements = document.querySelectorAll('.option, .btn, .badge');
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursorEffect.classList.add('active');
-                });
-                
-                element.addEventListener('mouseleave', function() {
-                    cursorEffect.classList.remove('active');
-                });
-            });
+            // Efeito de cursor personalizado removido
         });
     </script>
     
-    <style>
-        /* Efeito de cursor personalizado */
-        .cursor-effect {
-            position: fixed;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 208, 132, 0.3) 0%, rgba(0, 208, 132, 0) 70%);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            transition: width 0.3s, height 0.3s, background 0.3s;
-        }
-        
-        .cursor-effect.active {
-            width: 50px;
-            height: 50px;
-            background: radial-gradient(circle, rgba(0, 208, 132, 0.5) 0%, rgba(0, 208, 132, 0) 70%);
-        }
-    </style>
+    <!-- Estilo de cursor personalizado removido -->
 </body>
 </html>
