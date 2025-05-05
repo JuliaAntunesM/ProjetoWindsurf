@@ -997,92 +997,6 @@ transform: scaleX(1);
     100% { transform: rotate(360deg); }
 }
 
-/* Estilos para a seção "O que você vai receber" - Carrossel Animado */
-.offer-section {
-    position: relative;
-    padding: 40px 25px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #FFF8F0, #FFF);
-    box-shadow: 0 15px 35px rgba(209, 122, 69, 0.1);
-    margin-bottom: 40px;
-    overflow: hidden;
-    border: 1px solid rgba(232, 145, 92, 0.1);
-}
-
-.offer-header {
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.offer-icon-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-.offer-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 25px rgba(209, 122, 69, 0.25);
-    position: relative;
-    z-index: 1;
-    animation: pulse 2s infinite;
-}
-
-.offer-icon i {
-    color: white;
-    font-size: 22px;
-}
-
-.offer-decoration {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
-    margin: 15px auto 0;
-    border-radius: 2px;
-}
-
-/* Carrossel de Recursos */
-.feature-carousel-container {
-    position: relative;
-    margin-top: 30px;
-    overflow: hidden;
-    padding-bottom: 50px;
-}
-
-.feature-carousel {
-    position: relative;
-    min-height: 400px;
-    perspective: 1000px;
-}
-
-.feature-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
-    z-index: 1;
-}
-
-.feature-slide.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    z-index: 2;
-}
-
-/* Estilo para o item principal */
 .feature-main {
     background: white;
     border-radius: 20px;
@@ -1117,174 +1031,6 @@ transform: scaleX(1);
     object-fit: contain;
     transition: transform 0.8s ease;
     max-height: 400px;
-}
-
-/* Estilos para o novo layout premium do carrossel */
-.feature-card-premium {
-    background: linear-gradient(135deg, #fff, #FFF8F0);
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(209, 122, 69, 0.15);
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card-premium:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(209, 122, 69, 0.2);
-}
-
-.premium-badge {
-    position: absolute;
-    top: 20px;
-    right: -30px;
-    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
-    color: white;
-    padding: 8px 40px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transform: rotate(45deg);
-    z-index: 10;
-    box-shadow: 0 5px 15px rgba(209, 122, 69, 0.2);
-}
-
-.premium-content {
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.premium-content h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 15px;
-    position: relative;
-    display: inline-block;
-}
-
-.premium-content h3::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
-    border-radius: 3px;
-}
-
-.premium-content p {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 600px;
-}
-
-.premium-features {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin: 20px 0 30px;
-    width: 100%;
-}
-
-.premium-feature {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(209, 122, 69, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.premium-feature:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(209, 122, 69, 0.15);
-}
-
-.premium-feature .feature-icon {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
-}
-
-.premium-feature .feature-icon i {
-    color: white;
-    font-size: 18px;
-}
-
-.premium-feature .feature-text {
-    font-weight: 600;
-    color: var(--text-color);
-    font-size: 1rem;
-}
-
-.premium-image-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto 0;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(209, 122, 69, 0.2);
-}
-
-.premium-image-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(232, 145, 92, 0.1), rgba(232, 145, 92, 0.3));
-    z-index: 1;
-    pointer-events: none;
-}
-
-.premium-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.feature-card-premium:hover .premium-image {
-    transform: scale(1.05);
-}
-
-.feature-main:hover .feature-main-image img {
-    transform: scale(1.05);
-}
-
-.feature-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
-    color: white;
-    padding: 5px 15px;
-    border-radius: 30px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    z-index: 2;
-    box-shadow: 0 5px 15px rgba(209, 122, 69, 0.3);
-    transform: rotate(5deg);
 }
 
 .feature-main-content {
@@ -1331,7 +1077,22 @@ transform: scaleX(1);
     color: var(--primary-dark);
 }
 
-/* Estilo para os itens de destaque */
+.feature-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+    color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(209, 122, 69, 0.3);
+    transform: rotate(5deg);
+}
+
 .feature-spotlight {
     background: white;
     border-radius: 20px;
@@ -2671,6 +2432,130 @@ transform: scaleX(1);
     margin-bottom: 40px;
     overflow: hidden;
     border: 1px solid rgba(232, 145, 92, 0.1);
+}
+
+/* Estilos para o novo carrossel de transformação */
+.transformacao-container {
+    position: relative;
+    margin: 30px auto 60px;
+    max-width: 90%;
+    width: 100%;
+    z-index: 10;
+}
+
+.transformacao-titulo {
+    position: relative;
+    margin: 30px auto 10px;
+    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(209, 122, 69, 0.3);
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.antes-depois-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: opacity 0.3s ease;
+}
+
+.transformacao-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+    mix-blend-mode: multiply;
+}
+
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 5;
+    flex-shrink: 0;
+}
+
+.nav-btn:hover {
+    background: var(--primary-color);
+}
+
+.nav-btn i {
+    color: var(--primary-dark);
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-btn:hover i {
+    color: white;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    opacity: 0.4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.dot.active {
+    background: var(--primary-color);
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 /* Estilos para a galeria de exercícios com cadeira */
