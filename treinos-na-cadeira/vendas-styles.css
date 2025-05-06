@@ -1,0 +1,420 @@
+/* Estilos específicos para a página de vendas do Treinos na Cadeira */
+
+/* Cores personalizadas */
+:root {
+    --primary-color: #ff6b98;
+    --primary-dark: #e63e7b;
+    --primary-light: #ff8fb0;
+    --accent-color: #fff0f5;
+    --text-dark: #333333;
+    --text-medium: #555555;
+    --text-light: #777777;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos gerais para a página de vendas */
+.sales-content {
+    padding: 0;
+    background-color: #fff;
+}
+
+.sales-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    padding: 20px;
+    border-bottom: none;
+}
+
+/* Seções da página de vendas */
+.sales-section {
+    padding: 40px 25px;
+    margin-bottom: 0;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Sub-headline section */
+.sub-headline-section {
+    background-color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.support-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.support-text::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Feature icons */
+.feature-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 20px rgba(230, 62, 123, 0.2);
+}
+
+.icon-circle i {
+    font-size: 32px;
+    color: white;
+}
+
+.icon-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-medium);
+}
+
+/* Pain section */
+.pain-section {
+    background-color: var(--accent-color);
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin: 20px 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.pain-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="%23ff6b98" opacity="0.05"/></svg>');
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.pain-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 10px 25px rgba(230, 62, 123, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.pain-icon i {
+    font-size: 36px;
+    color: white;
+}
+
+.pain-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.pain-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.pain-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-medium);
+    max-width: 80%;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Benefits list */
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 80%;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-item i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.benefit-item span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-medium);
+}
+
+/* Transformation preview */
+.transformation-preview {
+    margin: 30px auto 10px;
+    max-width: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.transformation-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.transformation-preview:hover .transformation-image {
+    transform: scale(1.02);
+}
+
+/* Testimonial section */
+.testimonial-section {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.testimonial {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-image img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-light);
+    object-fit: cover;
+}
+
+.testimonial-content blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+    margin-bottom: 15px;
+}
+
+.testimonial-content cite {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.image-container {
+    margin: 30px auto;
+    max-width: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+/* CTA section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+.cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.primary-btn.large-btn {
+    background-color: white;
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    padding: 18px 35px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.primary-btn.large-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .feature-icons {
+        gap: 20px;
+    }
+    
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .icon-circle i {
+        font-size: 28px;
+    }
+    
+    .pain-title {
+        font-size: 1.8rem;
+    }
+    
+    .pain-text {
+        font-size: 1.1rem;
+        max-width: 95%;
+    }
+    
+    .testimonial {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cta-title {
+        font-size: 1.6rem;
+    }
+    
+    .primary-btn.large-btn {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
+}

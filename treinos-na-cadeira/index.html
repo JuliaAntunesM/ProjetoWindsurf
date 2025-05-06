@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinos na Cadeira - Quiz</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>NatáliaFit Quiz - Treinos na Cadeira</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/testimonial-styles.css">
+    <link rel="stylesheet" href="../css/sub-headline-styles.css">
     <link rel="stylesheet" href="../css/visual-elements.css">
-    <link rel="stylesheet" href="styles-cadeira.css">
+    <link rel="stylesheet" href="vendas-styles.css">
+    <link rel="stylesheet" href="beneficios-styles.css">
+    <link rel="stylesheet" href="exercicios-styles.css">
+    <link rel="stylesheet" href="depoimentos-styles.css">
+    <link rel="stylesheet" href="cta-styles.css">
+    <link rel="stylesheet" href="resultados-styles.css">
+    <link rel="stylesheet" href="icones-styles.css">
+    <link rel="stylesheet" href="loading-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Imagens flutuantes de fundo -->
-    <div class="floating-image"></div>
-    <div class="floating-image"></div>
-    <div class="floating-image"></div>
-    <div class="floating-image"></div>
-    <div class="floating-image"></div>
-    <div class="floating-image"></div>
-    <div class="floating-image"></div>
-    <div class="floating-image"></div>
-    
     <div class="quiz-container">
         <!-- Tela 1: Boas-vindas -->
         <div id="question-1" class="screen active">
@@ -37,8 +34,8 @@
             </div>
             
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">🪑 Transforme Seu Corpo Com Apenas Uma Cadeira!</h2>
-                <p class="animate__animated animate__fadeIn animate__delay-1s">Você gostaria de descobrir como tonificar seu corpo, eliminar a flacidez e conquistar um bumbum durinho usando apenas uma cadeira?</p>
+                <h2 class="animate__animated animate__fadeIn">🪑 Descubra Como Tonificar Seu Corpo Sem Precisar Sair de Casa!</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Você gostaria de descobrir como tonificar seu corpo usando apenas uma cadeira comum?</p>
                 
                 <div class="quiz-options">
                     <div class="option" onclick="selectOption(this)">
@@ -60,6 +57,8 @@
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </div>
 
@@ -74,13 +73,14 @@
                 </div>
             </div>
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">Mais de 50.000 mulheres já transformaram seu corpo com o Método Cadeira Fit!</h2>
+                <h2 class="animate__animated animate__fadeIn">Mais de 75.000 mulheres já começaram a transformar seu corpo sem precisar pisar numa academia!</h2>
                 
                 <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
-                    <img src="MulheresExercitando/1.png" alt="Mulher fazendo exercício com cadeira" class="rounded-image">
+                    <img src="MulheresExercitando/1.png" alt="Mulher madura se exercitando feliz" class="rounded-image">
                 </div>
                 
                 <button class="btn primary-btn pulse" onclick="nextPage('question-3')">QUERO SABER COMO</button>
+
             </div>
         </div>
 
@@ -95,32 +95,26 @@
                 </div>
             </div>
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">O que mais te motivaria a começar um treino em casa com cadeira?</h2>
+                <h2 class="animate__animated animate__fadeIn">O que mais te motivaria a começar um treino em casa?</h2>
                 <p class="animate__animated animate__fadeIn">Selecione todas as opções que te motivam</p>
                 
                 <div class="quiz-options checkbox-options">
                     <div class="option" onclick="toggleCheckbox(this)">
                         <span class="checkbox"></span>
                         <div class="option-text">
-                            <strong>Ter um bumbum mais durinho e empinado</strong>
+                            <strong>Deixar a barriga mais firme</strong>
                         </div>
                     </div>
                     <div class="option" onclick="toggleCheckbox(this)">
                         <span class="checkbox"></span>
                         <div class="option-text">
-                            <strong>Eliminar a flacidez dos braços</strong>
+                            <strong>Ter um bumbum mais durinho</strong>
                         </div>
                     </div>
                     <div class="option" onclick="toggleCheckbox(this)">
                         <span class="checkbox"></span>
                         <div class="option-text">
-                            <strong>Conseguir uma cintura mais fina</strong>
-                        </div>
-                    </div>
-                    <div class="option" onclick="toggleCheckbox(this)">
-                        <span class="checkbox"></span>
-                        <div class="option-text">
-                            <strong>Aumentar minha massa muscular</strong>
+                            <strong>Afinar a cintura</strong>
                         </div>
                     </div>
                     <div class="option" onclick="toggleCheckbox(this)">
@@ -130,6 +124,8 @@
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </div>
 
@@ -144,38 +140,40 @@
                 </div>
             </div>
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">Qual é a sua principal insatisfação física hoje?</h2>
+                <h2 class="animate__animated animate__fadeIn">Como você descreveria hoje sua principal insatisfação física?</h2>
                 
                 <div class="quiz-options">
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">🍑</span>
+                        <span class="emoji">😣</span>
                         <div class="option-text">
-                            <strong>Meu bumbum está caído e sem forma</strong>
+                            <strong>Flacidez na barriga</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">💪</span>
+                        <span class="emoji">😔</span>
                         <div class="option-text">
-                            <strong>Meus braços estão flácidos e com "tchauzinho"</strong>
+                            <strong>Celulite ou varizes</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">👗</span>
+                        <span class="emoji">😩</span>
                         <div class="option-text">
-                            <strong>Minha cintura não é definida</strong>
+                            <strong>Inchaço corporal</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">🔄</span>
+                        <span class="emoji">💥</span>
                         <div class="option-text">
                             <strong>Quero mudar tudo!</strong>
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </div>
 
-        <!-- Tela 5: Tempo disponível -->
+        <!-- Tela 5: Vida amorosa e autoestima -->
         <div id="question-5" class="screen">
             <div class="header">
                 <div class="logo-container">
@@ -186,38 +184,34 @@
                 </div>
             </div>
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">Quanto tempo você tem disponível para treinar por dia?</h2>
+                <h2 class="animate__animated animate__fadeIn">Você sente que seu corpo influencia na sua vida amorosa ou autoestima?</h2>
                 
                 <div class="quiz-options">
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">⏱️</span>
+                        <span class="emoji">💔</span>
                         <div class="option-text">
-                            <strong>Menos de 15 minutos</strong>
+                            <strong>Sim, muito.</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">⏱️</span>
+                        <span class="emoji">😕</span>
                         <div class="option-text">
-                            <strong>Entre 15 e 30 minutos</strong>
-                        </div>
-                    </div>
-                    <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">⏱️</span>
-                        <div class="option-text">
-                            <strong>Mais de 30 minutos</strong>
+                            <strong>Um pouco, mas incomoda.</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
                         <span class="emoji">🤷‍♀️</span>
                         <div class="option-text">
-                            <strong>Não tenho tempo, mas quero resultados</strong>
+                            <strong>Não sei, mas gostaria de me sentir melhor.</strong>
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </div>
 
-        <!-- Tela 6: Experiência com exercícios -->
+        <!-- Tela 6: Bumbum -->
         <div id="question-6" class="screen">
             <div class="header">
                 <div class="logo-container">
@@ -228,38 +222,34 @@
                 </div>
             </div>
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">Qual é a sua experiência com exercícios físicos?</h2>
+                <h2 class="animate__animated animate__fadeIn">Em relação ao seu bumbum, como você se sente?</h2>
                 
                 <div class="quiz-options">
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">🔰</span>
+                        <span class="emoji">🍑</span>
                         <div class="option-text">
-                            <strong>Sou iniciante, nunca treinei regularmente</strong>
+                            <strong>Gostaria que fosse mais durinho</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">🏃‍♀️</span>
+                        <span class="emoji">🤔</span>
                         <div class="option-text">
-                            <strong>Já fiz exercícios, mas parei há algum tempo</strong>
+                            <strong>Acho que poderia melhorar...</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">💪</span>
+                        <span class="emoji">😊</span>
                         <div class="option-text">
-                            <strong>Treino regularmente, mas quero melhorar</strong>
-                        </div>
-                    </div>
-                    <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">🏆</span>
-                        <div class="option-text">
-                            <strong>Sou avançada, busco novos desafios</strong>
+                            <strong>Estou satisfeita.</strong>
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </div>
 
-        <!-- Tela 7: Idade -->
+        <!-- Tela 7: Cintura -->
         <div id="question-7" class="screen">
             <div class="header">
                 <div class="logo-container">
@@ -270,38 +260,34 @@
                 </div>
             </div>
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">Qual é a sua faixa etária?</h2>
+                <h2 class="animate__animated animate__fadeIn">Em relação à sua cintura, como você se sente?</h2>
                 
                 <div class="quiz-options">
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">👩</span>
+                        <span class="emoji">⏰</span>
                         <div class="option-text">
-                            <strong>18 a 30 anos</strong>
+                            <strong>Queria ter a cintura mais fina</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">👩</span>
+                        <span class="emoji">😕</span>
                         <div class="option-text">
-                            <strong>31 a 40 anos</strong>
+                            <strong>Às vezes me incomodo com a barriga saliente.</strong>
                         </div>
                     </div>
                     <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">👩</span>
+                        <span class="emoji">👍</span>
                         <div class="option-text">
-                            <strong>41 a 50 anos</strong>
-                        </div>
-                    </div>
-                    <div class="option" onclick="selectOption(this)">
-                        <span class="emoji">👩</span>
-                        <div class="option-text">
-                            <strong>Acima de 50 anos</strong>
+                            <strong>Estou ok com minha cintura.</strong>
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </div>
 
-        <!-- Tela 8: Nome -->
+        <!-- Tela 8: Medo de falta de cuidados -->
         <div id="question-8" class="screen">
             <div class="header">
                 <div class="logo-container">
@@ -312,18 +298,94 @@
                 </div>
             </div>
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">Como podemos te chamar?</h2>
-                <p class="animate__animated animate__fadeIn animate__delay-1s">Digite seu primeiro nome para personalizarmos seu plano de treinos</p>
+                <h2 class="animate__animated animate__fadeIn">Você tem medo de que a falta de cuidados com o corpo possa afetar seu relacionamento ou sua autoestima?</h2>
                 
-                <div class="form-group animate__animated animate__fadeIn animate__delay-2s">
-                    <input type="text" id="user-name" class="form-input" placeholder="Seu nome aqui..." autocomplete="off">
-                    <button class="btn primary-btn" onclick="saveName()">CONTINUAR</button>
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">😢</span>
+                        <div class="option-text">
+                            <strong>Sim, tenho esse receio...</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🤔</span>
+                        <div class="option-text">
+                            <strong>Nunca tinha pensado nisso, mas faz sentido.</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🙂</span>
+                        <div class="option-text">
+                            <strong>Não me preocupo com isso.</strong>
+                        </div>
+                    </div>
                 </div>
+                
+
             </div>
         </div>
 
-        <!-- Tela de Carregamento -->
-        <div id="loading-screen" class="screen">
+        <!-- Tela 9: 10 minutos por dia -->
+        <div id="question-9" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 72%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Se você pudesse melhorar seu corpo e sua confiança treinando apenas 10 minutos por dia, você tentaria?</h2>
+                
+                <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="MulheresExercitando/2.png" alt="Mulher madura sorridente pós-treino" class="rounded-image">
+                </div>
+                
+                <button class="btn primary-btn pulse" onclick="nextPage('question-10')">QUERO TENTAR</button>
+            </div>
+        </div>
+
+        <!-- Tela 10: Preferência de treinos -->
+        <div id="question-10" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 81%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Você prefere treinos que...</h2>
+                
+                <div class="quiz-options checkbox-options">
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Fortaleçam glúteos e coxas</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Modelem a cintura</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Melhorem a postura e reduzam o inchaço</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 11: Plano personalizado -->
+        <div id="question-11" class="screen">
             <div class="header">
                 <div class="logo-container">
                     <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
@@ -333,25 +395,99 @@
                 </div>
             </div>
             <div class="content">
-                <h2 class="animate__animated animate__fadeIn">Preparando seu plano personalizado...</h2>
-                <p class="animate__animated animate__fadeIn animate__delay-1s">Estamos analisando suas respostas, <span id="user-name-display">amiga</span>!</p>
+                <h2 class="animate__animated animate__fadeIn">Quer receber um plano 100% personalizado para começar?</h2>
                 
-                <div class="loading-animation">
-                    <div class="loading-spinner"></div>
-                    <div class="loading-bar">
-                        <div class="loading-progress"></div>
-                    </div>
+                <div class="form-group animate__animated animate__fadeIn">
+                    <label for="user-name">Seu nome:</label>
+                    <input type="text" id="user-name" class="form-input" placeholder="Digite seu nome aqui" onkeydown="if(event.key === 'Enter') { saveName(); }">
                 </div>
                 
-                <div class="loading-text">
-                    <p>Criando seu plano de treinos com cadeira...</p>
+                <button class="btn primary-btn pulse" onclick="saveName(); showLoading()">QUERO RECEBER MEU PLANO</button>
+            </div>
+        </div>
+
+        <!-- Tela de Carregamento/Análise -->
+        <div id="loading-screen" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="loading-container animate__animated animate__fadeIn">
+                    <h2 class="loading-title animate__animated animate__fadeIn">🎉 Parabéns, <span id="user-name-display">!</span> Seu Plano Personalizado Está Sendo Gerado!</h2>
+                    
+                    <!-- Novo gráfico visual de carregamento -->
+                    <div class="loading-chart-container animate__animated animate__fadeIn animate__delay-1s">
+                        <div class="chart-grid">
+                            <div class="grid-line" data-label="100%"></div>
+                            <div class="grid-line" data-label="75%"></div>
+                            <div class="grid-line" data-label="50%"></div>
+                            <div class="grid-line" data-label="25%"></div>
+                            <div class="grid-line" data-label="0%"></div>
+                        </div>
+                        
+                        <div class="loading-chart">
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-fire-alt"></i></div>
+                                <div class="chart-label">Dia 1</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-dumbbell"></i></div>
+                                <div class="chart-label">Dia 7</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-heartbeat"></i></div>
+                                <div class="chart-label">Dia 14</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-ruler-vertical"></i></div>
+                                <div class="chart-label">Dia 21</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-running"></i></div>
+                                <div class="chart-label">Dia 28</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-medal"></i></div>
+                                <div class="chart-label">Dia 35</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-trophy"></i></div>
+                                <div class="chart-label">Dia 42</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="loading-subtitle animate__animated animate__fadeIn animate__delay-2s">Seus Resultados Projetados</h3>
+                    
+                    <div class="loading-info animate__animated animate__fadeIn animate__delay-2s">
+                        <div class="loading-stat">
+                            <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                            <div class="stat-value" data-value="21">0</div>
+                            <div class="stat-label">Dias para primeiros resultados</div>
+                        </div>
+                        <div class="loading-stat">
+                            <div class="stat-icon"><i class="fas fa-percentage"></i></div>
+                            <div class="stat-value" data-value="87">0</div>
+                            <div class="stat-label">% de satisfação das alunas</div>
+                        </div>
+                        <div class="loading-stat">
+                            <div class="stat-icon"><i class="fas fa-ruler-combined"></i></div>
+                            <div class="stat-value" data-value="5">0</div>
+                            <div class="stat-label">cm de redução média na cintura</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Tela de Resultados (Página de Vendas) -->
         <div id="results-screen" class="screen">
-            <div class="header">
+            <div class="header sales-header">
                 <div class="logo-container">
                     <img src="../Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
                 </div>
@@ -359,98 +495,65 @@
                     <div class="progress" style="width: 100%"></div>
                 </div>
             </div>
-            <div class="content results-container">
-                <!-- Headline Principal -->
-                <div class="headline-section animate__animated animate__fadeIn">
-                    <div class="headline-decoration"></div>
-                    <div class="headline-decoration-2"></div>
+            <div class="content sales-content">
+
+
+                <!-- Sub-headline de apoio com ícones -->
+                <div class="sales-section sub-headline-section animate__animated animate__fadeIn animate__delay-1s">
+                    <h3 class="support-text">Sem academia. Sem equipamentos. Sem desculpas.</h3>
                     
-                    <h2 class="headline">Seu Plano de Treinos na Cadeira Está Pronto!</h2>
-                    
-                    <div class="headline-icon-container">
-                        <div class="headline-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                    
-                    <p class="sub-headline">Descubra como transformar seu corpo com apenas <strong>uma cadeira</strong> e <strong>20 minutos por dia</strong>!</p>
-                    
-                </div>
-                
-                <!-- Novo carrossel de antes e depois -->
-                <div class="transformacao-container animate__animated animate__fadeIn animate__delay-1s">
-                    
-                    <div class="antes-depois-slider">
-                        <!-- Controle de navegação esquerdo -->
-                        <button class="nav-btn prev-btn" aria-label="Anterior">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        
-                        <!-- Container das imagens -->
-                        <div class="slider-container">
-                            <div class="slider-track">
-                                <div class="slide" data-index="0">
-                                    <img src="resultados/1.png" alt="Antes e depois 1" class="transformacao-img">
-                                </div>
-                                <div class="slide" data-index="1">
-                                    <img src="resultados/2.png" alt="Antes e depois 2" class="transformacao-img">
-                                </div>
-                                <div class="slide" data-index="2">
-                                    <img src="resultados/3.png" alt="Antes e depois 3" class="transformacao-img">
-                                </div>
-                                <div class="slide" data-index="3">
-                                    <img src="resultados/4.png" alt="Antes e depois 4" class="transformacao-img">
-                                </div>
-                                <div class="slide" data-index="4">
-                                    <img src="resultados/5.png" alt="Antes e depois 5" class="transformacao-img">
-                                </div>
-                                <div class="slide" data-index="5">
-                                    <img src="resultados/6.png" alt="Antes e depois 6" class="transformacao-img">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Controle de navegação direito -->
-                        <button class="nav-btn next-btn" aria-label="Próximo">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                    
-                    <!-- Indicadores de slide -->
-                    <div class="slider-dots">
-                        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
-                        <button class="dot" data-index="1" aria-label="Slide 2"></button>
-                        <button class="dot" data-index="2" aria-label="Slide 3"></button>
-                        <button class="dot" data-index="3" aria-label="Slide 4"></button>
-                        <button class="dot" data-index="4" aria-label="Slide 5"></button>
-                        <button class="dot" data-index="5" aria-label="Slide 6"></button>
-                    </div>
-                    
-                    <div class="transformacao-titulo">TRANSFORMAÇÃO</div>
-                </div>
-                    
-                    <div class="features-container">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="feature-text">20 min/dia</div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
+                    <div class="feature-icons">
+                        <div class="feature-icon">
+                            <div class="icon-circle">
                                 <i class="fas fa-home"></i>
                             </div>
-                            <div class="feature-text">Em casa</div>
+                            <div class="icon-text">Treinos em casa</div>
                         </div>
                         
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-chair"></i>
+                        <div class="feature-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-stopwatch"></i>
                             </div>
-                            <div class="feature-text">1 cadeira</div>
+                            <div class="icon-text">10 minutos</div>
+                        </div>
+                        
+                        <div class="feature-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="icon-text">Resultados reais</div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Identificação com a dor (melhorada) -->
+                <div class="sales-section pain-section animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="pain-icon">
+                        <i class="fas fa-heart-broken"></i>
+                    </div>
+                    <h3 class="pain-title">Insatisfeita com seu corpo?</h3>
+                    <p class="pain-text">Milhares de mulheres como você já transformaram seus corpos com o Método Cadeira Fit, sem precisar de academia ou equipamentos caros.</p>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Resultados em apenas 21 dias</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Exercícios simples e eficazes</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Treinos de apenas 10 minutos por dia</span>
+                        </div>
+                    </div>
+                    
+                    <div class="transformation-preview">
+                        <img src="resultados/1.png" alt="Transformação real com o Método Cadeira Fit" class="transformation-image">
+                    </div>
+                </div>
+                
                 </div>
                 
                 <!-- Benefícios -->
@@ -651,7 +754,7 @@
                             <div class="testimonial-tag">Resultado em 3 semanas</div>
                         </div>
                         
-                        <div class="testimonial-card next" data-index="1">
+                        <div class="testimonial-card" data-index="1">
                             <div class="testimonial-quote-icon">
                                 <i class="fas fa-quote-left"></i>
                             </div>
@@ -755,13 +858,55 @@
                             </div>
                         </div>
                         
-                        <div class="cta-price-container">
-                            <div class="price-tag">
-                                <div class="original-price">De <span>R$97</span></div>
-                                <div class="current-price">Por apenas <span>R$37,00</span></div>
+                        <!-- Carrossel de Resultados -->
+                        <div class="results-carousel-container">
+                            <div class="results-carousel-title">Resultados Reais</div>
+                            <div class="results-carousel">
+                                <div class="results-slide active" data-index="0">
+                                    <img src="resultados/1.png" alt="Resultado 1">
+                                    <div class="results-label">Transformação em 21 dias</div>
+                                </div>
+                                <div class="results-slide" data-index="1">
+                                    <img src="resultados/2.png" alt="Resultado 2">
+                                    <div class="results-label">Menos 5cm de cintura</div>
+                                </div>
+                                <div class="results-slide" data-index="2">
+                                    <img src="resultados/3.png" alt="Resultado 3">
+                                    <div class="results-label">Braços definidos</div>
+                                </div>
+                                <div class="results-slide" data-index="3">
+                                    <img src="resultados/4.png" alt="Resultado 4">
+                                    <div class="results-label">Barriga chapada</div>
+                                </div>
+                                <div class="results-slide" data-index="4">
+                                    <img src="resultados/5.png" alt="Resultado 5">
+                                    <div class="results-label">Bumbum empinado</div>
+                                </div>
+                                <div class="results-slide" data-index="5">
+                                    <img src="resultados/6.png" alt="Resultado 6">
+                                    <div class="results-label">Corpo definido</div>
+                                </div>
                             </div>
-                            <div class="price-info">Pagamento único - Acesso vitalício</div>
+                            
+                            <div class="results-nav">
+                                <button class="results-nav-button prev-result">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="results-nav-button next-result">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="results-indicators">
+                                <button class="results-indicator active" data-index="0"></button>
+                                <button class="results-indicator" data-index="1"></button>
+                                <button class="results-indicator" data-index="2"></button>
+                                <button class="results-indicator" data-index="3"></button>
+                                <button class="results-indicator" data-index="4"></button>
+                                <button class="results-indicator" data-index="5"></button>
+                            </div>
                         </div>
+                        
                         
                         <div class="cta-button-container">
                             <button class="premium-cta-button pulse-strong" onclick="window.location.href='https://pay.kiwify.com.br/9f50Tqs'">
@@ -797,9 +942,9 @@
         </div>
     </div>
 
-    <script src="quiz-cadeira.js"></script>
-    <script src="testimonials.js"></script>
-    <script src="feature-carousel.js"></script>
-    <script src="transformacao-slider.js"></script>
+    <script src="quiz-script.js"></script>
+    <script src="depoimentos-script.js"></script>
+    <script src="resultados-script.js"></script>
+    <script src="loading-script.js"></script>
 </body>
 </html>
