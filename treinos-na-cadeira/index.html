@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="exercicios-styles.css">
     <link rel="stylesheet" href="depoimentos-styles.css">
     <link rel="stylesheet" href="cta-styles.css">
+    <link rel="stylesheet" href="resultados-styles.css">
+    <link rel="stylesheet" href="icones-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -804,7 +806,55 @@
                             </div>
                         </div>
                         
-
+                        <!-- Carrossel de Resultados -->
+                        <div class="results-carousel-container">
+                            <div class="results-carousel-title">Resultados Reais</div>
+                            <div class="results-carousel">
+                                <div class="results-slide active" data-index="0">
+                                    <img src="resultados/1.png" alt="Resultado 1">
+                                    <div class="results-label">Transformação em 21 dias</div>
+                                </div>
+                                <div class="results-slide" data-index="1">
+                                    <img src="resultados/2.png" alt="Resultado 2">
+                                    <div class="results-label">Menos 5cm de cintura</div>
+                                </div>
+                                <div class="results-slide" data-index="2">
+                                    <img src="resultados/3.png" alt="Resultado 3">
+                                    <div class="results-label">Braços definidos</div>
+                                </div>
+                                <div class="results-slide" data-index="3">
+                                    <img src="resultados/4.png" alt="Resultado 4">
+                                    <div class="results-label">Barriga chapada</div>
+                                </div>
+                                <div class="results-slide" data-index="4">
+                                    <img src="resultados/5.png" alt="Resultado 5">
+                                    <div class="results-label">Bumbum empinado</div>
+                                </div>
+                                <div class="results-slide" data-index="5">
+                                    <img src="resultados/6.png" alt="Resultado 6">
+                                    <div class="results-label">Corpo definido</div>
+                                </div>
+                            </div>
+                            
+                            <div class="results-nav">
+                                <button class="results-nav-button prev-result">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="results-nav-button next-result">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="results-indicators">
+                                <button class="results-indicator active" data-index="0"></button>
+                                <button class="results-indicator" data-index="1"></button>
+                                <button class="results-indicator" data-index="2"></button>
+                                <button class="results-indicator" data-index="3"></button>
+                                <button class="results-indicator" data-index="4"></button>
+                                <button class="results-indicator" data-index="5"></button>
+                            </div>
+                        </div>
+                        
                         
                         <div class="cta-button-container">
                             <button class="premium-cta-button pulse-strong" onclick="window.location.href='https://pay.kiwify.com.br/9f50Tqs'">
@@ -842,5 +892,6 @@
 
     <script src="quiz-script.js"></script>
     <script src="depoimentos-script.js"></script>
+    <script src="resultados-script.js"></script>
 </body>
 </html>
