@@ -131,11 +131,13 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    margin-top: 45px !important;
+    padding-top: 60px !important;
 }
 
 .benefit-card:hover {
@@ -165,6 +167,10 @@
     box-shadow: 0 10px 20px rgba(230, 62, 123, 0.15);
     transform: translateY(-45px);
     margin-bottom: -25px;
+    position: relative;
+    z-index: 5;
+    border: 4px solid white;
+    overflow: visible !important;
 }
 
 .benefit-icon i {
