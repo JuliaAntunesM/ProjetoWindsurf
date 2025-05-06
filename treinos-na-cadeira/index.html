@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="cta-styles.css">
     <link rel="stylesheet" href="resultados-styles.css">
     <link rel="stylesheet" href="icones-styles.css">
+    <link rel="stylesheet" href="loading-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -417,18 +418,69 @@
             </div>
             <div class="content">
                 <div class="loading-container animate__animated animate__fadeIn">
-                    <h2 class="animate__animated animate__fadeIn">🎉 Parabéns, <span id="user-name-display">!</span> Seu Plano Personalizado Está Sendo Gerado!</h2>
-                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
-                        <div class="progress-bar-animated"></div>
+                    <h2 class="loading-title animate__animated animate__fadeIn">🎉 Parabéns, <span id="user-name-display">!</span> Seu Plano Personalizado Está Sendo Gerado!</h2>
+                    
+                    <!-- Novo gráfico visual de carregamento -->
+                    <div class="loading-chart-container animate__animated animate__fadeIn animate__delay-1s">
+                        <div class="chart-grid">
+                            <div class="grid-line" data-label="100%"></div>
+                            <div class="grid-line" data-label="75%"></div>
+                            <div class="grid-line" data-label="50%"></div>
+                            <div class="grid-line" data-label="25%"></div>
+                            <div class="grid-line" data-label="0%"></div>
+                        </div>
+                        
+                        <div class="loading-chart">
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-fire-alt"></i></div>
+                                <div class="chart-label">Dia 1</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-dumbbell"></i></div>
+                                <div class="chart-label">Dia 7</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-heartbeat"></i></div>
+                                <div class="chart-label">Dia 14</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-ruler-vertical"></i></div>
+                                <div class="chart-label">Dia 21</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-running"></i></div>
+                                <div class="chart-label">Dia 28</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-medal"></i></div>
+                                <div class="chart-label">Dia 35</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-icon"><i class="fas fa-trophy"></i></div>
+                                <div class="chart-label">Dia 42</div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="animate__animated animate__fadeIn animate__delay-1s">Estamos montando seu plano de treino personalizado baseado nas suas respostas!</p>
-                    <p class="animate__animated animate__fadeIn animate__delay-2s">👉 Prepare-se para descobrir como tonificar seu corpo, firmar a barriga e definir seu bumbum usando apenas uma cadeira comum!</p>
-                    <p class="animate__animated animate__fadeIn animate__delay-3s">Isso pode mudar completamente como você se sente ao se olhar no espelho — mais leve, mais firme e muito mais confiante. ✨</p>
-                    <div class="benefits animate__animated animate__fadeIn animate__delay-3s">
-                        <p>🛡️ <strong>Importante:</strong> seu plano é 100% adaptado para mulheres como você — sem exercícios impossíveis, sem necessidade de academia, e respeitando seu tempo e seu ritmo.</p>
+                    
+                    <h3 class="loading-subtitle animate__animated animate__fadeIn animate__delay-2s">Seus Resultados Projetados</h3>
+                    
+                    <div class="loading-info animate__animated animate__fadeIn animate__delay-2s">
+                        <div class="loading-stat">
+                            <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                            <div class="stat-value" data-value="21">0</div>
+                            <div class="stat-label">Dias para primeiros resultados</div>
+                        </div>
+                        <div class="loading-stat">
+                            <div class="stat-icon"><i class="fas fa-percentage"></i></div>
+                            <div class="stat-value" data-value="87">0</div>
+                            <div class="stat-label">% de satisfação das alunas</div>
+                        </div>
+                        <div class="loading-stat">
+                            <div class="stat-icon"><i class="fas fa-ruler-combined"></i></div>
+                            <div class="stat-value" data-value="5">0</div>
+                            <div class="stat-label">cm de redução média na cintura</div>
+                        </div>
                     </div>
-                    <button class="btn primary-btn pulse animate__animated animate__fadeIn animate__delay-4s" onclick="nextPage('results-screen')">QUERO ACESSAR MEU PLANO AGORA 🔥</button>
-                    <p class="tip animate__animated animate__fadeIn animate__delay-4s"><strong>📣 Dica de Ouro:</strong><br>Fique atenta! Na próxima página, vou explicar como centenas de mulheres com o seu perfil conquistaram resultados incríveis em apenas algumas semanas, sem sair de casa. Você vai poder se inspirar e começar também!</p>
                 </div>
             </div>
         </div>
@@ -893,5 +945,6 @@
     <script src="quiz-script.js"></script>
     <script src="depoimentos-script.js"></script>
     <script src="resultados-script.js"></script>
+    <script src="loading-script.js"></script>
 </body>
 </html>
