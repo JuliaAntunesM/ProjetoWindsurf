@@ -18,10 +18,12 @@
     background: linear-gradient(135deg, #fff, #fff8f0);
     padding: 60px 25px;
     border-radius: 20px;
-    margin: 30px 15px;
+    margin: 30px auto;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     position: relative;
     overflow: hidden;
+    max-width: 1200px;
+    width: 90%;
 }
 
 .benefits-section::before {
@@ -114,12 +116,14 @@
 
 /* Grid de benefícios */
 .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
-    margin-top: 30px;
+    margin: 30px auto 0;
     position: relative;
     z-index: 1;
+    max-width: 1200px;
 }
 
 /* Cartões de benefícios */
@@ -138,6 +142,7 @@
     height: 100%;
     margin-top: 45px !important;
     padding-top: 60px !important;
+    width: 280px;
 }
 
 .benefit-card:hover {
