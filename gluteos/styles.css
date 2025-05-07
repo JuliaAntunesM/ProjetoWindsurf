@@ -169,22 +169,31 @@ body {
 
 /* Botões */
 .btn {
-    background: linear-gradient(45deg, #ff5bae, #e83e8c);
+    background: linear-gradient(135deg, #ff9a9e 0%, #e83e8c 100%);
     color: white;
     border: none;
-    padding: 18px 38px;
-    font-size: 18px;
-    font-weight: 600;
+    padding: 15px 30px;
     border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 600;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
-    margin-top: 28px;
-    box-shadow: 0 5px 20px rgba(232, 62, 140, 0.35);
+    box-shadow: 0 5px 15px rgba(232, 62, 140, 0.4);
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+}
+
+.sound-played {
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); background-color: #28a745; }
+    100% { transform: scale(1); }
 }
 
 .btn span {
