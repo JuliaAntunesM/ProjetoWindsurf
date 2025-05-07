@@ -52,15 +52,65 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
+/* Estilos para a seção de avaliações */
+.ratings-section {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
 .stars-container {
-    margin: 15px 0;
+    margin: 5px 0 10px;
     color: #FFD700;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.stars-container i {
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
 }
 
 .review-count {
     color: #555;
-    font-size: 16px;
-    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Estilos para os benefícios */
+.benefits-tagline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0;
+    padding: 20px;
+    background-color: #ffb6c1; /* Cor de fundo rosa */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-tag {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    padding: 8px 0;
+}
+
+.peach-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 24px; /* Aumentei um pouco o tamanho */
+    color: #000;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Benefits Section */
