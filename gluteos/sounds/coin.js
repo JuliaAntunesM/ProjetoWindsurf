@@ -3,16 +3,18 @@ function playCoinSound() {
   // Criar um novo elemento de áudio a cada vez
   const audio = new Audio();
   
-  // Sons de moedinha
+  // Sons divertidos que remetem a dinheiro
   const coinSounds = [
-    // Som de moeda 1
-    'https://assets.mixkit.co/sfx/preview/mixkit-coin-win-notification-1992.mp3',
-    // Som de moeda 2
-    'https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3',
-    // Som de moeda 3
-    'https://assets.mixkit.co/sfx/preview/mixkit-bonus-earned-in-video-game-2058.mp3',
-    // Som de moeda 4
-    'https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3'
+    // Som de caixa registradora
+    'https://assets.mixkit.co/sfx/preview/mixkit-cash-register-open-and-close-1630.mp3',
+    // Som de moedas caindo
+    'https://assets.mixkit.co/sfx/preview/mixkit-coins-handling-1939.mp3',
+    // Som de dinheiro recebido
+    'https://assets.mixkit.co/sfx/preview/mixkit-slot-machine-win-1929.mp3',
+    // Som de jackpot
+    'https://assets.mixkit.co/sfx/preview/mixkit-casino-bling-achievement-2067.mp3',
+    // Som de moedas em máquina caça-níquel
+    'https://assets.mixkit.co/sfx/preview/mixkit-coins-falling-from-a-slot-machine-2997.mp3'
   ];
   
   // Escolher um som aleatório da lista
