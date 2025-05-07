@@ -201,9 +201,9 @@ document.addEventListener('DOMContentLoaded', function() {
         options.forEach(option => option.classList.remove('selected'));
         options[optionIndex].classList.add('selected');
         
-        // Reproduzir o som "plin"
-        if (typeof playPlinSound === 'function') {
-            playPlinSound();
+        // Reproduzir o som suave
+        if (typeof playSuaveSound === 'function') {
+            playSuaveSound();
         }
         
         // Adicionar efeito de confete na opção selecionada

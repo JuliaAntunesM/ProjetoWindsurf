@@ -1,25 +1,26 @@
-// Função para reproduzir um som bem bonito de comemoração
-function playPlinSound() {
+// Função para reproduzir um som de "tcharam"
+function playComemoracaoSound() {
   // Criar um novo elemento de áudio a cada vez
   const audio = new Audio();
   
-  // Sons bonitos de comemoração
-  const sonsComemorativos = [
-    'https://assets.mixkit.co/sfx/preview/mixkit-cheering-and-applause-512.mp3',
-    'https://assets.mixkit.co/sfx/preview/mixkit-animated-small-group-applause-523.mp3',
-    'https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3',
-    'https://assets.mixkit.co/sfx/preview/mixkit-medieval-show-fanfare-announcement-226.mp3',
-    'https://assets.mixkit.co/sfx/preview/mixkit-crowd-in-applause-and-cheering-510.mp3',
-    'https://assets.mixkit.co/sfx/preview/mixkit-audience-light-applause-513.mp3',
-    'https://assets.mixkit.co/sfx/preview/mixkit-cartoon-positive-sound-2255.mp3'
+  // Sons de "tcharam"
+  const sonsTcharam = [
+    // Som clássico de "ta-da" (tcharam)
+    'https://www.soundjay.com/misc/sounds/tada-1.mp3',
+    // Som de revelação
+    'https://www.soundjay.com/misc/sounds/magic-chime-01.mp3',
+    // Outro som de "ta-da"
+    'https://www.soundjay.com/misc/sounds/tada-fanfare-a.mp3',
+    // Som de fanfarra
+    'https://www.soundjay.com/misc/sounds/fanfare-1.mp3'
   ];
   
   // Escolher um som aleatório da lista
-  const somEscolhido = sonsComemorativos[Math.floor(Math.random() * sonsComemorativos.length)];
+  const somEscolhido = sonsTcharam[Math.floor(Math.random() * sonsTcharam.length)];
   audio.src = somEscolhido;
   
   // Configurar o volume para um nível agradável
-  audio.volume = 0.3;
+  audio.volume = 0.4;
   
   // Reproduzir o som
   const playPromise = audio.play();
@@ -78,6 +79,3 @@ function playPlinSound() {
     });
   }
 }
-
-// Não é necessário inicializar o som antecipadamente
-// A função playPlinSound cria um novo elemento de áudio a cada vez
