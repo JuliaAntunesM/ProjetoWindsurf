@@ -113,6 +113,192 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Seção Você se identifica com isso? */
+.identify-section {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(232, 62, 140, 0.15);
+    padding: 30px;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.identify-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #ff9a9e, #e83e8c);
+}
+
+.identify-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.heart-icon-container {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff9a9e, #e83e8c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    box-shadow: 0 10px 20px rgba(232, 62, 140, 0.3);
+}
+
+.pulse-heart {
+    color: white;
+    font-size: 28px;
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.identify-header h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+    margin: 0;
+}
+
+.pain-points-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.pain-point-card {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pain-point-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(232, 62, 140, 0.25);
+}
+
+.pain-point-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.pain-point-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pain-point-card:hover .pain-point-image img {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+}
+
+.pain-point-content {
+    padding: 20px;
+    position: relative;
+}
+
+.check-badge {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #e83e8c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3);
+}
+
+.pain-point-content p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.solidarity-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.message-line {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(232, 62, 140, 0.1), rgba(232, 62, 140, 0.8), rgba(232, 62, 140, 0.1));
+    max-width: 100px;
+}
+
+.solidarity-message p {
+    margin: 0 20px;
+    font-size: 18px;
+    color: #e83e8c;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .pain-points-container {
+        flex-direction: column;
+    }
+    
+    .pain-point-card {
+        width: 100%;
+    }
+    
+    .identify-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .heart-icon-container {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
 /* Benefits Section */
 .benefits-section {
     margin: 40px 0;
