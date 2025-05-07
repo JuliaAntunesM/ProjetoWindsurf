@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Variáveis de controle
     let currentQuestionIndex = 0;
     let userAnswers = [];
+    let userScore = 0;
 
     // Adicionar elementos decorativos flutuantes
     function addFloatingElements() {
@@ -140,10 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Iniciar o quiz
     function startQuiz() {
         welcomeScreen.classList.remove('active');
-        setTimeout(() => {
-            questionScreen.classList.add('active');
-            showQuestion(currentQuestionIndex);
-        }, 300);
+        questionScreen.classList.add('active');
+        userScore = 0; // Reiniciar a pontuação
+        updateScoreDisplay(); // Atualizar o display de pontuação
+        showQuestion(currentQuestionIndex);
     }
 
     // Mostrar a pergunta atual
@@ -200,6 +201,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const options = document.querySelectorAll('.option');
         options.forEach(option => option.classList.remove('selected'));
         options[optionIndex].classList.add('selected');
+        
+        // Adicionar pontos (10 pontos por pergunta respondida)
+        userScore += 10;
+        
+        // Atualizar o contador de pontos
+        updateScoreDisplay();
         
         // Reproduzir o som suave
         if (typeof playSuaveSound === 'function') {
@@ -288,6 +295,12 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingScreen.classList.remove('active');
         resultsScreen.classList.add('active');
         
+        // Atualizar a pontuação final nos resultados
+        const finalScoreElement = document.getElementById('final-score');
+        if (finalScoreElement) {
+            finalScoreElement.textContent = userScore;
+        }
+        
         // Animar as seções de resultado uma após a outra
         const sections = document.querySelectorAll('.result-section');
         sections.forEach((section, index) => {
@@ -297,7 +310,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Função para adicionar estilos dinâmicos
+    // Função para atualizar o display de pontuação
+    function updateScoreDisplay() {
+        const scoreElement = document.getElementById('score-display');
+        if (scoreElement) {
+            scoreElement.textContent = userScore;
+            
+            // Adicionar efeito de animação na pontuação
+            scoreElement.classList.add('score-updated');
+            setTimeout(() => {
+                scoreElement.classList.remove('score-updated');
+            }, 500);
+        }
+    }
+
+    // Adicionar estilos dinâmicos
     function addDynamicStyles() {
         const styleElement = document.createElement('style');
         styleElement.textContent = `
@@ -347,6 +374,69 @@ document.addEventListener('DOMContentLoaded', function() {
             .result-section.animated {
                 opacity: 1;
                 transform: translateY(0);
+            }
+            
+            .score-container {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 20px;
+                padding: 5px 15px;
+                font-weight: bold;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            
+            .score-container i {
+                color: #ff9a9e;
+            }
+            
+            .final-score-container {
+                position: relative;
+                margin: 0 auto 20px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 20px;
+                padding: 10px 20px;
+                font-weight: bold;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 1.2em;
+                color: #333;
+                animation: fade-in-bounce 1s ease;
+            }
+            
+            .final-score-container i {
+                color: gold;
+                font-size: 1.5em;
+            }
+            
+            #final-score {
+                font-size: 1.3em;
+                color: #ff5a5f;
+                font-weight: 700;
+            }
+            
+            @keyframes fade-in-bounce {
+                0% { opacity: 0; transform: scale(0.5); }
+                70% { opacity: 1; transform: scale(1.1); }
+                100% { opacity: 1; transform: scale(1); }
+            }
+            
+            .score-updated {
+                animation: score-pulse 0.5s ease;
+            }
+            
+            @keyframes score-pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.3); color: #ff5a5f; }
+                100% { transform: scale(1); }
             }
         `;
         document.head.appendChild(styleElement);
