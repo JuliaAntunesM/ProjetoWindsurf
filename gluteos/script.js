@@ -36,15 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
             3: "ImagensRespostas/4-4.jpg" // "Já tentei de tudo, mas nada me ajudou de verdade"
         },
         4: { // Pergunta 5: "Já sentiu vergonha em usar biquinis em lugares com muitas pessoas ou na hora de namorar?"
-            0: "https://img.freepik.com/free-photo/woman-beach-covering-buttocks-with-sarong-self-conscious_1150-45644.jpg", // "Sim, mas tento disfarçar com saída ou canga"
-            1: "https://img.freepik.com/free-photo/insecure-woman-uncomfortable-bikini-beach-hiding-body_1150-45645.jpg", // "Sim, me sinto insegura e desconfortável"
-            2: "https://img.freepik.com/free-photo/woman-receiving-compliments-beach-still-feeling-insecure-bikini_1150-45646.jpg", // "Já senti insegurança, mesmo com elogios"
-            3: "https://img.freepik.com/free-photo/woman-declining-beach-invitation-looking-uncomfortable-avoiding-situation_1150-45647.jpg" // "Às vezes tento evitar esse momento constrangedor"
+            0: "ImagensRespostas/5-1.jpg", // "Sim, mas tento disfarçar com saída ou canga"
+            1: "ImagensRespostas/5-2.jpg", // "Sim, me sinto insegura e desconfortável"
+            2: "ImagensRespostas/5-3.jpg", // "Já senti insegurança, mesmo com elogios"
+            3: "ImagensRespostas/5-4.jpg" // "Às vezes tento evitar esse momento constrangedor"
         },
         5: { // Pergunta 6: "Quanto tempo por dia você pode dedicar pra você?"
-            0: "https://img.freepik.com/free-photo/busy-woman-looking-watch-setting-timer-10-minutes-quick-workout_1150-45648.jpg", // "10 minutos já seria um luxo"
-            1: "https://img.freepik.com/free-photo/woman-home-setting-timer-20-minute-workout-living-room_1150-45649.jpg", // "15 a 20 minutos, em casa"
-            2: "https://img.freepik.com/free-photo/determined-woman-ready-dedicate-time-herself-feel-beautiful-again_1150-45650.jpg" // "Qualquer tempo, contanto que me faça sentir linda de novo!"
+            0: "ImagensRespostas/6-1.jpg", // "10 minutos já seria um luxo"
+            1: "ImagensRespostas/6-2.jpg", // "15 a 20 minutos, em casa"
+            2: "ImagensRespostas/6-3.jpg" // "Qualquer tempo, contanto que me faça sentir linda de novo!"
         }
     };
     
