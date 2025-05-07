@@ -208,9 +208,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Atualizar o contador de pontos
         updateScoreDisplay();
         
-        // Reproduzir o som suave
-        if (typeof playSuaveSound === 'function') {
-            playSuaveSound();
+        // Reproduzir o som de moedinha
+        if (typeof playCoinSound === 'function') {
+            playCoinSound();
         }
         
         // Adicionar efeito de confete na opção selecionada
