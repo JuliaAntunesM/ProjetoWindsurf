@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Glúteos - NatáliaFit</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="floating-vegetables">
-        <!-- Imagens de verduras flutuantes serão inseridas via JavaScript -->
+        <!-- Imagens de pêssegos flutuantes serão inseridas via JavaScript -->
     </div>
 
-    <div class="container">
+    <div class="container glass-effect">
         <!-- Tela de Boas-vindas -->
         <div id="welcome-screen" class="screen active">
-            <h1>DESCUBRA O TREINO EM CASA DE 10 MINUTINHOS QUE DEIXOU MEU BUMBUM DURINHO E REDONDINHO!</h1>
+            <div class="welcome-icon">
+                <i class="fas fa-fire-alt pulse-icon"></i>
+            </div>
+            <h1 class="shine">DESCUBRA O TREINO EM CASA DE 10 MINUTINHOS QUE DEIXOU MEU BUMBUM DURINHO E REDONDINHO!</h1>
             <p class="subtitle">🌟 Sem academia. Sem aparelhos. Só você… e o resultado que sempre quis.</p>
-            <button id="start-quiz" class="btn">COMEÇAR QUIZ</button>
+            <button id="start-quiz" class="btn"><span>COMEÇAR QUIZ</span> <i class="fas fa-chevron-right"></i></button>
         </div>
 
         <!-- Tela de Perguntas -->
@@ -31,9 +35,22 @@
 
         <!-- Tela de Carregamento -->
         <div id="loading-screen" class="screen">
-            <h2>Analisando suas respostas...</h2>
+            <h2 class="typing-effect">Analisando suas respostas...</h2>
             <div class="loader"></div>
             <p>Com base no que você contou, temos um plano que pode transformar os seus glúteos e como os outros te olham também.</p>
+            <div class="progress-status">
+                <span class="status-text">Calculando seu plano personalizado</span>
+                <div class="progress-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="sparkles">
+                <i class="fas fa-sparkles sparkle"></i>
+                <i class="fas fa-sparkles sparkle"></i>
+                <i class="fas fa-sparkles sparkle"></i>
+            </div>
         </div>
 
         <!-- Tela de Resultados -->
@@ -74,9 +91,15 @@
             </div>
             
             <div class="cta-section">
+                <div class="cta-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
                 <p>Você merece sentir isso.</p>
                 <p>Clique abaixo e descubra o segredo dos 10 minutinhos.</p>
-                <a href="#" class="cta-button">QUERO MEU BUMBUM DURINHO AGORA</a>
+                <a href="#" class="cta-button shine"><i class="fas fa-fire-alt"></i> QUERO MEU BUMBUM DURINHO AGORA <i class="fas fa-arrow-right"></i></a>
+                <div class="satisfaction-guarantee">
+                    <i class="fas fa-check-circle"></i> Satisfação garantida ou seu dinheiro de volta
+                </div>
             </div>
         </div>
     </div>

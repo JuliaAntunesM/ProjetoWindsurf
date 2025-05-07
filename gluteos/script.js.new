@@ -73,28 +73,49 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adicionar elementos decorativos flutuantes
     function addFloatingElements() {
         const vegetablesContainer = document.querySelector('.floating-vegetables');
+        const vegetables = [
+            'https://cdn-icons-png.flaticon.com/512/2909/2909787.png', // brócolis
+            'https://cdn-icons-png.flaticon.com/512/2909/2909841.png', // espinafre
+            'https://cdn-icons-png.flaticon.com/512/2909/2909838.png', // alface
+            'https://cdn-icons-png.flaticon.com/512/2909/2909830.png', // cenoura
+            'https://cdn-icons-png.flaticon.com/512/2909/2909812.png'  // pepino
+        ];
         
-        // Limpar qualquer elemento existente
-        vegetablesContainer.innerHTML = '';
-        
-        // Usar o emoji de pêssego em vez de imagens
-        const peachEmoji = 'https://em-content.zobj.net/thumbs/240/apple/354/peach_1f351.png';
-        
-        // Criar 8 pêssegos aleatórios
-        for (let i = 0; i < 8; i++) {
-            const peach = document.createElement('img');
-            peach.src = peachEmoji;
-            peach.classList.add('vegetable'); // mantendo a mesma classe para aproveitar os estilos
-            peach.alt = 'Pêssego';
+        // Adicionar bolhas decorativas
+        for (let i = 0; i < 15; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            
+            // Tamanho aleatório
+            const size = 20 + Math.random() * 60;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
             
             // Posição aleatória
-            peach.style.left = `${Math.random() * 90}%`;
-            peach.style.top = `${Math.random() * 90}%`;
+            bubble.style.left = `${Math.random() * 100}%`;
+            bubble.style.top = `${Math.random() * 100}%`;
             
             // Atraso aleatório na animação
-            peach.style.animationDelay = `${Math.random() * 5}s`;
+            bubble.style.animationDelay = `${Math.random() * 5}s`;
+            bubble.style.animationDuration = `${5 + Math.random() * 10}s`;
             
-            vegetablesContainer.appendChild(peach);
+            vegetablesContainer.appendChild(bubble);
+        }
+
+        // Criar 8 verduras aleatórias
+        for (let i = 0; i < 8; i++) {
+            const vegetable = document.createElement('img');
+            vegetable.src = vegetables[Math.floor(Math.random() * vegetables.length)];
+            vegetable.classList.add('vegetable');
+            
+            // Posição aleatória
+            vegetable.style.left = `${Math.random() * 100}%`;
+            vegetable.style.top = `${Math.random() * 100}%`;
+            
+            // Atraso aleatório na animação
+            vegetable.style.animationDelay = `${Math.random() * 5}s`;
+            
+            vegetablesContainer.appendChild(vegetable);
         }
     }
 
@@ -195,42 +216,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mostrar tela de carregamento
     function showLoadingScreen() {
-        loadingScreen.classList.add('active');
-        
-        // Adicionar efeito de digitação
-        const loadingText = document.querySelector('#loading-screen h2');
-        const originalText = loadingText.textContent;
-        loadingText.textContent = '';
-        
-        let i = 0;
-        const typeInterval = setInterval(() => {
-            if (i < originalText.length) {
-                loadingText.textContent += originalText.charAt(i);
-                i++;
-            } else {
-                clearInterval(typeInterval);
-            }
-        }, 50);
-        
-        // Simular tempo de processamento
-        setTimeout(showResults, 3000);
+        setTimeout(() => {
+            loadingScreen.classList.add('active');
+            
+            // Adicionar efeito de digitação
+            const loadingText = document.querySelector('#loading-screen h2');
+            const originalText = loadingText.textContent;
+            loadingText.textContent = '';
+            
+            let i = 0;
+            const typeInterval = setInterval(() => {
+                if (i < originalText.length) {
+                    loadingText.textContent += originalText.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typeInterval);
+                }
+            }, 50);
+            
+            // Simular tempo de processamento
+            setTimeout(showResults, 3000);
+        }, 300);
     }
 
     // Mostrar resultados
     function showResults() {
         loadingScreen.classList.remove('active');
-        resultsScreen.classList.add('active');
-        
-        // Animar as seções de resultado uma após a outra
-        const sections = document.querySelectorAll('.result-section');
-        sections.forEach((section, index) => {
-            setTimeout(() => {
-                section.classList.add('animated');
-            }, index * 300);
-        });
+        setTimeout(() => {
+            resultsScreen.classList.add('active');
+            
+            // Animar as seções de resultado uma após a outra
+            const sections = document.querySelectorAll('.result-section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.classList.add('animated');
+                }, index * 300);
+            });
+        }, 300);
     }
 
-    // Função para adicionar estilos dinâmicos
+    // Adicionar estilos dinâmicos
     function addDynamicStyles() {
         const styleElement = document.createElement('style');
         styleElement.textContent = `
