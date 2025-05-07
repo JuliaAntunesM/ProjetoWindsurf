@@ -139,32 +139,71 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-.subtitle {
-    font-size: 19px;
-    margin-bottom: 32px;
-    color: #555;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    position: relative;
-    display: inline-block;
-    padding: 0 15px;
+/* Estilos para a seção de benefícios compacta */
+.compact-benefits {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px auto 25px;
+    max-width: 90%;
 }
 
-.subtitle:before, .subtitle:after {
-    content: '✨';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #e83e8c;
+.benefit-pill {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px 15px 5px 5px;
+    box-shadow: 0 4px 10px rgba(232, 62, 140, 0.15);
+    transition: all 0.3s ease;
+    margin: 0 5px;
 }
 
-.subtitle:before {
-    left: -10px;
+.benefit-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(232, 62, 140, 0.25);
 }
 
-.subtitle:after {
-    right: -10px;
+.peach-circle {
+    width: 36px;
+    height: 36px;
+    background-color: #ffb6c1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.benefit-pill span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+.benefit-pill:last-child span {
+    white-space: normal;
+    max-width: 150px;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .compact-benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .benefit-pill {
+        width: 80%;
+    }
+    
+    .benefit-pill:last-child span {
+        max-width: none;
+    }
 }
 
 /* Botões */
