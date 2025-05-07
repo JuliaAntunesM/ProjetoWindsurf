@@ -9,6 +9,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const optionsContainer = document.getElementById('options-container');
     const progressBar = document.querySelector('.progress');
 
+    // Imagens geradas por IA para cada opção de resposta
+    const optionImages = {
+        0: { // Pergunta 1: "Já usou legging ou enchimento por baixo da calça jeans pra tentar parecer que tem mais bumbum?"
+            0: "ImagensRespostas/1-1.jpg", // "Sim, direto! Me sinto melhor assim"
+            1: "ImagensRespostas/1-2.jpg", // "Sim, e me senti bem até tirar a roupa"
+            2: "ImagensRespostas/1-3.jpg", // "Sim, mas percebi que isso não resolve de verdade"
+            3: "ImagensRespostas/1-4.jpg" // "Nunca usei, mas já pensei nisso"
+        },
+        1: { // Pergunta 2: "Como você gostaria de se sentir ao colocar uma calça jeans justinha?"
+            0: "https://img.freepik.com/free-photo/confident-woman-wearing-tight-jeans-admiring-toned-buttocks-mirror_1150-45632.jpg", // "Confiante, com o bumbum durinho e redondinho"
+            1: "https://img.freepik.com/free-photo/woman-walking-confidently-tight-jeans-attracting-attention_1150-45633.jpg", // "Poderosa, pronta pra atrair olhares"
+            2: "https://img.freepik.com/free-photo/woman-admiring-herself-mirror-feeling-proud-her-body-jeans_1150-45634.jpg", // "Orgulhosa do meu corpo no espelho"
+            3: "https://img.freepik.com/free-photo/woman-feeling-attractive-partner-wearing-jeans-romantic-setting_1150-45635.jpg" // "Me sentintindo bem comigo mesma, e atraente para meu marido/namorado"
+        },
+        2: { // Pergunta 3: "O que mais te incomoda no momento?"
+            0: "https://img.freepik.com/free-photo/woman-looking-cellulite-through-tight-clothing-concerned_1150-45636.jpg", // "Celulite marcando demais nas roupas"
+            1: "https://img.freepik.com/free-photo/woman-checking-sagging-buttocks-mirror-wanting-firmness_1150-45637.jpg", // "Flacidez, queria ter o bumbum redondinho e durinho"
+            2: "https://img.freepik.com/free-photo/woman-looking-mirror-concerned-about-flat-buttocks-lack-volume_1150-45638.jpg", // "Falta de volume no bumbum"
+            3: "https://img.freepik.com/free-photo/woman-looking-frustrated-mirror-multiple-buttocks-issues_1150-45639.jpg" // "Tudo isso junto 😩"
+        },
+        3: { // Pergunta 4: "Você já tentou algum treino pra glúteos antes?"
+            0: "https://img.freepik.com/free-photo/disappointed-woman-measuring-buttocks-after-workout-no-results_1150-45640.jpg", // "Sim, mas desisti porque não vi resultado"
+            1: "https://img.freepik.com/free-photo/exhausted-woman-sitting-floor-after-long-glutes-workout-tired_1150-45641.jpg", // "Sim, mas era cansativo e demorado"
+            2: "https://img.freepik.com/free-photo/confused-woman-searching-online-glutes-workout-overwhelmed-information_1150-45642.jpg", // "Não, nunca soube por onde começar"
+            3: "https://img.freepik.com/free-photo/frustrated-woman-surrounded-different-workout-equipment-nothing-worked_1150-45643.jpg" // "Já tentei de tudo, mas nada me ajudou de verdade"
+        },
+        4: { // Pergunta 5: "Já sentiu vergonha em usar biquinis em lugares com muitas pessoas ou na hora de namorar?"
+            0: "https://img.freepik.com/free-photo/woman-beach-covering-buttocks-with-sarong-self-conscious_1150-45644.jpg", // "Sim, mas tento disfarçar com saída ou canga"
+            1: "https://img.freepik.com/free-photo/insecure-woman-uncomfortable-bikini-beach-hiding-body_1150-45645.jpg", // "Sim, me sinto insegura e desconfortável"
+            2: "https://img.freepik.com/free-photo/woman-receiving-compliments-beach-still-feeling-insecure-bikini_1150-45646.jpg", // "Já senti insegurança, mesmo com elogios"
+            3: "https://img.freepik.com/free-photo/woman-declining-beach-invitation-looking-uncomfortable-avoiding-situation_1150-45647.jpg" // "Às vezes tento evitar esse momento constrangedor"
+        },
+        5: { // Pergunta 6: "Quanto tempo por dia você pode dedicar pra você?"
+            0: "https://img.freepik.com/free-photo/busy-woman-looking-watch-setting-timer-10-minutes-quick-workout_1150-45648.jpg", // "10 minutos já seria um luxo"
+            1: "https://img.freepik.com/free-photo/woman-home-setting-timer-20-minute-workout-living-room_1150-45649.jpg", // "15 a 20 minutos, em casa"
+            2: "https://img.freepik.com/free-photo/determined-woman-ready-dedicate-time-herself-feel-beautiful-again_1150-45650.jpg" // "Qualquer tempo, contanto que me faça sentir linda de novo!"
+        }
+    };
+    
     // Perguntas do quiz
     const questions = [
         {
@@ -119,12 +158,35 @@ document.addEventListener('DOMContentLoaded', function() {
         // Limpar opções anteriores
         optionsContainer.innerHTML = '';
         
-        // Adicionar opções
+        // Adicionar opções com imagens
         questions[index].options.forEach((option, i) => {
             const optionElement = document.createElement('div');
             optionElement.classList.add('option');
-            optionElement.textContent = option;
+            
+            // Criar container para a imagem
+            const imageContainer = document.createElement('div');
+            imageContainer.classList.add('option-image-container');
+            
+            // Adicionar imagem gerada por IA
+            const image = document.createElement('img');
+            image.src = optionImages[index][i];
+            image.alt = option;
+            image.classList.add('option-image');
+            imageContainer.appendChild(image);
+            
+            // Adicionar texto da opção
+            const textElement = document.createElement('div');
+            textElement.classList.add('option-text');
+            textElement.textContent = option;
+            
+            // Adicionar elementos à opção
+            optionElement.appendChild(imageContainer);
+            optionElement.appendChild(textElement);
+            
+            // Adicionar evento de clique
             optionElement.addEventListener('click', () => selectOption(i));
+            
+            // Adicionar ao container
             optionsContainer.appendChild(optionElement);
         });
     }
