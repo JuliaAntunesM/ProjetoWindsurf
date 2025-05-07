@@ -1,6 +1,21 @@
 /* Estilos adicionais para a página de vendas */
 
 /* Hero Banner */
+.hero-banner {
+    background: transparent;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
 .hero-badge {
     position: absolute;
     top: 20px;
@@ -16,40 +31,36 @@
     letter-spacing: 1px;
 }
 
-.hero-image-container {
-    margin-top: 30px;
-    position: relative;
+/* Estilo para o cabeçalho simplificado */
+.simplified-header {
+    background: white;
+    padding: 25px;
     border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.hero-image-container:hover .hero-image {
-    transform: scale(1.05);
-}
-
-.hero-image-badge {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(232, 62, 140, 0.8);
-    color: white;
-    padding: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
     text-align: center;
-    font-weight: 600;
-    letter-spacing: 1px;
+}
+
+.simplified-header h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #e83e8c;
+    line-height: 1.3;
+    font-weight: 700;
+    background: none !important;
+    -webkit-text-fill-color: #e83e8c !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.stars-container {
+    margin: 15px 0;
+    color: #FFD700;
+}
+
+.review-count {
+    color: #555;
     font-size: 16px;
+    margin-left: 10px;
 }
 
 /* Benefits Section */
@@ -675,11 +686,6 @@
         font-size: 12px;
         padding: 6px 30px;
         right: -30px;
-    }
-    
-    .hero-image-badge {
-        font-size: 14px;
-        padding: 8px;
     }
     
     .before-after-images {
