@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
             3: "ImagensRespostas/1-4.jpg" // "Nunca usei, mas já pensei nisso"
         },
         1: { // Pergunta 2: "Como você gostaria de se sentir ao colocar uma calça jeans justinha?"
-            0: "https://img.freepik.com/free-photo/confident-woman-wearing-tight-jeans-admiring-toned-buttocks-mirror_1150-45632.jpg", // "Confiante, com o bumbum durinho e redondinho"
-            1: "https://img.freepik.com/free-photo/woman-walking-confidently-tight-jeans-attracting-attention_1150-45633.jpg", // "Poderosa, pronta pra atrair olhares"
-            2: "https://img.freepik.com/free-photo/woman-admiring-herself-mirror-feeling-proud-her-body-jeans_1150-45634.jpg", // "Orgulhosa do meu corpo no espelho"
-            3: "https://img.freepik.com/free-photo/woman-feeling-attractive-partner-wearing-jeans-romantic-setting_1150-45635.jpg" // "Me sentintindo bem comigo mesma, e atraente para meu marido/namorado"
+            0: "ImagensRespostas/2-1.jpg", // "Confiante, com o bumbum durinho e redondinho"
+            1: "ImagensRespostas/2-2.jpg", // "Poderosa, pronta pra atrair olhares"
+            2: "ImagensRespostas/2-3.jpg", // "Orgulhosa do meu corpo no espelho"
+            3: "ImagensRespostas/2-4.jpg" // "Me sentintindo bem comigo mesma, e atraente para meu marido/namorado"
         },
         2: { // Pergunta 3: "O que mais te incomoda no momento?"
             0: "https://img.freepik.com/free-photo/woman-looking-cellulite-through-tight-clothing-concerned_1150-45636.jpg", // "Celulite marcando demais nas roupas"
