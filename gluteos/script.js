@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         3: { // Pergunta 4: "Você já tentou algum treino pra glúteos antes?"
             0: "ImagensRespostas/4-1.jpg", // "Sim, mas desisti porque não vi resultado"
             1: "ImagensRespostas/4-2.jpg", // "Sim, mas era cansativo e demorado"
-            2: "ImagensRespostas/3-4.jpg", // "Não, nunca soube por onde começar"
+            2: "ImagensRespostas/4-3.jpg", // "Não, nunca soube por onde começar"
             3: "ImagensRespostas/4-4.jpg" // "Já tentei de tudo, mas nada me ajudou de verdade"
         },
         4: { // Pergunta 5: "Já sentiu vergonha em usar biquinis em lugares com muitas pessoas ou na hora de namorar?"
