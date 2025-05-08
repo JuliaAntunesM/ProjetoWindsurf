@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Glúteos - NatáliaFit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vendas-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="floating-vegetables">
+        <!-- Imagens de pêssegos flutuantes serão inseridas via JavaScript -->
+    </div>
+
+    <div class="container glass-effect">
+        <!-- Tela de Boas-vindas -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-icon">
+                <i class="fas fa-fire-alt pulse-icon"></i>
+            </div>
+            <h1 class="shine">DESCUBRA O TREINO EM CASA DE 10 MINUTINHOS QUE DEIXOU MEU BUMBUM DURINHO E REDONDINHO!</h1>
+            <div class="compact-benefits">
+                <div class="benefit-pill">
+                    <div class="peach-circle">🍑</div>
+                    <span>Sem academia.</span>
+                </div>
+                <div class="benefit-pill">
+                    <div class="peach-circle">🍑</div>
+                    <span>Sem aparelhos.</span>
+                </div>
+                <div class="benefit-pill">
+                    <div class="peach-circle">🍑</div>
+                    <span>Só você… e o resultado que sempre quis.</span>
+                </div>
+            </div>
+            <button id="start-quiz" class="btn"><span>COMEÇAR QUIZ</span> <i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Tela de Perguntas -->
+        <div id="question-screen" class="screen">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="score-container">
+                <i class="fas fa-star"></i> Pontos: <span id="score-display">0</span>
+            </div>
+            <h2 id="question-text"></h2>
+            <div id="options-container" class="options-container"></div>
+        </div>
+
+        <!-- Tela de Carregamento -->
+        <div id="loading-screen" class="screen">
+            <h2 class="typing-effect">Analisando suas respostas...</h2>
+            <div class="loader"></div>
+            <p>Com base no que você contou, temos um plano que pode transformar os seus glúteos e como os outros te olham também.</p>
+            <div class="progress-status">
+                <span class="status-text">Calculando seu plano personalizado</span>
+                <div class="progress-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="sparkles">
+                <i class="fas fa-sparkles sparkle"></i>
+                <i class="fas fa-sparkles sparkle"></i>
+                <i class="fas fa-sparkles sparkle"></i>
+            </div>
+        </div>
+
+        <!-- Tela de Resultados -->
+        <div id="results-screen" class="screen">
+            <div class="final-score-container">
+                <i class="fas fa-trophy"></i> Pontuação final: <span id="final-score">0</span> pontos
+            </div>
+            
+            <div class="simplified-header" style="background: linear-gradient(135deg, rgba(255, 192, 203, 0.2), rgba(232, 62, 140, 0.15)); border-radius: 25px; padding: 30px; box-shadow: 0 15px 35px rgba(232, 62, 140, 0.2); border: 2px solid #ff9bb3; margin: 20px auto 40px; max-width: 600px;">
+                <h1 class="shine" style="font-size: 32px; text-align: center; color: #e83e8c; text-transform: uppercase; font-weight: 800; margin-bottom: 25px; letter-spacing: 1px; line-height: 1.3; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);">O TREINO DE 10 MINUTINHOS QUE TRANSFORMOU MEU BUMBUM!</h1>
+                
+                <div class="ratings-section" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 25px;">
+                    <div class="stars-container" style="margin-bottom: 12px;">
+                        <i class="fas fa-star" style="color: #ffcc00; font-size: 28px; margin: 0 3px; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));"></i>
+                        <i class="fas fa-star" style="color: #ffcc00; font-size: 28px; margin: 0 3px; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));"></i>
+                        <i class="fas fa-star" style="color: #ffcc00; font-size: 28px; margin: 0 3px; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));"></i>
+                        <i class="fas fa-star" style="color: #ffcc00; font-size: 28px; margin: 0 3px; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));"></i>
+                        <i class="fas fa-star" style="color: #ffcc00; font-size: 28px; margin: 0 3px; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));"></i>
+                    </div>
+                    <div class="review-count" style="font-size: 18px; font-weight: 600; color: #555; text-align: center;"><span style="color: #e83e8c; font-weight: 700;">1.243 mulheres</span> já transformaram seus glúteos</div>
+                </div>
+                
+                <div class="benefits-tagline" style="background-color: #ffb6c1; border-radius: 15px; padding: 15px; box-shadow: 0 5px 15px rgba(232, 62, 140, 0.2); margin: 0 auto; max-width: 320px;">
+                    <div class="benefit-tag" style="background-color: white; border-radius: 25px; padding: 10px 15px; margin-bottom: 10px; display: flex; align-items: center; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);">
+                        <div style="position: relative; min-width: 36px; height: 36px;">
+                            <div style="position: absolute; width: 36px; height: 36px; background: linear-gradient(135deg, #ff9a9e, #fad0c4); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                <span style="font-size: 20px;">🍑</span>
+                            </div>
+                        </div>
+                        <span style="font-size: 16px; font-weight: 600; color: #444; margin-left: 15px; text-align: center; flex-grow: 1;">Sem academia.</span>
+                    </div>
+                    
+                    <div class="benefit-tag" style="background-color: white; border-radius: 25px; padding: 10px 15px; margin-bottom: 10px; display: flex; align-items: center; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);">
+                        <div style="position: relative; min-width: 36px; height: 36px;">
+                            <div style="position: absolute; width: 36px; height: 36px; background: linear-gradient(135deg, #ff9a9e, #fad0c4); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                <span style="font-size: 20px;">🍑</span>
+                            </div>
+                        </div>
+                        <span style="font-size: 16px; font-weight: 600; color: #444; margin-left: 15px; text-align: center; flex-grow: 1;">Sem aparelhos.</span>
+                    </div>
+                    
+                    <div class="benefit-tag" style="background-color: white; border-radius: 25px; padding: 10px 15px; display: flex; align-items: center; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);">
+                        <div style="position: relative; min-width: 36px; height: 36px;">
+                            <div style="position: absolute; width: 36px; height: 36px; background: linear-gradient(135deg, #ff9a9e, #fad0c4); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                <span style="font-size: 20px;">🍑</span>
+                            </div>
+                        </div>
+                        <span style="font-size: 16px; font-weight: 600; color: #444; margin-left: 15px;">Só você… e o resultado que sempre quis.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Seção de Benefícios Exclusivos removida completamente -->
+            
+
+            <div class="identify-section">
+                <div class="identify-header">
+                    <div class="heart-icon-container">
+                        <i class="fas fa-heart pulse-heart"></i>
+                    </div>
+                    <h2>Você se identifica com isso?</h2>
+                </div>
+                
+                <div class="pain-points-container">
+                    <div class="pain-point-card">
+                        <div class="pain-point-image">
+                            <img src="ImagensRespostas/5-2.jpg" alt="Insegurança com o corpo">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="pain-point-content">
+                            <div class="check-badge"><i class="fas fa-check"></i></div>
+                            <p>Já evitou usar shorts ou biquíni por vergonha do seu bumbum?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pain-point-card">
+                        <div class="pain-point-image">
+                            <img src="ImagensRespostas/1-2.jpg" alt="Tentando roupas">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="pain-point-content">
+                            <div class="check-badge"><i class="fas fa-check"></i></div>
+                            <p>Já colocou legging por baixo pra "dar um up"?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pain-point-card">
+                        <div class="pain-point-image">
+                            <img src="ImagensRespostas/5-3.jpg" alt="Comprando roupas">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="pain-point-content">
+                            <div class="check-badge"><i class="fas fa-check"></i></div>
+                            <p>Comprou roupa que "aumenta"... mas na hora H, não tem como esconder?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solidarity-message">
+                    <div class="message-line"></div>
+                    <p>Você não está sozinha. Eu também já passei por isso.</p>
+                    <div class="message-line"></div>
+                </div>
+            </div>
+            
+            <div class="solution-discovery-section">
+                <div class="section-accent-top"></div>
+                <div class="solution-header">
+                    <div class="solution-icon-container">
+                        <i class="fas fa-star-half-alt pulse-icon"></i>
+                    </div>
+                    <h2>O Método que <span class="gradient-text">Transformou</span> Meu Corpo</h2>
+                </div>
+                
+                <div class="solution-content">
+                    <div class="method-card">
+                        <div class="method-card-header">
+                            <div class="method-number">1</div>
+                            <h3>Treino Estratégico</h3>
+                        </div>
+                        <div class="method-card-body">
+                            <p>Apenas <span class="highlight-text">10 minutos diários</span> com exercícios cientificamente comprovados para ativar os músculos certos e maximizar resultados.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: center; width: 100%;">
+                    <table style="border-collapse: separate; border-spacing: 8px; max-width: 320px;">
+                        <tr>
+                            <td style="padding: 0; vertical-align: top; width: 50%;">
+                                <div class="benefit-item wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="benefit-icon pulse-animation">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="benefit-title">Treine em Casa</div>
+                                    <div class="benefit-text">Transforme qualquer espaço em sua academia particular, sem deslocamentos ou mensalidades</div>
+                                </div>
+                            </td>
+                            <td style="padding: 0; vertical-align: top; width: 50%;">
+                                <div class="benefit-item wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="benefit-icon pulse-animation">
+                                        <i class="fas fa-dumbbell"></i>
+                                    </div>
+                                    <div class="benefit-title">Zero Equipamentos</div>
+                                    <div class="benefit-text">Apenas você e exercícios estratégicos que utilizam o peso do seu próprio corpo</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0; vertical-align: top; width: 50%;">
+                                <div class="benefit-item wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="benefit-icon pulse-animation">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="benefit-title">21 Dias de Transformação</div>
+                                    <div class="benefit-text">Resultados visíveis e comprovados em apenas 3 semanas seguindo o método</div>
+                                </div>
+                            </td>
+                            <td style="padding: 0; vertical-align: top; width: 50%;">
+                                <div class="benefit-item wow fadeInUp" data-wow-delay="0.7s">
+                                    <div class="benefit-icon pulse-animation">
+                                        <i class="fas fa-smile"></i>
+                                    </div>
+                                    <div class="benefit-title">Método Simplificado</div>
+                                    <div class="benefit-text">Programa passo a passo fácil de seguir mesmo para quem nunca treinou antes</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    
+                    <div class="method-quote">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>O segredo não está em treinar muito, mas em treinar <strong>certo</strong>.</p>
+                    </div>
+                </div>
+                <div class="before-after-container" style="background: linear-gradient(to bottom, rgba(255, 192, 203, 0.1), rgba(255, 192, 203, 0.2)); border-radius: 25px; padding: 30px; box-shadow: 0 10px 30px rgba(232, 62, 140, 0.15); border: 2px solid #ff9bb3; margin: 30px auto; max-width: 380px;">
+                    <div class="before-after-images" style="display: flex; flex-direction: column; gap: 25px; align-items: center;">
+                        <div class="before-image" style="width: 100%; max-width: 340px; position: relative; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); border-radius: 18px; border: 3px solid #ff9bb3;">
+                            <img src="ImagensVendas/1.jpg" alt="Antes do treino" style="width: 100%; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        
+                        <div class="transformation-results" style="background: linear-gradient(135deg, #ff9bb3, #e83e8c); border-radius: 20px; box-shadow: 0 10px 25px rgba(232, 62, 140, 0.3); padding: 25px; width: 100%; max-width: 340px; border: 3px solid rgba(255, 255, 255, 0.3);">
+                            <div class="results-header" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                <div class="results-icon" style="background-color: rgba(255, 255, 255, 0.2); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                    <i class="fas fa-fire" style="color: white; font-size: 20px;"></i>
+                                </div>
+                                <div class="results-title" style="color: white; font-size: 24px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">RESULTADOS</div>
+                            </div>
+                            <div class="results-divider" style="height: 2px; background-color: rgba(255, 255, 255, 0.3); margin: 10px 0 18px; border-radius: 2px;"></div>
+                            <div class="results-items-horizontal" style="display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                                <div class="result-item" style="background-color: rgba(255, 255, 255, 0.25); padding: 12px 18px; border-radius: 30px; color: white; font-size: 16px; font-weight: 500; display: flex; align-items: center; flex: 1; min-width: 90px; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                    <i class="fas fa-circle-check" style="color: white; margin-right: 8px; font-size: 16px;"></i> <span style="text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);">10 min/dia</span>
+                                </div>
+                                <div class="result-item" style="background-color: rgba(255, 255, 255, 0.25); padding: 12px 18px; border-radius: 30px; color: white; font-size: 16px; font-weight: 500; display: flex; align-items: center; flex: 1; min-width: 90px; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                    <i class="fas fa-circle-check" style="color: white; margin-right: 8px; font-size: 16px;"></i> <span style="text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);">21 dias</span>
+                                </div>
+                                <div class="result-item" style="background-color: rgba(255, 255, 255, 0.25); padding: 12px 18px; border-radius: 30px; color: white; font-size: 16px; font-weight: 500; display: flex; align-items: center; flex: 1; min-width: 90px; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                    <i class="fas fa-circle-check" style="color: white; margin-right: 8px; font-size: 16px;"></i> <span style="text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);">Comprovado</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="after-image" style="width: 100%; max-width: 340px; position: relative; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); border-radius: 18px; border: 3px solid #ff9bb3;">
+                            <div class="slideshow-container">
+                                <div class="slideshow-slides">
+                                    <div class="slide"><img src="ImagensVendas/2-1.png" alt="Resultado 1" style="width: 100%; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"></div>
+                                    <div class="slide"><img src="ImagensVendas/2-2.png" alt="Resultado 2" style="width: 100%; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"></div>
+                                    <div class="slide"><img src="ImagensVendas/2-3.png" alt="Resultado 3" style="width: 100%; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"></div>
+                                    <div class="slide"><img src="ImagensVendas/2-4.png" alt="Resultado 4" style="width: 100%; border-radius: 15px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="before-after-label" style="text-align: center; margin-top: 25px; font-weight: 600; color: #e83e8c; font-size: 18px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);">Resultados treinando 10 minutinhos por dia</div>
+                </div>
+                
+                <!-- Seção de Demonstração do Treino (conforme imagem de referência) -->
+                <div class="video-preview" style="background-color: #ffdbde; border-radius: 30px; box-shadow: 0 10px 20px rgba(232, 62, 140, 0.15); padding: 25px; margin: 50px auto; max-width: 380px;">
+                    <h3 style="color: #e83e8c; font-size: 24px; text-align: center; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">DEMONSTRAÇÃO DO TREINO</h3>
+                    
+                    <div style="position: relative; border-radius: 25px; overflow: hidden; margin: 0 auto; max-width: 360px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);">
+                        <img src="ImagensVendas/DemonstraçãoDoTreino.gif" alt="Demonstração do treino" style="width: 100%; border-radius: 25px;">
+                        <div style="position: absolute; top: 10px; right: 10px; background-color: rgba(255, 255, 255, 0.8); color: #333; padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: 600;">40</div>
+                    </div>
+                    
+                    <p style="text-align: center; color: #444; font-size: 16px; margin-top: 20px; line-height: 1.5; font-weight: 500;">Veja uma prévia do treino de 10 minutinhos que transformou meu bumbum</p>
+                </div>
+            </div>
+            
+            <div class="dream-section">
+                <div class="dream-header">
+                    <div class="dream-icon-container">
+                        <i class="fas fa-magic pulse-icon"></i>
+                    </div>
+                    <h2>Imagine como seria...</h2>
+                </div>
+                
+                <div class="dream-cards">
+                    <div class="dream-card">
+                        <div class="dream-image">
+                            <img src="ImagensVendas/2.jpg" alt="Confiança">
+                            <div class="dream-overlay"></div>
+                        </div>
+                        <div class="dream-content">
+                            <div class="dream-check"><i class="fas fa-check-circle"></i></div>
+                            <h3>Confiança Total</h3>
+                            <p>Vestir aquele jeans coladinho e se sentir confiante em qualquer situação</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dream-card">
+                        <div class="dream-image">
+                            <img src="ImagensRespostas/6-2.jpg" alt="Bumbum Perfeito">
+                            <div class="dream-overlay"></div>
+                        </div>
+                        <div class="dream-content">
+                            <div class="dream-check"><i class="fas fa-check-circle"></i></div>
+                            <h3>Bumbum Perfeito</h3>
+                            <p>Ter um bumbum empinado, firme e redondinho que chama atenção</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dream-card">
+                        <div class="dream-image">
+                            <img src="ImagensVendas/3.jpg" alt="Admiração">
+                            <div class="dream-overlay"></div>
+                        </div>
+                        <div class="dream-content">
+                            <div class="dream-check"><i class="fas fa-check-circle"></i></div>
+                            <h3>Admiração</h3>
+                            <p>Receber olhares e elogios que aumentam sua autoestima</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dream-card">
+                        <div class="dream-image">
+                            <img src="ImagensVendas/5.jpg" alt="Amor Próprio">
+                            <div class="dream-overlay"></div>
+                        </div>
+                        <div class="dream-content">
+                            <div class="dream-check"><i class="fas fa-check-circle"></i></div>
+                            <h3>Amor Próprio</h3>
+                            <p>Se amar quando se olhar no espelho e se sentir realizada</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dream-cta">
+                    <p>Tudo isso é possível com apenas <span class="highlight-text">10 minutos por dia</span></p>
+                </div>
+            </div>
+            
+            <div class="testimonials-section" style="max-width: 320px; background-color: #ffb6c1; border-radius: 20px; padding: 20px; margin: 20px auto; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <div style="width: 50px; height: 50px; background-color: #ff6b9b; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
+                        <span style="color: white; font-size: 24px; font-weight: bold;">“</span>
+                    </div>
+                    <h2 style="color: #7b3f5d; font-size: 20px; margin: 0; font-weight: 600;">O que elas <span style="color: #ff6b9b;">estão dizendo</span></h2>
+                </div>
+                
+                <div id="testimonial-carousel" class="carousel" style="position: relative;">
+                    <!-- Depoimento 1 -->
+                    <div class="testimonial-slide" style="background-color: white; border-radius: 15px; padding: 20px; margin-bottom: 15px; position: relative; display: none;">
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <div style="color: #ffcc00; margin-bottom: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: center;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; margin-right: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <p style="margin: 0; font-weight: 600; color: #444; font-size: 16px;">Mariana S., 32 anos</p>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 15px; line-height: 1.5; color: #555; margin-bottom: 15px; font-style: italic; text-align: center;">“Em 3 semanas já notei diferença! Meu bumbum está mais firme. Melhor investimento!”</p>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="color: #28a745; font-size: 14px; display: flex; align-items: center;">
+                                <span style="display: inline-block; width: 14px; height: 14px; background-color: #28a745; border-radius: 50%; margin-right: 5px;"></span> Verificado
+                            </div>
+                            <div style="color: #888; font-size: 14px;">Há 2 semanas</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 2 -->
+                    <div class="testimonial-slide" style="background-color: white; border-radius: 15px; padding: 20px; margin-bottom: 15px; position: relative; display: none;">
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <div style="color: #ffcc00; margin-bottom: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: center;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; margin-right: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                    <img src="ImagensVendas/camila.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <p style="margin: 0; font-weight: 600; color: #444; font-size: 16px;">Camila R., 28 anos</p>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 15px; line-height: 1.5; color: #555; margin-bottom: 15px; font-style: italic; text-align: center;">“Agora uso shorts sem vergonha! 10 minutos por dia e meu bumbum mudou completamente!”</p>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="color: #28a745; font-size: 14px; display: flex; align-items: center;">
+                                <span style="display: inline-block; width: 14px; height: 14px; background-color: #28a745; border-radius: 50%; margin-right: 5px;"></span> Verificado
+                            </div>
+                            <div style="color: #888; font-size: 14px;">Há 1 mês</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 3 -->
+                    <div class="testimonial-slide" style="background-color: white; border-radius: 15px; padding: 20px; margin-bottom: 15px; position: relative; display: none;">
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <div style="color: #ffcc00; margin-bottom: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: center;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; margin-right: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                                    <img src="ImagensVendas/paula.jpeg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <p style="margin: 0; font-weight: 600; color: #444; font-size: 16px;">Paula M., 35 anos</p>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 15px; line-height: 1.5; color: #555; margin-bottom: 15px; font-style: italic; text-align: center;">“Após ter filho, achei que nunca mais teria bumbum bonito. Em 21 dias já vi resultados!”</p>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="color: #28a745; font-size: 14px; display: flex; align-items: center;">
+                                <span style="display: inline-block; width: 14px; height: 14px; background-color: #28a745; border-radius: 50%; margin-right: 5px;"></span> Verificado
+                            </div>
+                            <div style="color: #888; font-size: 14px;">Há 3 semanas</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 5px; margin: 15px 0;">
+                    <span id="dot-1" class="carousel-dot" style="width: 8px; height: 8px; border-radius: 50%; background-color: #ff6b9b; cursor: pointer;"></span>
+                    <span id="dot-2" class="carousel-dot" style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"></span>
+                    <span id="dot-3" class="carousel-dot" style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.5); cursor: pointer;"></span>
+                </div>
+                
+                <div style="background-color: white; border-radius: 15px; padding: 15px; text-align: center;">
+                    <div style="color: #ff6b9b; font-size: 28px; font-weight: 700; margin-bottom: 5px;">1.243</div>
+                    <div style="color: #666; font-size: 14px; font-weight: 500;">Mulheres transformadas</div>
+                </div>
+            </div>
+            
+            <!-- Seção de Checkout Atraente -->
+            <div class="checkout-section" style="max-width: 800px; margin: 40px auto; background: linear-gradient(135deg, #fff6f8 0%, #ffe6ee 100%); border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(255, 107, 155, 0.2); text-align: center; border: 2px solid #ff6b9b;">
+                <div style="margin-bottom: 25px;">
+                    <h2 style="color: #7b3f5d; font-size: 28px; margin-bottom: 15px; font-weight: 700;">Comece Sua Transformação <span style="color: #ff6b9b;">Hoje Mesmo</span></h2>
+                    <p style="color: #666; font-size: 18px; line-height: 1.5; max-width: 600px; margin: 0 auto;">Junte-se a mais de 1.200 mulheres que já transformaram seus corpos e suas vidas com o Programa NatáliaFit</p>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin: 30px 0;">
+                    <!-- Benefício 1 -->
+                    <div style="flex: 1; min-width: 200px; background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="color: #ff6b9b; font-size: 36px; margin-bottom: 10px;">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 style="color: #7b3f5d; font-size: 18px; margin-bottom: 10px;">Acesso Imediato</h3>
+                        <p style="color: #666; font-size: 15px;">Receba todo o conteúdo diretamente no seu WhatsApp assim que finalizar seu pedido</p>
+                    </div>
+                    
+                    <!-- Benefício 2 -->
+                    <div style="flex: 1; min-width: 200px; background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="color: #ff6b9b; font-size: 36px; margin-bottom: 10px;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 style="color: #7b3f5d; font-size: 18px; margin-bottom: 10px;">Garantia de 30 Dias</h3>
+                        <p style="color: #666; font-size: 15px;">Satisfação garantida ou seu dinheiro de volta. Sem perguntas, sem complicações</p>
+                    </div>
+                    
+                    <!-- Benefício 3 -->
+                    <div style="flex: 1; min-width: 200px; background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="color: #ff6b9b; font-size: 36px; margin-bottom: 10px;">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 style="color: #7b3f5d; font-size: 18px; margin-bottom: 10px;">Suporte Exclusivo</h3>
+                        <p style="color: #666; font-size: 15px;">Tire suas dúvidas diretamente com nossa equipe especializada via WhatsApp</p>
+                    </div>
+                </div>
+                
+                <div style="margin: 30px auto; max-width: 500px;">
+                    <a href="#" class="pulse-button" style="display: block; background: linear-gradient(45deg, #ff6b9b 0%, #ff408c 100%); color: white; font-size: 20px; font-weight: 700; text-align: center; padding: 18px 30px; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 20px rgba(255, 107, 155, 0.4); transition: all 0.3s; position: relative; overflow: hidden; animation: pulse 1.5s infinite;" onmouseover="this.style.animation='none'; this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(255, 107, 155, 0.6)'" onmouseout="this.style.animation='pulse 1.5s infinite'; this.style.transform='scale(1)'; this.style.boxShadow='0 8px 20px rgba(255, 107, 155, 0.4)'">
+                        <span style="position: relative; z-index: 2;">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right" style="margin-left: 8px; animation: bounce 1s infinite;"></i></span>
+                        <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.3); transform: skewX(-25deg); transition: all 0.5s; z-index: 1; animation: shine 3s infinite;"></span>
+                    </a>
+                    <p style="margin-top: 15px; font-size: 14px; color: #7b3f5d;"><i class="fas fa-lock" style="margin-right: 5px;"></i> Pagamento 100% seguro | <i class="fas fa-truck" style="margin-right: 5px; margin-left: 5px;"></i> Entrega imediata no WhatsApp</p>
+                </div>
+                
+                <style>
+                @keyframes pulse {
+                    0% {
+                        transform: scale(1);
+                        box-shadow: 0 8px 20px rgba(255, 107, 155, 0.4);
+                    }
+                    50% {
+                        transform: scale(1.03);
+                        box-shadow: 0 12px 24px rgba(255, 107, 155, 0.6);
+                    }
+                    100% {
+                        transform: scale(1);
+                        box-shadow: 0 8px 20px rgba(255, 107, 155, 0.4);
+                    }
+                }
+                
+                @keyframes bounce {
+                    0%, 100% {
+                        transform: translateX(0);
+                    }
+                    50% {
+                        transform: translateX(5px);
+                    }
+                }
+                
+                @keyframes shine {
+                    0% {
+                        left: -100%;
+                    }
+                    20% {
+                        left: 100%;
+                    }
+                    100% {
+                        left: 100%;
+                    }
+                }
+                </style>
+            </div>
+            
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Configuração do carrossel de depoimentos
+                const slides = document.querySelectorAll('.testimonial-slide');
+                const dots = document.querySelectorAll('.carousel-dot');
+                let currentSlide = 0;
+                
+                // Mostrar o primeiro slide inicialmente
+                slides[0].style.display = 'block';
+                
+                // Função para mudar de slide
+                function showSlide(index) {
+                    // Esconder todos os slides
+                    slides.forEach(slide => slide.style.display = 'none');
+                    
+                    // Resetar todos os dots
+                    dots.forEach(dot => dot.style.backgroundColor = 'rgba(255, 255, 255, 0.5)');
+                    
+                    // Mostrar o slide atual
+                    slides[index].style.display = 'block';
+                    
+                    // Destacar o dot atual
+                    dots[index].style.backgroundColor = '#ff6b9b';
+                    
+                    // Atualizar o índice atual
+                    currentSlide = index;
+                }
+                
+                // Configurar cliques nos dots
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => showSlide(index));
+                });
+                
+                // Configurar mudança automática de slides
+                setInterval(() => {
+                    let nextSlide = (currentSlide + 1) % slides.length;
+                    showSlide(nextSlide);
+                }, 5000); // Mudar a cada 5 segundos
+            });
+            </script>
+            
+
+        </div>
+    </div>
+
+    <script src="sounds/suave.js"></script>
+    <script src="sounds/coin.js"></script>
+    <script src="script.js"></script>
+    <script src="sales-animations.js"></script>
+</body>
+</html>
