@@ -113,6 +113,224 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Novos estilos para a grade de benefícios */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Forçando duas colunas */
+    grid-template-rows: auto auto; /* Forçando duas linhas */
+    gap: 8px;
+    margin: 20px auto;
+    max-width: 320px; /* Reduzindo ainda mais a largura máxima */
+    text-align: center;
+    width: 100%;
+}
+
+.benefit-item {
+    background: linear-gradient(135deg, #fff, #fff6f8);
+    border-radius: 8px;
+    padding: 8px 5px;
+    box-shadow: 0 4px 12px rgba(232, 62, 140, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(232, 62, 140, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 140px; /* Altura mínima reduzida ainda mais */
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(232, 62, 140, 0.25);
+}
+
+.benefit-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #ff9a9e, #e83e8c);
+    border-radius: 4px 4px 0 0;
+}
+
+.benefit-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #ff9a9e, #e83e8c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(232, 62, 140, 0.3);
+    flex-shrink: 0;
+}
+
+.benefit-icon i {
+    color: white;
+    font-size: 16px;
+}
+
+.pulse-animation {
+    position: relative;
+}
+
+.pulse-animation:after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    background: rgba(232, 62, 140, 0.3);
+    z-index: -1;
+    animation: pulse-benefit 2s infinite;
+}
+
+@keyframes pulse-benefit {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 0.3; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+.benefit-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e83e8c;
+    margin-bottom: 4px;
+    position: relative;
+    display: inline-block;
+    min-height: 16px;
+}
+
+.benefit-text {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.2;
+    margin: 0;
+    flex-grow: 1;
+    padding: 0 3px;
+}
+
+.benefits-cta {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.guarantee-text {
+    display: inline-block;
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(232, 62, 140, 0.1);
+}
+
+.guarantee-text i {
+    color: #4CAF50;
+    margin-right: 8px;
+}
+
+/* Animações para entrada dos elementos */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.wow {
+    visibility: visible;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .benefit-item {
+        padding: 12px 10px;
+        min-height: 0;
+        height: auto;
+    }
+    
+    .benefit-icon {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 8px;
+    }
+    
+    .benefit-icon i {
+        font-size: 20px;
+    }
+    
+    .benefit-title {
+        font-size: 14px;
+        margin-bottom: 5px;
+        min-height: 18px;
+    }
+    
+    .benefit-text {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .benefit-item {
+        padding: 10px 8px;
+    }
+    
+    .benefit-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 6px;
+    }
+    
+    .benefit-title {
+        font-size: 13px;
+        min-height: 16px;
+    }
+    
+    .benefit-text {
+        font-size: 11px;
+        line-height: 1.2;
+    }
+}
+
 /* Seção Você se identifica com isso? */
 .identify-section {
     background-color: #fff;
