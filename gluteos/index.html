@@ -193,45 +193,48 @@
                         </div>
                     </div>
                     
-                    <div style="display: flex; justify-content: center; width: 100%;">
-                    <table style="border-collapse: separate; border-spacing: 4px; max-width: 300px;">
-                        <tr>
-                            <td style="padding: 0; vertical-align: top; width: 50%;">
-                                <div class="benefit-item wow fadeInUp" data-wow-delay="0.1s" style="min-height: 80px; padding: 8px 5px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                    <div class="benefit-icon pulse-animation" style="width: 30px; height: 30px; margin-bottom: 8px; background-color: #ff9bb3;">
-                                        <i class="fas fa-home" style="font-size: 12px;"></i>
-                                    </div>
-                                    <div class="benefit-title" style="font-size: 14px; color: #e83e8c; font-weight: 600;">Treine em Casa</div>
-                                </div>
-                            </td>
-                            <td style="padding: 0; vertical-align: top; width: 50%;">
-                                <div class="benefit-item wow fadeInUp" data-wow-delay="0.3s" style="min-height: 80px; padding: 8px 5px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                    <div class="benefit-icon pulse-animation" style="width: 30px; height: 30px; margin-bottom: 8px; background-color: #ff9bb3;">
-                                        <i class="fas fa-dumbbell" style="font-size: 12px;"></i>
-                                    </div>
-                                    <div class="benefit-title" style="font-size: 14px; color: #e83e8c; font-weight: 600;">Zero Equipamentos</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0; vertical-align: top; width: 50%;">
-                                <div class="benefit-item wow fadeInUp" data-wow-delay="0.5s" style="min-height: 80px; padding: 8px 5px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                    <div class="benefit-icon pulse-animation" style="width: 30px; height: 30px; margin-bottom: 8px; background-color: #ff9bb3;">
-                                        <i class="fas fa-calendar-check" style="font-size: 12px;"></i>
-                                    </div>
-                                    <div class="benefit-title" style="font-size: 14px; color: #e83e8c; font-weight: 600;">21 Dias de Transformação</div>
-                                </div>
-                            </td>
-                            <td style="padding: 0; vertical-align: top; width: 50%;">
-                                <div class="benefit-item wow fadeInUp" data-wow-delay="0.7s" style="min-height: 80px; padding: 8px 5px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                    <div class="benefit-icon pulse-animation" style="width: 30px; height: 30px; margin-bottom: 8px; background-color: #ff9bb3;">
-                                        <i class="fas fa-smile" style="font-size: 12px;"></i>
-                                    </div>
-                                    <div class="benefit-title" style="font-size: 14px; color: #e83e8c; font-weight: 600;">Método Simplificado</div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                    <div style="display: flex; justify-content: center; width: 100%; margin: 20px 0;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 320px; width: 100%;">
+                        <!-- Card 1: Treine em Casa -->
+                        <div style="background: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(232, 62, 140, 0.15); padding: 15px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s ease; position: relative; overflow: hidden; border: 1px solid rgba(255, 155, 179, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(232, 62, 140, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(232, 62, 140, 0.15)'">
+                            <div style="background: linear-gradient(135deg, #ff9bb3, #e83e8c); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3);">
+                                <i class="fas fa-home" style="color: white; font-size: 18px;"></i>
+                            </div>
+                            <div style="font-size: 15px; color: #e83e8c; font-weight: 700; text-align: center;">Treine em Casa</div>
+                            <!-- Círculo decorativo -->
+                            <div style="position: absolute; top: -15px; right: -15px; width: 50px; height: 50px; background: radial-gradient(circle, rgba(255, 155, 179, 0.2) 0%, rgba(255, 155, 179, 0) 70%); border-radius: 50%;"></div>
+                        </div>
+                        
+                        <!-- Card 2: Zero Equipamentos -->
+                        <div style="background: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(232, 62, 140, 0.15); padding: 15px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s ease; position: relative; overflow: hidden; border: 1px solid rgba(255, 155, 179, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(232, 62, 140, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(232, 62, 140, 0.15)'">
+                            <div style="background: linear-gradient(135deg, #ff9bb3, #e83e8c); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3);">
+                                <i class="fas fa-dumbbell" style="color: white; font-size: 18px;"></i>
+                            </div>
+                            <div style="font-size: 15px; color: #e83e8c; font-weight: 700; text-align: center;">Zero Equipamentos</div>
+                            <!-- Círculo decorativo -->
+                            <div style="position: absolute; bottom: -15px; left: -15px; width: 50px; height: 50px; background: radial-gradient(circle, rgba(255, 155, 179, 0.2) 0%, rgba(255, 155, 179, 0) 70%); border-radius: 50%;"></div>
+                        </div>
+                        
+                        <!-- Card 3: 21 Dias de Transformação -->
+                        <div style="background: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(232, 62, 140, 0.15); padding: 15px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s ease; position: relative; overflow: hidden; border: 1px solid rgba(255, 155, 179, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(232, 62, 140, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(232, 62, 140, 0.15)'">
+                            <div style="background: linear-gradient(135deg, #ff9bb3, #e83e8c); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3);">
+                                <i class="fas fa-calendar-check" style="color: white; font-size: 18px;"></i>
+                            </div>
+                            <div style="font-size: 15px; color: #e83e8c; font-weight: 700; text-align: center;">21 Dias de Transformação</div>
+                            <!-- Círculo decorativo -->
+                            <div style="position: absolute; top: -15px; left: -15px; width: 50px; height: 50px; background: radial-gradient(circle, rgba(255, 155, 179, 0.2) 0%, rgba(255, 155, 179, 0) 70%); border-radius: 50%;"></div>
+                        </div>
+                        
+                        <!-- Card 4: Método Simplificado -->
+                        <div style="background: white; border-radius: 20px; box-shadow: 0 10px 20px rgba(232, 62, 140, 0.15); padding: 15px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s ease; position: relative; overflow: hidden; border: 1px solid rgba(255, 155, 179, 0.3);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(232, 62, 140, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(232, 62, 140, 0.15)'">
+                            <div style="background: linear-gradient(135deg, #ff9bb3, #e83e8c); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3);">
+                                <i class="fas fa-smile" style="color: white; font-size: 18px;"></i>
+                            </div>
+                            <div style="font-size: 15px; color: #e83e8c; font-weight: 700; text-align: center;">Método Simplificado</div>
+                            <!-- Círculo decorativo -->
+                            <div style="position: absolute; bottom: -15px; right: -15px; width: 50px; height: 50px; background: radial-gradient(circle, rgba(255, 155, 179, 0.2) 0%, rgba(255, 155, 179, 0) 70%); border-radius: 50%;"></div>
+                        </div>
+                    </div>
                     </div>
                     
                     <div class="method-quote">
