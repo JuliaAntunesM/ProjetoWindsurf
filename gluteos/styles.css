@@ -142,9 +142,8 @@ body {
 /* Estilos para a seção de benefícios compacta */
 .compact-benefits {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
     margin: 15px auto 25px;
     max-width: 90%;
@@ -153,12 +152,14 @@ body {
 .benefit-pill {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: white;
     border-radius: 50px;
-    padding: 5px 15px 5px 5px;
+    padding: 6px 16px 6px 6px;
     box-shadow: 0 4px 10px rgba(232, 62, 140, 0.15);
     transition: all 0.3s ease;
-    margin: 0 5px;
+    margin: 0 4px;
+    width: 220px;
 }
 
 .benefit-pill:hover {
@@ -167,15 +168,15 @@ body {
 }
 
 .peach-circle {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     background-color: #ffb6c1;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 8px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .benefit-pill span {
@@ -183,11 +184,14 @@ body {
     font-weight: 600;
     color: #333;
     white-space: nowrap;
+    display: inline-block;
+    width: 140px;
+    text-align: center;
 }
 
 .benefit-pill:last-child span {
     white-space: normal;
-    max-width: 150px;
+    width: 140px;
     line-height: 1.2;
 }
 
@@ -195,14 +199,16 @@ body {
     .compact-benefits {
         flex-direction: column;
         align-items: center;
+        gap: 8px;
     }
     
     .benefit-pill {
-        width: 80%;
+        width: 220px;
+        margin-bottom: 0;
     }
     
-    .benefit-pill:last-child span {
-        max-width: none;
+    .benefit-pill span {
+        width: 140px;
     }
 }
 
