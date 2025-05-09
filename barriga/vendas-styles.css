@@ -1,0 +1,541 @@
+/* Estilos para a página de vendas */
+.simplified-header {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.simplified-header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+}
+
+.identify-section {
+    margin-bottom: 30px;
+}
+
+.identify-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.heart-icon-container {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #4caf50, #2c7a39);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(100, 180, 100, 0.3);
+}
+
+.pulse-heart {
+    animation: pulse-heart 1.5s infinite;
+}
+
+@keyframes pulse-heart {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.identify-section h2 {
+    font-size: 24px;
+    color: #2c7a39;
+    margin: 0;
+    font-weight: 600;
+}
+
+.identify-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.identify-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(100, 180, 100, 0.2);
+}
+
+.identify-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #4caf50;
+}
+
+.identify-card-content {
+    padding: 20px;
+}
+
+.identify-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c7a39;
+    margin-bottom: 10px;
+}
+
+.identify-card-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.testimonial-section {
+    margin: 40px 0;
+    position: relative;
+}
+
+.testimonial-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.testimonial-title {
+    font-size: 28px;
+    color: #2c7a39;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.testimonial-subtitle {
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonial-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-slide {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    position: relative;
+    display: none;
+}
+
+.testimonial-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.testimonial-content:before {
+    content: '"';
+    font-size: 60px;
+    color: rgba(100, 180, 100, 0.2);
+    position: absolute;
+    top: -20px;
+    left: -15px;
+    font-family: Georgia, serif;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #4caf50;
+}
+
+.testimonial-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.testimonial-role {
+    font-size: 14px;
+    color: #777;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: #4caf50;
+}
+
+.offer-section {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #4caf50, #2c7a39);
+}
+
+.offer-title {
+    font-size: 28px;
+    color: #2c7a39;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.offer-subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.offer-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.offer-item {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.offer-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(100, 180, 100, 0.1);
+}
+
+.offer-item-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #4caf50, #2c7a39);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.offer-item-title {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.offer-item-description {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.price-section {
+    background: linear-gradient(135deg, rgba(100, 180, 100, 0.1), rgba(44, 122, 57, 0.05));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.original-price {
+    font-size: 20px;
+    color: #777;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.current-price {
+    font-size: 36px;
+    color: #2c7a39;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.price-note {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.guarantee-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.guarantee-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: #2c7a39;
+    font-size: 24px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.guarantee-content {
+    flex-grow: 1;
+}
+
+.guarantee-title {
+    font-size: 18px;
+    color: #2c7a39;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.guarantee-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.cta-button-large {
+    background: linear-gradient(45deg, #4caf50, #2c7a39);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(100, 180, 100, 0.3);
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(100, 180, 100, 0.4);
+}
+
+.cta-button-large:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(100, 180, 100, 0.3);
+}
+
+.cta-button-large:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+}
+
+.cta-button-large:hover:before {
+    left: 100%;
+}
+
+.bonus-section {
+    margin: 40px 0;
+}
+
+.bonus-title {
+    font-size: 24px;
+    color: #2c7a39;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bonus-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.bonus-item {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.bonus-item:before {
+    content: 'BÔNUS';
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 30px;
+    font-size: 12px;
+    font-weight: 600;
+    transform: rotate(45deg);
+}
+
+.bonus-item-title {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.bonus-item-description {
+    font-size: 14px;
+    color: #555;
+}
+
+.faq-section {
+    margin: 40px 0;
+}
+
+.faq-title {
+    font-size: 28px;
+    color: #2c7a39;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    background-color: #f9f9f9;
+    border-radius: 0 0 10px 10px;
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #555;
+    margin-top: -5px;
+    display: none;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .offer-items, .bonus-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .guarantee-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .guarantee-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .cta-button-large {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+    
+    .offer-title, .bonus-title, .faq-title {
+        font-size: 24px;
+    }
+    
+    .offer-subtitle {
+        font-size: 16px;
+    }
+    
+    .current-price {
+        font-size: 30px;
+    }
+}
