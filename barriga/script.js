@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
             2: "images/2-3.jpg"  // Imagem adicional disponível
         },
         2: { // Pergunta 3: "Qual dessas frases representa melhor o que você sente quando se olha no espelho?"
-            0: "images/3-1.jpg", // "Me sinto frustrada, queria um corpo mais bonito"
-            1: "images/3-2.jpg", // "Evito espelhos porque sempre me comparo com meninas das redes sociais"
-            2: "images/3-3.jpg", // "Sinto que poderia estar bem melhor, mas não sei por onde começar"
+            0: "images/2-1.jpg", // "Me sinto frustrada, queria um corpo mais bonito"
+            1: "images/2-2.jpg", // "Evito espelhos porque sempre me comparo com meninas das redes sociais"
+            2: "images/2-3.jpg", // "Sinto que poderia estar bem melhor, mas não sei por onde começar"
         },
         3: { // Pergunta 4: "Já deixou de usar uma roupa por vergonha da barriga?"
-            0: "images/4-1.jpg", // "Sim, tenho vergonha de usar biquini em lugares com muita gente"
-            1: "images/4-2.jpg", // "Sim, sempre me incomodo com vestido coladinhos que ficam marcando"
-            2: "images/4-3.jpg", // "As vezes isso me deixa insegura, acabo sempre achando que não tenho nenhuma roupa boa"
-            3: "images/4-4.jpg" // "Todas as opções anteriores"
+            0: "images/3-1.jpg", // "Sim, tenho vergonha de usar biquini em lugares com muita gente"
+            1: "images/3-2.jpg", // "Sim, sempre me incomodo com vestido coladinhos que ficam marcando"
+            2: "images/3-3.jpg", // "As vezes isso me deixa insegura, acabo sempre achando que não tenho nenhuma roupa boa"
+            3: "images/1-4.jpg" // "Todas as opções anteriores"
         },
         4: { // Pergunta 5: "Como você se sentiria ao ver o olhar de admiração do seu marido/namorado quando você coloca uma roupa mais justa?"
             0: "images/5-1.jpg", // "Poderosa"

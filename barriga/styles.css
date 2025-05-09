@@ -380,8 +380,13 @@ body {
 }
 
 .options-container.single-option .option.single {
-    max-width: 350px;
+    max-width: 260px;
     margin: 0 auto;
+    height: 100%;
+}
+
+.options-container.single-option .option.single .option-image-container {
+    height: 320px;
 }
 
 .option {
