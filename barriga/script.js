@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
             3: "images/5-4.jpg" // "Drenagem linfática"
         },
         6: { // Pergunta 7: "Cansada de fazer mil coisas e não ver resultados reais?"
-            0: "images/7-1.jpg", // "QUERO ENTENDER POR QUÊ"
-            1: "images/7-2.jpg", // "SIM, ESTOU CANSADA"
-            2: "images/7-3.jpg"  // "PRECISO DE UMA SOLUÇÃO"
+            0: "images/8-1.jpg", // "QUERO ENTENDER POR QUÊ"
+            1: "images/8-2.jpg", // "SIM, ESTOU CANSADA"
+            2: "images/8-3.jpg"  // "PRECISO DE UMA SOLUÇÃO"
         },
         7: { // Pergunta 8: "Quanto tempo você está tentando mudar isso?"
             0: "images/6-1.jpg", // "Menos de 1 mês"
