@@ -202,10 +202,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const progressPercentage = (index / questions.length) * 100;
         progressBar.style.width = `${progressPercentage}%`;
         
+        // Verificar se há apenas uma opção de resposta
+        const singleOption = questions[index].options.length === 1;
+        
+        // Adicionar classe especial ao container quando há apenas uma opção
+        if (singleOption) {
+            optionsContainer.classList.add('single-option');
+        } else {
+            optionsContainer.classList.remove('single-option');
+        }
+        
         // Criar opções de resposta
         questions[index].options.forEach((option, optionIndex) => {
             const optionElement = document.createElement('div');
             optionElement.classList.add('option');
+            
+            // Adicionar classe especial quando há apenas uma opção
+            if (singleOption) {
+                optionElement.classList.add('single');
+            }
             
             // Estrutura da opção
             let optionContent = '';

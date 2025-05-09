@@ -373,6 +373,17 @@ body {
     margin-top: 10px;
 }
 
+/* Estilo para quando há apenas uma opção de resposta */
+.options-container.single-option {
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.options-container.single-option .option.single {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
 .option {
     background-color: #fff;
     border-radius: 20px;
