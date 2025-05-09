@@ -34,16 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
             3: "images/1-4.jpg" // "Todas as opções anteriores"
         },
         4: { // Pergunta 5: "Como você se sentiria ao ver o olhar de admiração do seu marido/namorado quando você coloca uma roupa mais justa?"
-            0: "images/5-1.jpg", // "Poderosa"
-            1: "images/5-2.jpg", // "Desejada"
-            2: "images/5-3.jpg", // "Confiante"
-            3: "images/5-4.jpg" // "Tudo isso junto!"
+            0: "images/4-1.jpg", // "Poderosa"
+            1: "images/4-2.jpg", // "Desejada"
+            2: "images/4-3.jpg", // "Confiante"
+            3: "images/4-4.jpg" // "Tudo isso junto!"
         },
         5: { // Pergunta 6: "Você já tentou alguma dessas estratégias para perder barriga e nenhuma delas funcionou como eu queria?"
-            0: "images/6-1.jpg", // "Dietas restritivas"
-            1: "images/6-2.jpg", // "Termogênicos"
-            2: "images/6-3.jpg", // "Academia"
-            3: "images/6-4.jpg" // "Drenagem linfática"
+            0: "images/5-1.jpg", // "Dietas restritivas"
+            1: "images/5-2.jpg", // "Termogênicos"
+            2: "images/5-3.jpg", // "Academia"
+            3: "images/5-4.jpg" // "Drenagem linfática"
         },
         6: { // Pergunta 7: "Cansada de fazer mil coisas e não ver resultados reais?"
             0: "images/7-1.jpg", // "QUERO ENTENDER POR QUÊ"
@@ -51,18 +51,18 @@ document.addEventListener('DOMContentLoaded', function() {
             2: "images/7-3.jpg"  // "PRECISO DE UMA SOLUÇÃO"
         },
         7: { // Pergunta 8: "Quanto tempo você está tentando mudar isso?"
-            0: "images/1-1.jpg", // Reutilizando imagens existentes
-            1: "images/1-2.jpg",
-            2: "images/1-3.jpg",
-            3: "images/1-4.jpg"
+            0: "images/6-1.jpg", // "Menos de 1 mês"
+            1: "images/6-2.jpg", // "De 1 a 6 meses"
+            2: "images/6-3.jpg", // "Mais de 6 meses"
+            3: "images/6-4.jpg"  // "Já desisti várias vezes"
         },
         8: { // Pergunta 9: "Imagina você daqui a alguns dias com a barriga visivelmente mais fina, sem precisar fazer academia..."
-            0: "images/2-1.jpg", // Reutilizando imagens existentes
-            1: "images/2-2.jpg",
-            2: "images/2-3.jpg"
+            0: "images/7-1.jpg", // "Eu PRECISO disso"
+            1: "images/7-2.jpg", // "Seria um sonho"
+            2: "images/7-3.jpg"  // "Eu topo tentar"
         },
         9: { // Pergunta 10: "Mulheres comuns, com rotinas reais, já estão conseguindo resultados visíveis com essa técnica"
-            0: "images/3-1.jpg" // Reutilizando imagens existentes
+            0: "images/9.jpg" // "PARECE UM SONHO!"
         }
     };
     
