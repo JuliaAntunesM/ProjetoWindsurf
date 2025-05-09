@@ -163,10 +163,82 @@
                     
                     <div style="margin-top: 25px; text-align: center; position: relative;">
                         <div style="position: relative; display: inline-block; max-width: 90%; transition: all 0.5s ease; margin-bottom: 40px;">
-                            <img src="images/10.jpg" alt="Mulher com calça jeans apertada" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transition: transform 0.5s ease; border: 8px solid white;">
+                            <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2); border: 8px solid white;">
+                                <!-- Imagem Única com alternância via JavaScript -->
+                                <img id="transition-image" src="images/8-2.jpg" alt="Imagem de transformação" style="width: 100%; display: block;">
+                                
+                                <!-- Etiqueta que muda de texto -->
+                                <div id="image-label" style="position: absolute; top: 15px; left: 15px; background-color: rgba(255, 105, 180, 0.8); color: white; padding: 8px 20px; border-radius: 30px; font-weight: bold; z-index: 10;">DEPOIS</div>
+                            </div>
+                            
+                            <!-- Script para controlar a transição -->
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const transitionImage = document.getElementById('transition-image');
+                                    const imageLabel = document.getElementById('image-label');
+                                    
+                                    // Imagens para alternar
+                                    const beforeImage = 'images/10.jpg';
+                                    const afterImage = 'images/8-2.jpg';
+                                    
+                                    // Estado inicial - mostrando a imagem DEPOIS
+                                    let showingAfter = true;
+                                    
+                                    // Função para alternar a imagem
+                                    function toggleImage() {
+                                        if (showingAfter) {
+                                            // Mudar para a imagem ANTES
+                                            transitionImage.src = beforeImage;
+                                            imageLabel.textContent = 'ANTES';
+                                            showingAfter = false;
+                                        } else {
+                                            // Mudar para a imagem DEPOIS
+                                            transitionImage.src = afterImage;
+                                            imageLabel.textContent = 'DEPOIS';
+                                            showingAfter = true;
+                                        }
+                                    }
+                                    
+                                    // Alternar a cada 3 segundos
+                                    setInterval(toggleImage, 3000);
+                                });
+                            </script>
                             
                             <!-- Efeito de brilho no canto da imagem -->
                             <div style="position: absolute; top: -10px; right: -10px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; z-index: 2; animation: pulse 2s infinite ease-in-out;"></div>
+                            
+                            <!-- Script para alternar as imagens -->
+                            <script>
+                                // Função para alternar as imagens
+                                function alternarImagens() {
+                                    const img1 = document.getElementById('image1');
+                                    const img2 = document.getElementById('image2');
+                                    
+                                    // Se a primeira imagem estiver visível, mostrar a segunda
+                                    if (img1.style.opacity === '1' || img1.style.opacity === '') {
+                                        img1.style.opacity = '0';
+                                        img2.style.opacity = '1';
+                                    } else {
+                                        // Caso contrário, mostrar a primeira
+                                        img1.style.opacity = '1';
+                                        img2.style.opacity = '0';
+                                    }
+                                }
+                                
+                                // Iniciar a alternância quando a página carregar
+                                window.addEventListener('load', function() {
+                                    // Definir a transição suave para as imagens
+                                    const img1 = document.getElementById('image1');
+                                    const img2 = document.getElementById('image2');
+                                    
+                                    img1.style.transition = 'opacity 1s ease-in-out';
+                                    img2.style.transition = 'opacity 1s ease-in-out';
+                                    img1.style.opacity = '1';
+                                    
+                                    // Alternar as imagens a cada 3 segundos
+                                    setInterval(alternarImagens, 3000);
+                                });
+                            </script>
                         </div>
                         
                         <div style="position: relative; background: linear-gradient(45deg, #ff69b4, #ff1493); color: white; padding: 15px 30px; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 25px rgba(255,20,147,0.4); font-size: 18px; letter-spacing: 0.5px; display: inline-block; margin-top: 15px; margin-bottom: 15px; transition: all 0.3s ease;">Transforme sua silhueta em apenas 21 dias!</div>
