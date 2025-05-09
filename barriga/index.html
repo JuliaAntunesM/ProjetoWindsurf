@@ -164,43 +164,49 @@
                     <div style="margin-top: 25px; text-align: center; position: relative;">
                         <div style="position: relative; display: inline-block; max-width: 90%; transition: all 0.5s ease; margin-bottom: 40px;">
                             <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2); border: 8px solid white;">
-                                <!-- Imagem Única com alternância via JavaScript -->
-                                <img id="transition-image" src="images/8-2.jpg" alt="Imagem de transformação" style="width: 100%; display: block;">
+                                <!-- Container para efeito de transição -->
+                                <div style="position: relative; width: 100%;">
+                                    <!-- Imagem DEPOIS (fixa no fundo) -->
+                                    <img src="images/8-2.jpg" alt="Depois" style="width: 100%; display: block;">
+                                    
+                                    <!-- Imagem ANTES (com transição de opacidade) -->
+                                    <img id="transition-image" src="images/10.jpg" alt="Antes" style="width: 100%; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease; display: block;">
+                                </div>
                                 
-                                <!-- Etiqueta que muda de texto -->
-                                <div id="image-label" style="position: absolute; top: 15px; left: 15px; background-color: rgba(255, 105, 180, 0.8); color: white; padding: 8px 20px; border-radius: 30px; font-weight: bold; z-index: 10;">DEPOIS</div>
+                                <!-- Etiquetas ANTES e DEPOIS -->
+                                <div id="label-depois" style="position: absolute; top: 15px; left: 15px; background-color: rgba(255, 105, 180, 0.8); color: white; padding: 8px 20px; border-radius: 30px; font-weight: bold; z-index: 10;">DEPOIS</div>
+                                <div id="label-antes" style="position: absolute; top: 15px; left: 15px; background-color: rgba(255, 105, 180, 0.8); color: white; padding: 8px 20px; border-radius: 30px; font-weight: bold; z-index: 10; opacity: 0; transition: opacity 0.5s ease;">ANTES</div>
                             </div>
                             
                             <!-- Script para controlar a transição -->
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
                                     const transitionImage = document.getElementById('transition-image');
-                                    const imageLabel = document.getElementById('image-label');
+                                    const labelAntes = document.getElementById('label-antes');
+                                    const labelDepois = document.getElementById('label-depois');
                                     
-                                    // Imagens para alternar
-                                    const beforeImage = 'images/10.jpg';
-                                    const afterImage = 'images/8-2.jpg';
+                                    // Estado inicial
+                                    let mostrandoAntes = false;
                                     
-                                    // Estado inicial - mostrando a imagem DEPOIS
-                                    let showingAfter = true;
-                                    
-                                    // Função para alternar a imagem
-                                    function toggleImage() {
-                                        if (showingAfter) {
-                                            // Mudar para a imagem ANTES
-                                            transitionImage.src = beforeImage;
-                                            imageLabel.textContent = 'ANTES';
-                                            showingAfter = false;
+                                    // Função para alternar a visibilidade
+                                    function alternarImagens() {
+                                        if (mostrandoAntes) {
+                                            // Mostrar DEPOIS (esconder ANTES)
+                                            transitionImage.style.opacity = '0';
+                                            labelAntes.style.opacity = '0';
+                                            labelDepois.style.opacity = '1';
+                                            mostrandoAntes = false;
                                         } else {
-                                            // Mudar para a imagem DEPOIS
-                                            transitionImage.src = afterImage;
-                                            imageLabel.textContent = 'DEPOIS';
-                                            showingAfter = true;
+                                            // Mostrar ANTES
+                                            transitionImage.style.opacity = '0.7'; // Meio transparente
+                                            labelAntes.style.opacity = '1';
+                                            labelDepois.style.opacity = '0';
+                                            mostrandoAntes = true;
                                         }
                                     }
                                     
-                                    // Alternar a cada 3 segundos
-                                    setInterval(toggleImage, 3000);
+                                    // Alternar a cada 1.5 segundos (mais rápido)
+                                    setInterval(alternarImagens, 1500);
                                 });
                             </script>
                             
