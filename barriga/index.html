@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Barriga - NatáliaFit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vendas-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="floating-vegetables">
+        <!-- Imagens de verduras flutuantes serão inseridas via JavaScript -->
+    </div>
+
+    <div class="container glass-effect">
+        <!-- Tela de Boas-vindas -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-icon">
+                <i class="fas fa-fire-alt pulse-icon"></i>
+            </div>
+            <h1 class="shine">DESCUBRA O TREINO EM CASA DE 10 MINUTINHOS QUE DEIXOU MINHA BARRIGA CHAPADA E CINTURA FININHA!</h1>
+            <div class="compact-benefits">
+                <div class="benefit-pill">
+                    <div class="vegetable-circle">🥦</div>
+                    <span>Sem academia.</span>
+                </div>
+                <div class="benefit-pill">
+                    <div class="vegetable-circle">🥬</div>
+                    <span>Sem aparelhos.</span>
+                </div>
+                <div class="benefit-pill">
+                    <div class="vegetable-circle">🥒</div>
+                    <span>Só você… e o resultado que sempre quis.</span>
+                </div>
+            </div>
+            <button id="start-quiz" class="btn"><span>COMEÇAR QUIZ</span> <i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Tela de Perguntas -->
+        <div id="question-screen" class="screen">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="score-container" style="background: linear-gradient(135deg, #ffffff, #f9f9f9); border: 1px solid rgba(255, 215, 0, 0.5); box-shadow: 0 4px 15px rgba(255, 215, 0, 0.25); border-radius: 30px; padding: 8px 18px; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(5px);">
+                <i class="fas fa-crown" style="color: #FFD700; font-size: 18px; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i> 
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <span style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Pontos</span>
+                    <span id="score-display" style="color: #FFD700; font-weight: 700; font-size: 20px; letter-spacing: 0.5px;">0</span>
+                </div>
+            </div>
+            <h2 id="question-text"></h2>
+            <div id="options-container" class="options-container"></div>
+        </div>
+
+        <!-- Tela de Carregamento -->
+        <div id="loading-screen" class="screen">
+            <h2 class="typing-effect">Analisando suas respostas...</h2>
+            <div class="loader"></div>
+            <p>Com base no que você contou, temos um plano que pode transformar sua barriga e como você se sente ao se olhar no espelho.</p>
+            <div class="progress-status">
+                <span class="status-text">Calculando seu plano personalizado</span>
+                <div class="progress-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="sparkles">
+                <i class="fas fa-sparkles sparkle"></i>
+                <i class="fas fa-sparkles sparkle"></i>
+                <i class="fas fa-sparkles sparkle"></i>
+            </div>
+        </div>
+
+        <!-- Tela de Resultados (Página de Vendas) -->
+        <div id="results-screen" class="screen" style="padding: 5px;">
+            <div class="final-score-container" style="background: linear-gradient(135deg, #ffffff, #f9f9f9); border: 1px solid rgba(255, 215, 0, 0.5); box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3); border-radius: 30px; padding: 12px 25px; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(5px); margin: 0 auto 25px;">
+                <div style="background: linear-gradient(135deg, #FFD700, #FFC107); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);">
+                    <i class="fas fa-trophy" style="color: white; font-size: 22px; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"></i>
+                </div>
+                <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                    <span style="color: #888; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Pontuação final</span>
+                    <div style="display: flex; align-items: baseline; gap: 5px;">
+                        <span id="final-score" style="color: #FFD700; font-weight: 700; font-size: 28px; letter-spacing: 0.5px;">0</span>
+                        <span style="color: #888; font-size: 14px; font-weight: 500;">pontos</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cabeçalho da página de vendas -->
+            <div class="simplified-header" style="background: linear-gradient(135deg, rgba(195, 230, 203, 0.2), rgba(100, 180, 100, 0.15)); border-radius: 15px; padding: 20px; box-shadow: 0 15px 35px rgba(100, 180, 100, 0.2); border: 2px solid #a3d9a5; margin: 0 auto 20px; max-width: 98%; width: 100%;">
+                <h1 style="font-size: 28px; color: #2c7a39; margin-bottom: 15px; line-height: 1.3;">DESCUBRA O TREINO EM CASA DE 10 MINUTINHOS QUE DEIXOU MINHA BARRIGA CHAPADA E CINTURA FININHA!</h1>
+                <p style="font-size: 16px; color: #444; line-height: 1.5; margin-bottom: 0;">Quantas vezes você já se olhou no espelho, segurou a respiração, puxou a calça pra cima... e ainda assim não gostou do que viu?</p>
+                <div style="margin-top: 15px; text-align: center;">
+                    <img src="ImagensVendas/mulher-calca-jeans.jpg" alt="Mulher com calça jeans apertada" style="max-width: 90%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+            
+            <!-- Avaliações -->
+            <div class="ratings-section" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 25px;">
+                <div class="stars-container" style="margin-bottom: 12px;">
+                    <i class="fas fa-star" style="color: gold; font-size: 24px; margin: 0 2px;"></i>
+                    <i class="fas fa-star" style="color: gold; font-size: 24px; margin: 0 2px;"></i>
+                    <i class="fas fa-star" style="color: gold; font-size: 24px; margin: 0 2px;"></i>
+                    <i class="fas fa-star" style="color: gold; font-size: 24px; margin: 0 2px;"></i>
+                    <i class="fas fa-star" style="color: gold; font-size: 24px; margin: 0 2px;"></i>
+                </div>
+                <p style="font-size: 16px; color: #444; font-weight: 500; margin: 0;">Avaliação média: <span style="color: #2c7a39; font-weight: 700;">4.9/5</span> (mais de 42.357 mulheres)</p>
+            </div>
+            
+            <!-- Citação do parceiro -->
+            <div style="background-color: #f8f9fa; border-radius: 15px; padding: 20px; margin: 0 auto 25px; max-width: 90%; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <h3 style="font-size: 22px; color: #2c7a39; margin-bottom: 15px;">💬 "Você está linda, amor..."</h3>
+                <p style="font-size: 16px; color: #555; margin-bottom: 15px;">Mas no fundo, você sabe que ele fala só pra te agradar.</p>
+                <p style="font-size: 16px; color: #555; margin-bottom: 15px;">Você queria ver o olhar de desejo, aquele que te fazia se sentir poderosa.<br>Queria ouvir um "uau" quando sai do banheiro com aquela lingerie nova...</p>
+                <div style="margin-top: 15px; text-align: center;">
+                    <img src="ImagensVendas/homem-admirando.jpg" alt="Homem admirando a beleza da esposa" style="max-width: 90%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+            
+            <!-- O que já tentou -->
+            <div style="background-color: #fff; border-radius: 15px; padding: 20px; margin: 0 auto 25px; max-width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <h3 style="font-size: 22px; color: #2c7a39; margin-bottom: 15px; text-align: center;">😢 Você já tentou dietas, cremes, massagens, academia...</h3>
+                <p style="font-size: 16px; color: #555; margin-bottom: 15px; text-align: center;">Mas nada parece funcionar.</p>
+                <p style="font-size: 16px; color: #555; margin-bottom: 15px; text-align: center;">E aí você começa a acreditar que:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                    <div style="display: flex; align-items: center; background-color: #f8f9fa; padding: 10px; border-radius: 10px;">
+                        <img src="ImagensVendas/mulher-espelho-triste.jpg" alt="Mulher na frente do espelho triste" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px; margin-right: 15px;">
+                        <p style="font-size: 16px; color: #555; margin: 0;">"É da minha genética"</p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: #f8f9fa; padding: 10px; border-radius: 10px;">
+                        <img src="ImagensVendas/mulher-short-apertado.jpg" alt="Mulher tentando vestir um short jeans apertado" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px; margin-right: 15px;">
+                        <p style="font-size: 16px; color: #555; margin: 0;">"Depois dos filhos, não tem mais jeito"</p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: #f8f9fa; padding: 10px; border-radius: 10px;">
+                        <img src="ImagensVendas/senhora-barriga-flacida.jpg" alt="Senhora com a barriga flácida" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px; margin-right: 15px;">
+                        <p style="font-size: 16px; color: #555; margin: 0;">"Já passei da idade"</p>
+                    </div>
+                </div>
+                
+                <p style="font-size: 18px; color: #2c7a39; margin-top: 20px; font-weight: 600; text-align: center;">👉 Mas deixa eu te contar uma coisa: isso não é verdade.</p>
+            </div>
+            
+            <!-- Solução -->
+            <div style="background-color: #e9f7ec; border-radius: 15px; padding: 20px; margin: 0 auto 25px; max-width: 90%; box-shadow: 0 5px 15px rgba(100, 180, 100, 0.2);">
+                <p style="font-size: 16px; color: #333; margin-bottom: 15px; text-align: center;">Você só precisa ativar o método certo, que fale com o seu corpo, com sua realidade — e principalmente: com suas emoções.</p>
+                
+                <h3 style="font-size: 24px; color: #2c7a39; margin: 20px 0; text-align: center; font-weight: 700;">💡 Conheça o Plano Anti-Barriga</h3>
+                <p style="font-size: 16px; color: #333; margin-bottom: 15px; text-align: center;">Criado especialmente para mulheres reais que querem voltar a:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                    <div style="display: flex; align-items: center; background-color: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="min-width: 30px; height: 30px; background-color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-check" style="color: white; font-size: 14px;"></i>
+                        </div>
+                        <div>
+                            <p style="font-size: 16px; color: #333; margin: 0; font-weight: 600;">Se sentir lindas de verdade</p>
+                            <img src="ImagensVendas/mulher-vestido-coladinho.jpg" alt="Mulher se amando com vestido coladinho" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 8px; margin-top: 10px;">
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="min-width: 30px; height: 30px; background-color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-check" style="color: white; font-size: 14px;"></i>
+                        </div>
+                        <div>
+                            <p style="font-size: 16px; color: #333; margin: 0; font-weight: 600;">Afinar a cintura e sumir com a barriguinha teimosa</p>
+                            <img src="ImagensVendas/mulher-feliz-praia.jpg" alt="Mulher feliz na praia" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 8px; margin-top: 10px;">
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="min-width: 30px; height: 30px; background-color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-check" style="color: white; font-size: 14px;"></i>
+                        </div>
+                        <div>
+                            <p style="font-size: 16px; color: #333; margin: 0; font-weight: 600;">Ser notadas de novo... e admiradas!</p>
+                            <img src="ImagensVendas/mulher-sendo-admirada.jpg" alt="Mulher sendo admirada pelo marido" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 8px; margin-top: 10px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 18px; color: #2c7a39; margin-top: 20px; font-weight: 600; text-align: center;">Sem academia, sem dietas malucas e sem perder tempo.</p>
+            </div>
+            
+            <!-- Prova social -->
+            <div style="background-color: #fff; border-radius: 15px; padding: 20px; margin: 0 auto 25px; max-width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <h3 style="font-size: 22px; color: #2c7a39; margin-bottom: 15px; text-align: center;">👩‍🦰 Mulheres como você já estão transformando sua autoestima...</h3>
+                
+                <div style="margin: 20px 0; text-align: center;">
+                    <div class="carousel-container" style="position: relative; max-width: 100%; margin: 0 auto;">
+                        <div class="carousel-slides" style="overflow: hidden; border-radius: 10px;">
+                            <img src="ImagensVendas/antes-depois-1.jpg" alt="Antes e depois 1" style="width: 100%; display: block; border-radius: 10px;">
+                        </div>
+                        <div style="margin-top: 10px; display: flex; justify-content: center; gap: 5px;">
+                            <span style="width: 10px; height: 10px; background-color: #4caf50; border-radius: 50%; display: inline-block;"></span>
+                            <span style="width: 10px; height: 10px; background-color: #c3e6cb; border-radius: 50%; display: inline-block;"></span>
+                            <span style="width: 10px; height: 10px; background-color: #c3e6cb; border-radius: 50%; display: inline-block;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- O que você vai receber -->
+            <div style="background-color: #e9f7ec; border-radius: 15px; padding: 25px; margin: 0 auto 25px; max-width: 90%; box-shadow: 0 5px 15px rgba(100, 180, 100, 0.2);">
+                <h3 style="font-size: 24px; color: #2c7a39; margin-bottom: 20px; text-align: center; font-weight: 700;">O Que Você Vai Receber</h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: center; background-color: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="min-width: 40px; height: 40px; background-color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-dumbbell" style="color: white; font-size: 18px;"></i>
+                        </div>
+                        <p style="font-size: 16px; color: #333; margin: 0; font-weight: 600;">Plano Anti-Barriga: treinos guiados de 10 minutos por dia</p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="min-width: 40px; height: 40px; background-color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-apple-alt" style="color: white; font-size: 18px;"></i>
+                        </div>
+                        <p style="font-size: 16px; color: #333; margin: 0; font-weight: 600;">Guia Desinflamatório: elimine o inchaço e retenção naturalmente</p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="min-width: 40px; height: 40px; background-color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-brain" style="color: white; font-size: 18px;"></i>
+                        </div>
+                        <p style="font-size: 16px; color: #333; margin: 0; font-weight: 600;">Aula de Reprogramação Emocional: mude a forma como você se vê</p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="min-width: 40px; height: 40px; background-color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-mobile-alt" style="color: white; font-size: 18px;"></i>
+                        </div>
+                        <p style="font-size: 16px; color: #333; margin: 0; font-weight: 600;">Acesso Imediato pelo Celular</p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: white; padding: 15px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <div style="min-width: 40px; height: 40px; background-color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-users" style="color: white; font-size: 18px;"></i>
+                        </div>
+                        <p style="font-size: 16px; color: #333; margin: 0; font-weight: 600;">Grupo exclusivo de mulheres reais como você</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bônus -->
+            <div style="background-color: #fff; border-radius: 15px; padding: 25px; margin: 0 auto 25px; max-width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                <h3 style="font-size: 24px; color: #2c7a39; margin-bottom: 20px; text-align: center; font-weight: 700;">💝 BÔNUS:</h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: center; background-color: #f8f9fa; padding: 15px; border-radius: 10px;">
+                        <div style="min-width: 30px; height: 30px; background-color: #ff6b6b; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-gift" style="color: white; font-size: 14px;"></i>
+                        </div>
+                        <p style="font-size: 16px; color: #333; margin: 0;">🎁 Meditações para Corpo e Mente</p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: #f8f9fa; padding: 15px; border-radius: 10px;">
+                        <div style="min-width: 30px; height: 30px; background-color: #ff6b6b; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-gift" style="color: white; font-size: 14px;"></i>
+                        </div>
+                        <p style="font-size: 16px; color: #333; margin: 0;">🎁 Receitas termogênicas naturais</p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; background-color: #f8f9fa; padding: 15px; border-radius: 10px;">
+                        <div style="min-width: 30px; height: 30px; background-color: #ff6b6b; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                            <i class="fas fa-gift" style="color: white; font-size: 14px;"></i>
+                        </div>
+                        <p style="font-size: 16px; color: #333; margin: 0;">🎁 Mini-curso: "Como ser admirada e desejada todos os dias"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chamada para ação final -->
+            <div style="background-color: #e9f7ec; border-radius: 15px; padding: 30px; margin: 0 auto 25px; max-width: 90%; box-shadow: 0 5px 15px rgba(100, 180, 100, 0.2); text-align: center;">
+                <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <i class="fas fa-mobile-alt" style="color: #2c7a39;"></i>
+                        <span style="font-size: 14px; color: #333;">Acesso imediato</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <i class="fas fa-envelope" style="color: #2c7a39;"></i>
+                        <span style="font-size: 14px; color: #333;">Entrega por WhatsApp</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <i class="fas fa-lock" style="color: #2c7a39;"></i>
+                        <span style="font-size: 14px; color: #333;">Garantia total</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="cta-button-large" style="display: block; background: linear-gradient(45deg, #4caf50, #2c7a39); color: white; text-decoration: none; border-radius: 50px; padding: 20px; font-size: 20px; font-weight: 700; margin: 20px auto; max-width: 400px; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(100, 180, 100, 0.3); animation: pulse 2s infinite;">
+                    QUERO VOLTAR A ME SENTIR LINDA
+                    <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.3); transform: skewX(-25deg); transition: all 0.5s; z-index: 1; animation: shine 3s infinite;"></span>
+                </a>
+                
+                <p style="font-size: 16px; color: #555; margin-top: 20px;">💬 Você não está sozinha.<br>Bora começar juntas o projeto verão!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="sounds/suave.js"></script>
+    <script src="sounds/coin.js"></script>
+    <script src="script.js"></script>
+    <script src="sales-animations.js"></script>
+</body>
+</html>
