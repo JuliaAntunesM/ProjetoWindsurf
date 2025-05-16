@@ -1,0 +1,328 @@
+/* Estilos para subtítulos e elementos de destaque do Detox Alimentar NatáliaFit */
+
+.sub-headline {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 2px 5px rgba(46, 204, 113, 0.15);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 15px;
+}
+
+.sub-headline::before,
+.sub-headline::after {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-light);
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sub-headline::before {
+    left: -10px;
+}
+
+.sub-headline::after {
+    right: -10px;
+}
+
+.highlight-text {
+    background-image: var(--gradient-primary);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 2px 5px rgba(46, 204, 113, 0.2);
+    display: inline-block;
+    position: relative;
+    margin: 0 2px;
+}
+
+.highlight-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 6px;
+    animation: highlightShine 2s infinite;
+}
+
+@keyframes highlightShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.special-offer {
+    background-image: var(--gradient-accent);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 30px 0;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.25);
+    transform: rotate(-1deg);
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+.special-offer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shine 2.5s infinite;
+}
+
+.special-offer::after {
+    content: 'OFERTA ESPECIAL';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--accent-color);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 10px;
+    transform: rotate(3deg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes shine {
+    to {
+        left: 100%;
+    }
+}
+
+.price-container {
+    text-align: center;
+    margin: 35px 0;
+    padding: 20px;
+    background-color: var(--primary-light);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.price-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="3" fill="%232ecc7122"/></svg>');
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.original-price {
+    font-size: 20px;
+    color: var(--light-text);
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.original-price::after {
+    content: 'ANTES';
+    position: absolute;
+    top: 0;
+    right: -45px;
+    background-color: var(--light-text);
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.discount-price {
+    font-size: 38px;
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 10px 0;
+    text-shadow: 0 2px 5px rgba(46, 204, 113, 0.2);
+}
+
+.discount-price::before {
+    content: 'HOJE';
+    position: absolute;
+    top: -8px;
+    right: -40px;
+    background-image: var(--gradient-accent);
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    transform: rotate(5deg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.installment-info {
+    font-size: 16px;
+    color: var(--primary-dark);
+    margin-top: 10px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 3px 8px rgba(46, 204, 113, 0.1);
+}
+
+.countdown-container {
+    background-image: linear-gradient(135deg, var(--primary-light), white);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    margin: 30px 0;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15);
+    border: 2px solid var(--primary-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-container::before {
+    content: '⏰';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.countdown-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.countdown-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background-image: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.countdown-item {
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 60px;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.15);
+    border: 1px solid var(--primary-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-image: var(--gradient-primary);
+}
+
+.countdown-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.countdown-label {
+    font-size: 12px;
+    color: var(--light-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sub-headline {
+        font-size: 24px;
+    }
+    
+    .discount-price {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sub-headline {
+        font-size: 22px;
+    }
+    
+    .countdown-timer {
+        gap: 5px;
+    }
+    
+    .countdown-item {
+        min-width: 40px;
+        padding: 5px;
+    }
+    
+    .countdown-number {
+        font-size: 16px;
+    }
+    
+    .countdown-label {
+        font-size: 10px;
+    }
+}

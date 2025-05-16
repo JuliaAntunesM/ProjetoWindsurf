@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatáliaFit Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/testimonial-styles.css">
+    <link rel="stylesheet" href="css/sub-headline-styles.css">
+    <link rel="stylesheet" href="css/visual-elements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Tela 1: Boas-vindas -->
+        <div id="question-1" class="screen active">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">🌟 Descubra Como Tonificar Seu Corpo Sem Precisar Sair de Casa!</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Você gostaria de descobrir como tonificar seu corpo usando apenas a parede da sua casa?</p>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">✨</span>
+                        <div class="option-text">
+                            <strong>Sim, quero muito!</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🤔</span>
+                        <div class="option-text">
+                            <strong>Talvez... depende do que for preciso.</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🧐</span>
+                        <div class="option-text">
+                            <strong>Não sei, estou curiosa.</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 2: Informação motivacional -->
+        <div id="question-2" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 9%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Mais de 75.000 mulheres já começaram a transformar seu corpo sem precisar pisar numa academia!</h2>
+                
+                <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="images/imagem1.jpg" alt="Mulher madura se exercitando feliz" class="rounded-image">
+                </div>
+                
+                <button class="btn primary-btn pulse" onclick="nextPage('question-3')">QUERO SABER COMO</button>
+
+            </div>
+        </div>
+
+        <!-- Tela 3: Motivação para treino -->
+        <div id="question-3" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 18%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">O que mais te motivaria a começar um treino em casa?</h2>
+                <p class="animate__animated animate__fadeIn">Selecione todas as opções que te motivam</p>
+                
+                <div class="quiz-options checkbox-options">
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Deixar a barriga mais firme</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Ter um bumbum mais durinho</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Afinar a cintura</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Melhorar minha autoestima</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 4: Insatisfação física -->
+        <div id="question-4" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 27%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Como você descreveria hoje sua principal insatisfação física?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">😣</span>
+                        <div class="option-text">
+                            <strong>Flacidez na barriga</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">😔</span>
+                        <div class="option-text">
+                            <strong>Celulite ou varizes</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">😩</span>
+                        <div class="option-text">
+                            <strong>Inchaço corporal</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">💥</span>
+                        <div class="option-text">
+                            <strong>Quero mudar tudo!</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 5: Vida amorosa e autoestima -->
+        <div id="question-5" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 36%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Você sente que seu corpo influencia na sua vida amorosa ou autoestima?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">💔</span>
+                        <div class="option-text">
+                            <strong>Sim, muito.</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">😕</span>
+                        <div class="option-text">
+                            <strong>Um pouco, mas incomoda.</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🤷‍♀️</span>
+                        <div class="option-text">
+                            <strong>Não sei, mas gostaria de me sentir melhor.</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 6: Bumbum -->
+        <div id="question-6" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 45%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Em relação ao seu bumbum, como você se sente?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🍑</span>
+                        <div class="option-text">
+                            <strong>Gostaria que fosse mais durinho</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🤔</span>
+                        <div class="option-text">
+                            <strong>Acho que poderia melhorar...</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">😊</span>
+                        <div class="option-text">
+                            <strong>Estou satisfeita.</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 7: Cintura -->
+        <div id="question-7" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 54%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Em relação à sua cintura, como você se sente?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">⏰</span>
+                        <div class="option-text">
+                            <strong>Queria ter a cintura mais fina</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">😕</span>
+                        <div class="option-text">
+                            <strong>Às vezes me incomodo com a barriga saliente.</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">👍</span>
+                        <div class="option-text">
+                            <strong>Estou ok com minha cintura.</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 8: Medo de falta de cuidados -->
+        <div id="question-8" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 63%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Você tem medo de que a falta de cuidados com o corpo possa afetar seu relacionamento ou sua autoestima?</h2>
+                
+                <div class="quiz-options">
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">😢</span>
+                        <div class="option-text">
+                            <strong>Sim, tenho esse receio...</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🤔</span>
+                        <div class="option-text">
+                            <strong>Nunca tinha pensado nisso, mas faz sentido.</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <span class="emoji">🙂</span>
+                        <div class="option-text">
+                            <strong>Não me preocupo com isso.</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 9: 10 minutos por dia -->
+        <div id="question-9" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 72%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Se você pudesse melhorar seu corpo e sua confiança treinando apenas 10 minutos por dia, você tentaria?</h2>
+                
+                <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="images/imagem2.jpg" alt="Mulher madura sorridente pós-treino" class="rounded-image">
+                </div>
+                
+                <button class="btn primary-btn pulse" onclick="nextPage('question-10')">QUERO TENTAR</button>
+            </div>
+        </div>
+
+        <!-- Tela 10: Preferência de treinos -->
+        <div id="question-10" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 81%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Você prefere treinos que...</h2>
+                
+                <div class="quiz-options checkbox-options">
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Fortaleçam glúteos e coxas</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Modelem a cintura</strong>
+                        </div>
+                    </div>
+                    <div class="option" onclick="toggleCheckbox(this)">
+                        <span class="checkbox"></span>
+                        <div class="option-text">
+                            <strong>Melhorem a postura e reduzam o inchaço</strong>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!-- Tela 11: Plano personalizado -->
+        <div id="question-11" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="animate__animated animate__fadeIn">Quer receber um plano 100% personalizado para começar?</h2>
+                
+                <div class="form-group animate__animated animate__fadeIn">
+                    <label for="user-name">Seu nome:</label>
+                    <input type="text" id="user-name" class="form-input" placeholder="Digite seu nome aqui" onkeydown="if(event.key === 'Enter') { saveName(); }">
+                </div>
+                
+                <button class="btn primary-btn pulse" onclick="saveName(); showLoading()">QUERO RECEBER MEU PLANO</button>
+            </div>
+        </div>
+
+        <!-- Tela de Carregamento/Análise -->
+        <div id="loading-screen" class="screen">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="loading-container animate__animated animate__fadeIn">
+                    <h2 class="animate__animated animate__fadeIn">🎉 Parabéns, <span id="user-name-display">!</span> Seu Plano Personalizado Está Sendo Gerado!</h2>
+                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                        <div class="progress-bar-animated"></div>
+                    </div>
+                    <p class="animate__animated animate__fadeIn animate__delay-1s">Estamos montando seu plano de treino personalizado baseado nas suas respostas!</p>
+                    <p class="animate__animated animate__fadeIn animate__delay-2s">👉 Prepare-se para descobrir como tonificar seu corpo, firmar a barriga e definir seu bumbum usando apenas a parede da sua casa!</p>
+                    <p class="animate__animated animate__fadeIn animate__delay-3s">Isso pode mudar completamente como você se sente ao se olhar no espelho — mais leve, mais firme e muito mais confiante. ✨</p>
+                    <div class="benefits animate__animated animate__fadeIn animate__delay-3s">
+                        <p>🛡️ <strong>Importante:</strong> seu plano é 100% adaptado para mulheres como você — sem exercícios impossíveis, sem necessidade de academia, e respeitando seu tempo e seu ritmo.</p>
+                    </div>
+                    <button class="btn primary-btn pulse animate__animated animate__fadeIn animate__delay-4s" onclick="nextPage('results-screen')">QUERO ACESSAR MEU PLANO AGORA 🔥</button>
+                    <p class="tip animate__animated animate__fadeIn animate__delay-4s"><strong>📣 Dica de Ouro:</strong><br>Fique atenta! Na próxima página, vou explicar como centenas de mulheres com o seu perfil conquistaram resultados incríveis em apenas algumas semanas, sem sair de casa. Você vai poder se inspirar e começar também!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Resultados (Página de Vendas) -->
+        <div id="results-screen" class="screen">
+            <div class="header sales-header">
+                <div class="logo-container">
+                    <img src="Logo/logo.png" alt="NatáliaFit Logo" class="logo-image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="content sales-content">
+
+
+                <!-- Sub-headline de apoio com ícones -->
+                <div class="sales-section sub-headline-section animate__animated animate__fadeIn animate__delay-1s">
+                    <h3 class="support-text">Sem academia. Sem equipamentos. Sem desculpas.</h3>
+                    
+                    <div class="feature-icons">
+                        <div class="feature-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="icon-text">Treinos em casa</div>
+                        </div>
+                        
+                        <div class="feature-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-stopwatch"></i>
+                            </div>
+                            <div class="icon-text">10 minutos</div>
+                        </div>
+                        
+                        <div class="feature-icon">
+                            <div class="icon-circle">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="icon-text">Resultados reais</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Identificação com a dor (reduzida) -->
+                <div class="sales-section pain-section animate__animated animate__fadeIn animate__delay-2s">
+                    <h3 class="pain-title">Insatisfeita com seu corpo?</h3>
+                    <p class="pain-text">Milhares de mulheres como você conseguiram transformar seus corpos sem precisar de academia ou equipamentos caros.</p>
+                </div>
+
+
+
+                <!-- Prova Social -->
+                <div class="sales-section testimonial-section animate__animated animate__fadeIn animate__delay-3s">
+                    <h3 class="section-title">📈 O QUE DIZEM NOSSAS ALUNAS</h3>
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="FotosComentarios/6.png" alt="Foto de Ana Paula" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #ff69b4; object-fit: cover;">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Depois de anos tentando dietas e treinos difíceis, finalmente encontrei algo que consigo fazer! Meu corpo mudou muito em poucas semanas!"</strong></p>
+                                <cite>— Ana Paula, 47 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                        <img src="AntesEDepois/1.png" alt="Antes e Depois - Resultados Reais" class="rounded-image">
+                    </div>
+                </div>
+
+                <!-- Primeira CTA -->
+                <div class="sales-section cta-section animate__animated animate__fadeIn animate__delay-3s">
+                    <h3 class="cta-title">🚀 Comece agora a transformação que você merece!</h3>
+                    <button class="btn primary-btn large-btn pulse" onclick="window.location.href='https://pay.kiwify.com.br/fbVOj48'">
+                        QUERO MEU PLANO PERSONALIZADO 🔥
+                    </button>
+                </div>
+
+                <!-- Sobre o Método - Visual Cards -->
+                <div class="method-banner animate__animated animate__fadeIn animate__delay-2s">
+                    <i class="fas fa-gem method-icon"></i>
+                    <h2 class="method-title">Método Parede Fit</h2>
+                    <p class="method-description">Transforme seu corpo usando apenas a parede da sua casa</p>
+                </div>
+                
+                <div class="visual-cards-container animate__animated animate__fadeIn animate__delay-3s">
+                    <div class="visual-card">
+                        <div class="icon-container">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <h3 class="card-title">Treinos Rápidos</h3>
+                        <p>Apenas 10 minutos por dia para resultados incríveis</p>
+                    </div>
+                    
+                    <div class="visual-card">
+                        <div class="icon-container">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="card-title">Sem Academia</h3>
+                        <p>Treine no conforto da sua casa, sem equipamentos</p>
+                    </div>
+                    
+                    <div class="visual-card">
+                        <div class="icon-container">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="card-title">Para Iniciantes</h3>
+                        <p>Exercícios seguros e adaptados para qualquer nível</p>
+                    </div>
+                </div>
+
+                <!-- Resultados Esperados - Visual Grid -->
+                <div class="sales-section results-section animate__animated animate__fadeIn animate__delay-4s">
+                    <h3 class="section-title">✨ RESULTADOS TRANSFORMADORES</h3>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-1s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-venus"></i>
+                            </div>
+                            <div class="benefit-text">Barriga mais definida e tonificada</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-1s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-hourglass"></i>
+                            </div>
+                            <div class="benefit-text">Cintura mais fina e marcada</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="benefit-text">Bumbum mais firme e empinado</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-tint-slash"></i>
+                            </div>
+                            <div class="benefit-text">Redução de celulite e retenção</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-3s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="benefit-text">Mais autoestima e confiança</div>
+                        </div>
+                        
+                        <div class="benefit-item animate__animated animate__fadeIn animate__delay-3s">
+                            <div class="benefit-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="benefit-text">Mais energia e disposição no dia a dia</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mais Depoimentos -->
+                <div class="sales-section more-testimonials animate__animated animate__fadeIn animate__delay-5s">
+                    <h3 class="section-title">📣 DEPOIMENTOS REAIS</h3>
+                    
+                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                        <img src="images/imagem4.jpg" alt="Resultados reais do Método Parede Fit" class="rounded-image">
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="FotosComentarios/1.png" alt="Foto de Carla M.">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Comecei desconfiada, mas hoje minha barriga está mais durinha e meu marido vive me elogiando. Me sinto outra mulher!"</strong></p>
+                                <cite>— Carla M., 44 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="FotosComentarios/2.png" alt="Foto de Sônia F.">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Nunca pensei que 10 minutos pudessem fazer tanta diferença. Melhor decisão que tomei por mim!"</strong></p>
+                                <cite>— Sônia F., 49 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="FotosComentarios/3.png" alt="Foto de Renata L.">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Já tinha tentado várias dietas e exercícios, mas só com o Método Parede Fit consegui resultados reais. Minha cintura diminuiu 4cm em apenas 3 semanas!"</strong></p>
+                                <cite>— Renata L., 47 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="FotosComentarios/4.png" alt="Foto de Márcia T.">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Tenho artrose no joelho e achei que não conseguiria fazer exercícios, mas os treinos na parede são perfeitos para mim. Sem impacto e com resultados incríveis!"</strong></p>
+                                <cite>— Márcia T., 52 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="FotosComentarios/5.png" alt="Foto de Patrícia S.">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Depois dos 45 anos, achei que era impossível recuperar minha forma. O Método Parede Fit me provou o contrário. Meu bumbum está mais empinado e firme do que há 10 anos!"</strong></p>
+                                <cite>— Patrícia S., 48 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- O que você vai receber -->
+                <div class="sales-section offer-section animate__animated animate__fadeIn animate__delay-5s">
+                    <h3 class="section-title">🎯 O QUE VOCÊ VAI RECEBER</h3>
+                    
+                    <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
+                        <img src="images/imagem5.jpg" alt="Kit completo do Método Parede Fit" class="rounded-image">
+                    </div>
+                    
+                    <ul class="offer-list">
+                        <li>Programa completo de Treinos na Parede</li>
+                        <li>Sequência de exercícios focados em bumbum, abdômen e cintura</li>
+                        <li>Rotina rápida para praticar em casa sem equipamentos</li>
+                    </ul>
+                </div>
+
+                <!-- CTA Final -->
+                <div class="sales-section final-cta animate__animated animate__fadeIn animate__delay-5s">
+                    <h3 class="cta-title">Está na hora de investir em você!</h3>
+                    <button class="btn primary-btn large-btn pulse" onclick="window.location.href='https://pay.kiwify.com.br/fbVOj48'">
+                        QUERO COMEÇAR AGORA MESMO 🔥
+                    </button>
+                    <p class="guarantee"><strong>🔐 Pagamento 100% seguro</strong> | Satisfação garantida ou seu dinheiro de volta</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>

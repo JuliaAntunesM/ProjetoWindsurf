@@ -1,0 +1,65 @@
+{
+  "name": "NatáliaFit Site",
+  "pages": [
+    {
+      "id": "welcome",
+      "title": "Bem-vinda ao Desafio NatáliaFit!",
+      "subtitle": "Descubra como transformar seu corpo em apenas 15 minutos por dia!",
+      "progress": 0,
+      "content": {
+        "benefits": [
+          "Adeus flacidez e celulite!",
+          "Bumbum durinho e cintura fina!",
+          "Sem dietas malucas, sem academia!"
+        ],
+        "buttonText": "COMEÇAR AGORA"
+      }
+    },
+    {
+      "id": "question",
+      "title": "O que mais te incomoda no seu corpo hoje?",
+      "subtitle": "Selecione todas as opções que já te fizeram sentir insegura",
+      "progress": 50,
+      "content": {
+        "options": [
+          {
+            "emoji": "🙁",
+            "text": "<strong>Minha barriga está flácida e caída</strong>... As roupas marcam e eu evito usar biquíni. 😞"
+          },
+          {
+            "emoji": "🚨",
+            "text": "<strong>Meu bumbum perdeu volume e está com celulite</strong>... Quando vejo no espelho, só penso em cobrir. 🍑"
+          },
+          {
+            "emoji": "🫣",
+            "text": "<strong>Já tentei de tudo e nada resolveu</strong>... Dietas, academia, cremes, mas minha pele continua flácida! 😩"
+          },
+          {
+            "emoji": "👙",
+            "text": "<strong>Me sinto menos atraente no meu relacionamento</strong>... Meu marido/namorado já não me olha como antes. 💔"
+          }
+        ],
+        "footer": "Se você marcou pelo menos uma opção, já está na hora de mudar!",
+        "buttonText": "QUERO ACABAR COM ISSO!"
+      }
+    },
+    {
+      "id": "results",
+      "title": "Seu plano de exercícios está pronto! 🎉",
+      "subtitle": "Baseado nas suas respostas, você pode <strong>alcançar seu corpo dos sonhos</strong> com <strong>apenas 15 minutos por dia!</strong>",
+      "progress": 100,
+      "content": {
+        "loading": {
+          "title": "Analisando...",
+          "subtitle": "Estamos analisando suas respostas..."
+        },
+        "benefits": [
+          "Adeus flacidez e celulite!",
+          "Bumbum durinho e cintura fina!",
+          "Sem dietas malucas, sem academia!"
+        ],
+        "buttonText": "QUERO PARTICIPAR DO DESAFIO"
+      }
+    }
+  ]
+}
