@@ -1116,3 +1116,71 @@ body {
     50% { transform: scale(1.3); color: gold; }
     100% { transform: scale(1); }
 }
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 100vw;
+        padding: 10px 2vw;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+    }
+    .carousel-slides {
+        max-width: 98vw !important;
+        min-height: 180px !important;
+    }
+    .carousel-item {
+        min-width: 0 !important;
+        max-width: 90vw !important;
+        padding: 10px 2vw 8px 2vw !important;
+        border-radius: 18px !important;
+    }
+    .carousel-item img {
+        width: 90vw !important;
+        max-width: 90vw !important;
+        height: 40vw !important;
+        max-height: 220px !important;
+        border-radius: 12px !important;
+    }
+    #carousel-prev, #carousel-next {
+        left: 0 !important;
+        right: 0 !important;
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 18px !important;
+        top: 45% !important;
+        transform: translateY(-50%);
+    }
+    .cta-button, .btn {
+        font-size: 15px !important;
+        padding: 14px 10px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100vw !important;
+    }
+    h1, h2, h3 {
+        font-size: 6vw !important;
+        line-height: 1.2 !important;
+    }
+    .final-score-container, .dopamine-shimmer, .reward-glow, .value-highlight {
+        max-width: 98vw !important;
+        padding: 10px 2vw !important;
+    }
+    /* Cards de antes e depois */
+    .cards-transform {
+        flex-direction: column !important;
+        gap: 18px !important;
+    }
+    .cards-transform > div {
+        width: 95vw !important;
+        min-width: 0 !important;
+        max-width: 98vw !important;
+        margin: 0 auto !important;
+        border-radius: 18px !important;
+    }
+    .cards-transform img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+    }
+}
