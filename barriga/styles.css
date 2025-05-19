@@ -1131,16 +1131,21 @@ body {
     }
     .carousel-item {
         min-width: 0 !important;
-        max-width: 90vw !important;
+        max-width: 95vw !important;
         padding: 10px 2vw 8px 2vw !important;
         border-radius: 18px !important;
+        margin: 0 auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .carousel-item img {
-        width: 90vw !important;
-        max-width: 90vw !important;
-        height: 40vw !important;
-        max-height: 220px !important;
+        width: 95vw !important;
+        max-width: 350px !important;
+        height: auto !important;
         border-radius: 12px !important;
+        display: block;
+        margin: 0 auto;
     }
     #carousel-prev, #carousel-next {
         left: 0 !important;
@@ -1173,14 +1178,17 @@ body {
     }
     .cards-transform > div {
         width: 95vw !important;
+        max-width: 350px !important;
         min-width: 0 !important;
-        max-width: 98vw !important;
         margin: 0 auto !important;
         border-radius: 18px !important;
     }
     .cards-transform img {
         width: 100% !important;
+        max-width: 350px !important;
         height: auto !important;
         border-radius: 12px !important;
+        display: block;
+        margin: 0 auto;
     }
 }
