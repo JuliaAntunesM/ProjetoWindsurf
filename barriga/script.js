@@ -9,55 +9,60 @@ document.addEventListener('DOMContentLoaded', function() {
     const optionsContainer = document.getElementById('options-container');
     const progressBar = document.querySelector('.progress');
 
-    // Imagens geradas por IA para cada opção de resposta
+    // Imagens para cada opção de resposta (usando as imagens da pasta 'images')
     const optionImages = {
         0: { // Pergunta 1: "Qual dessas frases representa melhor como você se sente ao colocar uma roupa mais justa?"
-            0: "ImagensRespostas/1-1.jpg", // "Me sinto desconfortável, como se algo estivesse marcando"
-            1: "ImagensRespostas/1-2.jpg", // "Gosto, mas sempre tento disfarçar a barriguinha"
-            2: "ImagensRespostas/1-3.jpg", // "Fico insegura, prefiro roupas mais largas"
-            3: "ImagensRespostas/1-4.jpg" // "Me sinto bem, mas adoraria ver minha cintura mais fina"
+            0: "images/1-1.jpg", // "Me sinto desconfortável, como se algo estivesse marcando"
+            1: "images/1-2.jpg", // "Gosto, mas sempre tento disfarçar a barriguinha"
+            2: "images/1-3.jpg", // "Fico insegura, prefiro roupas mais largas"
+            3: "images/1-4.jpg" // "Me sinto bem, mas adoraria ver minha cintura mais fina"
         },
         1: { // Pergunta 2: "+42.357 mulheres descobriram como afinar a cintura e causar admiração no espelho e no olhar do parceiro"
-            0: "ImagensRespostas/2-1.jpg", // "EU TAMBÉM QUERO ISSO!"
+            0: "images/2.jpg", // "EU TAMBÉM QUERO ISSO!"
+            1: "images/2-2.jpg", // Imagem adicional disponível
+            2: "images/2-3.jpg"  // Imagem adicional disponível
         },
         2: { // Pergunta 3: "Qual dessas frases representa melhor o que você sente quando se olha no espelho?"
-            0: "ImagensRespostas/3-1.jpg", // "Me sinto frustrada, queria um corpo mais bonito"
-            1: "ImagensRespostas/3-2.jpg", // "Evito espelhos porque sempre me comparo com meninas das redes sociais"
-            2: "ImagensRespostas/3-3.jpg", // "Sinto que poderia estar bem melhor, mas não sei por onde começar"
+            0: "images/2-1.jpg", // "Me sinto frustrada, queria um corpo mais bonito"
+            1: "images/2-2.jpg", // "Evito espelhos porque sempre me comparo com meninas das redes sociais"
+            2: "images/2-3.jpg", // "Sinto que poderia estar bem melhor, mas não sei por onde começar"
         },
         3: { // Pergunta 4: "Já deixou de usar uma roupa por vergonha da barriga?"
-            0: "ImagensRespostas/4-1.jpg", // "Sim, tenho vergonha de usar biquini em lugares com muita gente"
-            1: "ImagensRespostas/4-2.jpg", // "Sim, sempre me incomodo com vestido coladinhos que ficam marcando"
-            2: "ImagensRespostas/4-3.jpg", // "As vezes isso me deixa insegura, acabo sempre achando que não tenho nenhuma roupa boa"
+            0: "images/3-1.jpg", // "Sim, tenho vergonha de usar biquini em lugares com muita gente"
+            1: "images/3-2.jpg", // "Sim, sempre me incomodo com vestido coladinhos que ficam marcando"
+            2: "images/3-3.jpg", // "As vezes isso me deixa insegura, acabo sempre achando que não tenho nenhuma roupa boa"
+            3: "images/1-4.jpg" // "Todas as opções anteriores"
         },
         4: { // Pergunta 5: "Como você se sentiria ao ver o olhar de admiração do seu marido/namorado quando você coloca uma roupa mais justa?"
-            0: "ImagensRespostas/5-1.jpg", // "Poderosa"
-            1: "ImagensRespostas/5-2.jpg", // "Desejada"
-            2: "ImagensRespostas/5-3.jpg", // "Confiante"
-            3: "ImagensRespostas/5-4.jpg" // "Tudo isso junto!"
+            0: "images/4-1.jpg", // "Poderosa"
+            1: "images/4-2.jpg", // "Desejada"
+            2: "images/4-3.jpg", // "Confiante"
+            3: "images/4-4.jpg" // "Tudo isso junto!"
         },
         5: { // Pergunta 6: "Você já tentou alguma dessas estratégias para perder barriga e nenhuma delas funcionou como eu queria?"
-            0: "ImagensRespostas/6-1.jpg", // "Dietas restritivas"
-            1: "ImagensRespostas/6-2.jpg", // "Termogênicos"
-            2: "ImagensRespostas/6-3.jpg", // "Academia"
-            3: "ImagensRespostas/6-4.jpg" // "Drenagem linfática"
+            0: "images/5-1.jpg", // "Dietas restritivas"
+            1: "images/5-2.jpg", // "Termogênicos"
+            2: "images/5-3.jpg", // "Academia"
+            3: "images/5-4.jpg" // "Drenagem linfática"
         },
         6: { // Pergunta 7: "Cansada de fazer mil coisas e não ver resultados reais?"
-            0: "ImagensRespostas/7-1.jpg", // "QUERO ENTENDER POR QUÊ"
+            0: "images/8-1.jpg", // "QUERO ENTENDER POR QUÊ"
+            1: "images/8-2.jpg", // "SIM, ESTOU CANSADA"
+            2: "images/8-3.jpg"  // "PRECISO DE UMA SOLUÇÃO"
         },
         7: { // Pergunta 8: "Quanto tempo você está tentando mudar isso?"
-            0: "ImagensRespostas/8-1.jpg", // "Menos de 1 mês"
-            1: "ImagensRespostas/8-2.jpg", // "De 1 a 6 meses"
-            2: "ImagensRespostas/8-3.jpg", // "Mais de 6 meses"
-            3: "ImagensRespostas/8-4.jpg" // "Já desisti várias vezes"
+            0: "images/6-1.jpg", // "Menos de 1 mês"
+            1: "images/6-2.jpg", // "De 1 a 6 meses"
+            2: "images/6-3.jpg", // "Mais de 6 meses"
+            3: "images/6-4.jpg"  // "Já desisti várias vezes"
         },
         8: { // Pergunta 9: "Imagina você daqui a alguns dias com a barriga visivelmente mais fina, sem precisar fazer academia..."
-            0: "ImagensRespostas/9-1.jpg", // "Eu PRECISO disso"
-            1: "ImagensRespostas/9-2.jpg", // "Seria um sonho"
-            2: "ImagensRespostas/9-3.jpg", // "Eu topo tentar"
+            0: "images/7-1.jpg", // "Eu PRECISO disso"
+            1: "images/7-2.jpg", // "Seria um sonho"
+            2: "images/7-3.jpg"  // "Eu topo tentar"
         },
         9: { // Pergunta 10: "Mulheres comuns, com rotinas reais, já estão conseguindo resultados visíveis com essa técnica"
-            0: "ImagensRespostas/10-1.jpg", // "PARECE UM SONHO!"
+            0: "images/9.jpg" // "PARECE UM SONHO!"
         }
     };
     
@@ -91,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
             options: [
                 "Sim, tenho vergonha de usar biquini em lugares com muita gente",
                 "Sim, sempre me incomodo com vestido coladinhos que ficam marcando",
-                "As vezes isso me deixa insegura, acabo sempre achando que não tenho nenhuma roupa boa"
+                "As vezes isso me deixa insegura, acabo sempre achando que não tenho nenhuma roupa boa",
+                "Todas as opções anteriores"
             ]
         },
         {
@@ -115,7 +121,9 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             question: "Cansada de fazer mil coisas e não ver resultados reais?",
             options: [
-                "QUERO ENTENDER POR QUÊ"
+                "QUERO ENTENDER POR QUÊ",
+                "SIM, ESTOU CANSADA",
+                "PRECISO DE UMA SOLUÇÃO"
             ]
         },
         {
@@ -151,19 +159,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adicionar elementos decorativos flutuantes
     function addFloatingElements() {
         const floatingContainer = document.querySelector('.floating-vegetables');
-        const vegetableImages = [
-            'images/broccoli.png',
-            'images/lettuce.png',
-            'images/cucumber.png',
-            'images/spinach.png',
-            'images/kale.png',
-            'images/celery.png'
-        ];
+        
+        // Emojis de verduras para usar como elementos flutuantes
+        const vegetableEmojis = ['🥦', '🥬', '🥒', '🥗', '🍃', '🌿', '🍀', '🥑', '🥝', '🫑'];
         
         for (let i = 0; i < 12; i++) {
-            const vegetable = document.createElement('img');
-            vegetable.src = vegetableImages[Math.floor(Math.random() * vegetableImages.length)];
+            const vegetable = document.createElement('div');
+            vegetable.textContent = vegetableEmojis[Math.floor(Math.random() * vegetableEmojis.length)];
             vegetable.classList.add('vegetable');
+            vegetable.style.fontSize = '80px'; // Tamanho do emoji
+            vegetable.style.opacity = '0.3';   // Opacidade conforme solicitado
             
             // Posicionamento aleatório
             vegetable.style.top = `${Math.random() * 100}%`;
@@ -197,10 +202,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const progressPercentage = (index / questions.length) * 100;
         progressBar.style.width = `${progressPercentage}%`;
         
+        // Verificar se há apenas uma opção de resposta
+        const singleOption = questions[index].options.length === 1;
+        
+        // Adicionar classe especial ao container quando há apenas uma opção
+        if (singleOption) {
+            optionsContainer.classList.add('single-option');
+        } else {
+            optionsContainer.classList.remove('single-option');
+        }
+        
         // Criar opções de resposta
         questions[index].options.forEach((option, optionIndex) => {
             const optionElement = document.createElement('div');
             optionElement.classList.add('option');
+            
+            // Adicionar classe especial quando há apenas uma opção
+            if (singleOption) {
+                optionElement.classList.add('single');
+            }
             
             // Estrutura da opção
             let optionContent = '';
@@ -265,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         
-        const colors = ['#4caf50', '#a5d6a7', '#c3e6cb', '#2c7a39', '#81c784'];
+        const colors = ['#ffccd5', '#ff9eb6', '#d63384', '#ff5bae', '#ff80ab'];
         
         for (let i = 0; i < 30; i++) {
             const confetti = document.createElement('div');
