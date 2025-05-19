@@ -301,23 +301,14 @@ p {
     font-size: 1.2rem;
 }
 
-.btn {
-    display: block;
+.btn, .primary-btn {
+    padding: 14px 8px;
+    font-size: 1rem;
+    border-radius: 35px;
+    margin-top: 20px;
     width: 100%;
-    padding: 18px;
-    border: none;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.05rem;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.4s ease;
-    margin-top: 35px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    min-width: unset;
+    box-sizing: border-box;
 }
 
 .btn::before {
@@ -865,7 +856,7 @@ p {
 }
 
 .testimonial:before {
-    content: "“";
+    content: "";
     font-size: 4.5rem;
     color: rgba(255, 105, 180, 0.1);
     position: absolute;
