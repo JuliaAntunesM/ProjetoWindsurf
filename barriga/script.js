@@ -69,84 +69,84 @@ document.addEventListener('DOMContentLoaded', function() {
     // Perguntas do quiz
     const questions = [
         {
-            question: "Qual dessas frases representa melhor como você se sente ao colocar uma roupa mais justa?",
+            question: "Como você se sente com roupas justas?",
             options: [
-                "Me sinto desconfortável, como se algo estivesse marcando",
-                "Gosto, mas sempre tento disfarçar a barriguinha",
-                "Fico insegura, prefiro roupas mais largas",
-                "Me sinto bem, mas adoraria ver minha cintura mais fina"
+                "Me sinto desconfortável",
+                "Disfarço a barriga",
+                "Prefiro roupas largas",
+                "Quero afinar a cintura"
             ]
         },
         {
-            question: "✨ +42.357 mulheres descobriram como afinar a cintura e causar admiração no espelho e no olhar do parceiro",
+            question: "Quer ter uma cintura mais fina?",
             options: [
-                "EU TAMBÉM QUERO ISSO!"
+                "SIM, EU QUERO!"
             ]
         },
         {
-            question: "Qual dessas frases representa melhor o que você sente quando se olha no espelho?",
+            question: "O que você sente ao se olhar no espelho?",
             options: [
-                "Me sinto frustrada, queria um corpo mais bonito",
-                "Evito espelhos porque sempre me comparo com meninas das redes sociais",
-                "Sinto que poderia estar bem melhor, mas não sei por onde começar"
+                "Me sinto frustrada com meu corpo",
+                "Me comparo com outras mulheres",
+                "Quero melhorar mas não sei como"
             ]
         },
         {
-            question: "Já deixou de usar uma roupa por vergonha da barriga?",
+            question: "Evita usar certas roupas?",
             options: [
-                "Sim, tenho vergonha de usar biquini em lugares com muita gente",
-                "Sim, sempre me incomodo com vestido coladinhos que ficam marcando",
-                "As vezes isso me deixa insegura, acabo sempre achando que não tenho nenhuma roupa boa",
-                "Todas as opções anteriores"
+                "Sim, evito biquíni",
+                "Sim, evito vestidos justos",
+                "Sim, me sinto insegura",
+                "Todas as opções"
             ]
         },
         {
-            question: "Como você se sentiria ao ver o olhar de admiração do seu marido/namorado quando você coloca uma roupa mais justa?",
+            question: "Como quer se sentir?",
             options: [
                 "Poderosa",
                 "Desejada",
                 "Confiante",
-                "Tudo isso junto!"
+                "Tudo isso!"
             ]
         },
         {
-            question: "Você já tentou alguma dessas estratégias para perder barriga e nenhuma delas funcionou como eu queria?",
+            question: "O que já tentou sem sucesso?",
             options: [
-                "Dietas restritivas",
+                "Dietas",
                 "Termogênicos",
                 "Academia",
-                "Drenagem linfática"
+                "Drenagem"
             ]
         },
         {
-            question: "Cansada de fazer mil coisas e não ver resultados reais?",
+            question: "Cansada de não ver resultados?",
             options: [
-                "QUERO ENTENDER POR QUÊ",
-                "SIM, ESTOU CANSADA",
-                "PRECISO DE UMA SOLUÇÃO"
+                "QUERO ENTENDER",
+                "SIM, MUITO",
+                "PRECISO MUDAR"
             ]
         },
         {
-            question: "Quanto tempo você está tentando mudar isso?",
+            question: "Há quanto tempo tenta mudar?",
             options: [
                 "Menos de 1 mês",
-                "De 1 a 6 meses",
+                "1 a 6 meses",
                 "Mais de 6 meses",
-                "Já desisti várias vezes"
+                "Já desisti"
             ]
         },
         {
-            question: "Imagina você daqui a alguns dias com a barriga visivelmente mais fina, sem precisar fazer academia...",
+            question: "Quer uma barriga mais fina?",
             options: [
-                "Eu PRECISO disso",
-                "Seria um sonho",
-                "Eu topo tentar"
+                "PRECISO DISSO",
+                "SERIA PERFEITO",
+                "QUERO TENTAR"
             ]
         },
         {
-            question: "Mulheres comuns, com rotinas reais, já estão conseguindo resultados visíveis com essa técnica",
+            question: "Outras já conseguiram!",
             options: [
-                "PARECE UM SONHO!"
+                "QUERO TAMBÉM!"
             ]
         }
     ];
