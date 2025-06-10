@@ -102,7 +102,7 @@ body {
     margin-bottom: 15px;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
