@@ -3358,336 +3358,6 @@
         "x": 334.0094092050172,
         "y": 530.0949732577117
       }
-    },
-    {
-      "id": "032344a1-f1b7-4050-8ba7-f528d70222b1",
-      "data": {
-        "url": "https://pay.kiwify.com.br/fbVOj48",
-        "slug": "2v423e0e",
-        "type": "link",
-        "title": "Link"
-      },
-      "type": "function",
-      "width": 320,
-      "height": 80,
-      "dragging": false,
-      "position": {
-        "x": 7078.583017839038,
-        "y": 641.3499298992124
-      },
-      "selected": false,
-      "positionAbsolute": {
-        "x": 7078.583017839038,
-        "y": 641.3499298992124
-      }
-    },
-    {
-      "id": "891d719a-8643-461e-8886-7d3e6812fbba",
-      "data": {
-        "slug": "5j680k2q",
-        "title": "13 PVP",
-        "content": [
-          {
-            "id": "ef87e4e0-baca-470e-8162-c178c9fbe73a",
-            "data": {
-              "size": "90",
-              "image": {
-                "uuid": "d0e4cb24-24d6-4c00-a6b3-f176bafce12c",
-                "width": 500,
-                "height": 150
-              },
-              "style": "default",
-              "custom": true,
-              "backButton": true
-            },
-            "type": "header",
-            "title": "Cabeçalho",
-            "category": "heading"
-          },
-          {
-            "id": "3a572866-e652-45ff-a5e8-2a5718b5bfb6",
-            "data": {
-              "style": "default",
-              "title": "<span style=\"color: rgb(3, 3, 3)\">Seu método personalizado está pronto!</span>",
-              "subtitle": "<span style=\"color: rgb(0, 0, 0)\"><strong>Começando o desafio </strong></span><span style=\"color: rgb(204, 0, 0)\"><strong>HOJE </strong></span><span style=\"color: rgb(0, 0, 0)\"><strong>mesmo,</strong></span><span style=\"color: rgb(3, 7, 18)\"> você pode eliminar a flacidez da sua barriga afinando a cintura, ter glúteos redondinhos e sem celulites </span><strong>apenas 28 dias</strong><span style=\"color: rgb(3, 7, 18)\">, seguindo exercícios específicos para o seu tipo de condicionamento físico.</span>",
-              "alignment": "center",
-              "animation": "fade-in",
-              "titleSize": "text-lg",
-              "subtitleSize": "text-sm"
-            },
-            "type": "title",
-            "title": "Título",
-            "category": "heading"
-          },
-          {
-            "id": "cd9494c8-f2a9-4385-9893-bacebd2323bf",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "d2083aee-3c95-41b7-9448-4c1473393f21",
-                "width": 500,
-                "height": 713
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
-          },
-          {
-            "id": "cd8adbed-1253-49fd-87e9-4440ff8d0942",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "db53467c-4b31-4c90-9899-e041671eab22",
-                "width": 500,
-                "height": 580
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
-          },
-          {
-            "id": "ab3a5ec8-d0fb-493a-b5e6-b8ce1facda85",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "9e6ff704-5f6a-4939-a85e-b8e72fd9abde",
-                "width": 500,
-                "height": 350
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
-          },
-          {
-            "id": "d11e36bf-e740-448f-bf79-4510c3ad89ac",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "d904ae3f-3405-4341-b0da-05bdf5187450",
-                "width": 500,
-                "height": 805
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
-          },
-          {
-            "id": "80096224-d53d-45b8-af7d-1bb8770cc39f",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "54311ece-7c80-4418-bcc4-781cfee6a975",
-                "width": 500,
-                "height": 339
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
-          },
-          {
-            "id": "0c078595-4f71-4226-8268-8fb45c7efbc1",
-            "data": {
-              "size": "w-full",
-              "style": "default",
-              "content": [
-                {
-                  "id": "7be37292-05c1-492d-9aba-3b4939ace005",
-                  "image": {
-                    "uuid": "d7f4ab85-80de-4674-abc8-8e13370c2b86",
-                    "width": 200,
-                    "height": 200
-                  },
-                  "title": "Imagem 1",
-                  "deleted": "2025-02-12T15:07:30.342Z"
-                },
-                {
-                  "id": "e75b531c-c18b-4567-bc1b-29c1803118ef",
-                  "image": {
-                    "uuid": "1b8f790a-7c55-4a6e-b41c-4cd639683cdf",
-                    "width": 1000,
-                    "height": 1000
-                  },
-                  "title": "Imagem 1"
-                },
-                {
-                  "id": "6bc0025d-988d-4b19-a9b3-68d968cc8116",
-                  "image": {
-                    "uuid": "a2a4c525-4008-4410-8c50-a38e910824d6",
-                    "width": 1000,
-                    "height": 1000
-                  },
-                  "title": "Imagem 2"
-                },
-                {
-                  "id": "9d833df7-fc69-441f-97fc-baccf208cf13",
-                  "image": {
-                    "uuid": "e1c6c69d-5a45-4f07-b2b3-6f512911ec3e",
-                    "width": 1000,
-                    "height": 1000
-                  },
-                  "title": "Imagem 3"
-                },
-                {
-                  "id": "03e28a0f-7344-406e-979f-7cfeea29b6ef",
-                  "image": {
-                    "uuid": "d058adcf-925c-430a-a3d3-b1998cdb495c",
-                    "width": 1000,
-                    "height": 1000
-                  },
-                  "title": "Imagem 4"
-                },
-                {
-                  "id": "fbc2e091-61d4-4517-865f-10b6959e3313",
-                  "image": {
-                    "uuid": "2b652e59-131e-4eb9-a551-28db466b3a49",
-                    "width": 1000,
-                    "height": 1000
-                  },
-                  "title": "Imagem 5"
-                },
-                {
-                  "id": "3abdb7da-5176-442e-a39c-c2b55dd25f1b",
-                  "image": {
-                    "uuid": "d3099169-9392-40db-bed2-305c2d3e23df",
-                    "width": 1000,
-                    "height": 1000
-                  },
-                  "title": "Imagem 6"
-                }
-              ],
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "carousel",
-            "title": "Carrossel",
-            "category": "midea"
-          },
-          {
-            "id": "39764a5a-5e57-4835-ad99-25dce9ba4cb4",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "08f84628-b57b-4375-9fae-f84c5c6f0233",
-                "width": 500,
-                "height": 816
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
-          },
-          {
-            "id": "599718fc-62c6-498b-ac0d-f4f0e6d45d4a",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "44f92a44-5d05-440d-ade3-0e9b0e031b6d",
-                "width": 500,
-                "height": 487
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
-          },
-          {
-            "id": "1ec0f2f7-86bd-4a28-8d67-217dfedf0621",
-            "data": {
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z\"/></svg>",
-              "label": "<p>Por dia, menos de</p>",
-              "title": "INSCRIÇÃO",
-              "colors": {
-                "focus": "#0aff3b",
-                "focusBorder": "#09ec18"
-              },
-              "pricing": "<p>R$ 1,00</p>",
-              "subtitle": "Acesso Vitalício",
-              "alignment": "center",
-              "animation": "none"
-            },
-            "type": "pricing",
-            "title": "Preço",
-            "category": "checkout"
-          },
-          {
-            "id": "46cebb11-be51-44be-92aa-2051122d861d",
-            "data": {
-              "fixed": false,
-              "style": "default",
-              "title": "QUERO PARTICIPAR AGORA!",
-              "colors": {
-                "text": "#ffffff",
-                "focus": "#01f92a",
-                "focusBorder": "#0ea503"
-              },
-              "alignment": "center",
-              "animation": "pulse",
-              "videoDelay": false,
-              "videoDelayTime": 10
-            },
-            "type": "button",
-            "title": "Botão",
-            "category": "action"
-          },
-          {
-            "id": "77b69d39-f032-40bb-9d99-ed538fc794f0",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "4fb3bf40-597f-4880-862b-fc871ec7ce1a",
-                "width": 1000,
-                "height": 400
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
-          },
-          {
-            "id": "22b1569c-55fc-4a0e-b939-d44d8ee205f7",
-            "data": {
-              "size": "w-full",
-              "image": {
-                "uuid": "16f634a7-5097-4a20-b70d-0f17e0d8a62b",
-                "width": 1000,
-                "height": 400
-              },
-              "style": "default",
-              "alignment": "center",
-              "animation": "fade-in"
-            },
-            "type": "image",
-            "title": "Imagem",
-            "category": "midea"
           },
           {
             "id": "3dc81935-0be9-48b3-bcbe-5c330707d17f",
@@ -4029,39 +3699,6 @@
             "type": "image",
             "title": "Imagem",
             "category": "midea"
-          },
-          {
-            "id": "23adde85-d535-44a5-ade1-711a2a54b427",
-            "data": {
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\"><path d=\"M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z\"/></svg>",
-              "title": "🔥 Transformação Garantida:",
-              "colors": {
-                "text": "#09dc17"
-              },
-              "content": [
-                {
-                  "id": "8159d57c-d784-4afc-a298-27d3b14b0e61",
-                  "text": "<p><span style=\"color: #000000\">Adeus flacidez e celulite!</span></p>"
-                },
-                {
-                  "id": "320ef681-fc83-443f-a636-5e01e061e173",
-                  "text": "<p><span style=\"color: #000000\">Bumbum durinho e cintura fina!</span></p>"
-                },
-                {
-                  "id": "1a50be53-5581-41d4-8181-c462ab08a733",
-                  "text": "<p><span style=\"color: #030303\">Sem dietas malucas, sem academia!</span></p>"
-                },
-                {
-                  "id": "1c13ed35-6e06-43bd-af74-413afbade735",
-                  "text": "Isso ajuda o seu cliente a ter mais clareza sobre a sua oferta.",
-                  "deleted": "2025-03-24T21:11:49.215Z"
-                }
-              ],
-              "animation": "fade-in"
-            },
-            "type": "benefits",
-            "title": "Benefícios",
-            "category": "checkout"
           },
           {
             "id": "4e40db07-9d8e-4e93-8936-460f31d0962f",
@@ -4669,7 +4306,7 @@
             "id": "59afcd98-8f74-4fa2-938b-937e0f005e77",
             "data": {
               "size": "text-base",
-              "text": "<p><span style=\"color: rgb(51, 51, 51)\"><strong>TREINOS NA PAREDE DE 7 MINUTOS</strong></span></p>",
+              "text": "<p><span style=\"color: rgb(51, 51, 51)\"><strong>Treinos da Natália Fit de 7 minutos</strong></span></p>",
               "style": "default",
               "alignment": "center",
               "animation": "fade-in"
@@ -4677,6 +4314,101 @@
             "type": "text",
             "title": "Texto",
             "category": "reading"
+          }
+        ]
+      },
+      "type": "page",
+      "width": 320,
+      "height": 450,
+      "dragging": false,
+      "position": {
+        "x": 4565.953566567166,
+        "y": 212.49198642230567
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 4565.953566567166,
+        "y": 212.49198642230567
+      }
+    },
+    {
+      "id": "ca2074eb-8978-47e7-9db1-a16f1dda0d33",
+      "data": {
+        "slug": "5j680k2q",
+        "title": "13 PVP",
+        "content": [
+          {
+            "id": "ef87e4e0-baca-470e-8162-c178c9fbe73a",
+            "data": {
+              "size": "90",
+              "image": {
+                "uuid": "d0e4cb24-24d6-4c00-a6b3-f176bafce12c",
+                "width": 500,
+                "height": 150
+              },
+              "style": "default",
+              "custom": true,
+              "backButton": true
+            },
+            "type": "header",
+            "title": "Cabeçalho",
+            "category": "heading"
+          },
+          {
+            "id": "3dc81935-0be9-48b3-bcbe-5c330707d17f",
+            "data": {
+              "size": "w-full",
+              "image": {
+                "uuid": "08f84628-b57b-4375-9fae-f84c5c6f0233",
+                "width": 500,
+                "height": 816
+              },
+              "style": "default",
+              "alignment": "center",
+              "animation": "fade-in"
+            },
+            "type": "image",
+            "title": "Imagem",
+            "category": "midea"
+          },
+          {
+            "id": "4e40db07-9d8e-4e93-8936-460f31d0962f",
+            "data": {
+              "fixed": false,
+              "style": "default",
+              "title": "QUERO PARTICIPAR AGORA!",
+              "colors": {
+                "text": "#ffffff",
+                "focus": "#01f92a",
+                "focusBorder": "#0ea503"
+              },
+              "alignment": "center",
+              "animation": "pulse",
+              "videoDelay": false,
+              "videoDelayTime": 10
+            },
+            "type": "button",
+            "title": "Botão",
+            "category": "action"
+          }
+        ]
+      },
+      "type": "page",
+      "width": 320,
+      "height": 450,
+      "dragging": false,
+      "position": {
+        "x": 334.0094092050172,
+        "y": 530.0949732577117
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 334.0094092050172,
+        "y": 530.0949732577117
+      }
+    }
+  ]
+}
           },
           {
             "id": "f8384998-c783-4632-81a2-36f8a7a9c1e0",
