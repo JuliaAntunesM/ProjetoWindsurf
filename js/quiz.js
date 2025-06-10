@@ -17,6 +17,13 @@ let userAnswers = {
 const dopamineSound = new Audio('sonsdopamina/sonsdopamina.wav');
 dopamineSound.volume = 0.5;
 
+let score = 0;
+function updateScore(points) {
+    score += points;
+    const scoreValue = document.getElementById('score-value');
+    if (scoreValue) scoreValue.textContent = score;
+}
+
 // Função para navegar entre as páginas
 function nextPage(screenId) {
     // Esconde todas as telas
@@ -80,6 +87,7 @@ function selectOption(option) {
         dopamineSound.currentTime = 0;
         dopamineSound.play();
     }
+    updateScore(10);
     const screenId = option.closest('.screen').id;
     const questionNumber = screenId.split('-')[0];
     
@@ -118,6 +126,10 @@ function toggleCheckbox(option) {
     if (dopamineSound) {
         dopamineSound.currentTime = 0;
         dopamineSound.play();
+    }
+    // Só soma pontos se estiver selecionando (não ao desmarcar)
+    if (!option.classList.contains('selected')) {
+        updateScore(10);
     }
     const screenId = option.closest('.screen').id;
     const questionNumber = screenId.split('-')[0];
