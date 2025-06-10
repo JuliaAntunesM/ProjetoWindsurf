@@ -13,6 +13,10 @@ let userAnswers = {
     userName: ''
 };
 
+// Efeito sonoro dopaminérgico
+const dopamineSound = new Audio('sonsdopamina/sonsdopamina.wav');
+dopamineSound.volume = 0.5;
+
 // Função para navegar entre as páginas
 function nextPage(screenId) {
     // Esconde todas as telas
@@ -72,6 +76,10 @@ function animateOptionsSequentially(screen) {
 
 // Função para selecionar/desselecionar opções do quiz (opção única)
 function selectOption(option) {
+    if (dopamineSound) {
+        dopamineSound.currentTime = 0;
+        dopamineSound.play();
+    }
     const screenId = option.closest('.screen').id;
     const questionNumber = screenId.split('-')[0];
     
@@ -107,6 +115,10 @@ function selectOption(option) {
 
 // Função para selecionar/desselecionar opções de checkbox (múltipla escolha)
 function toggleCheckbox(option) {
+    if (dopamineSound) {
+        dopamineSound.currentTime = 0;
+        dopamineSound.play();
+    }
     const screenId = option.closest('.screen').id;
     const questionNumber = screenId.split('-')[0];
     
