@@ -982,6 +982,9 @@ p {
         padding: 15px;
     }
     
+    .logo-container {
+        justify-content: flex-start !important;
+    }
     .logo-container h1 {
         font-size: 1.8rem;
     }
