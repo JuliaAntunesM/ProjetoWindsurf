@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Banco do Brasil</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #FFCC00;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .quiz-container {
+            max-width: 520px;
+            margin: 48px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+            padding: 36px 28px 32px 28px;
+            position: relative;
+        }
+        .logo-bb {
+            display: block;
+            margin: 0 auto 18px auto;
+            width: 220px;
+            max-width: 80%;
+        }
+        h1 {
+            color: #003399;
+            text-align: center;
+            font-size: 2.1rem;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+        .score {
+            text-align: right;
+            color: #003399;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .question {
+            font-size: 1.18rem;
+            margin-bottom: 20px;
+            color: #222;
+            font-weight: 500;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .option {
+            background: #FFCC00;
+            border: 2px solid #003399;
+            color: #003399;
+            border-radius: 10px;
+            padding: 13px 18px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .option.selected {
+            background: #e3eafc;
+            border-color: #003399;
+        }
+        .option.wrong {
+            background: #ffcdd2;
+            border-color: #e57373;
+            color: #b71c1c;
+        }
+        .option.correct {
+            background: #b2dfdb;
+            border-color: #009688;
+            color: #00695c;
+        }
+        .feedback {
+            margin-top: 22px;
+            font-size: 1.13rem;
+            font-weight: 600;
+            text-align: center;
+            min-height: 28px;
+        }
+        .next-btn {
+            margin: 32px auto 0 auto;
+            display: block;
+            padding: 12px 38px;
+            background: #003399;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .next-btn:hover {
+            background: #002266;
+        }
+        @media (max-width: 600px) {
+            .quiz-container { padding: 18px 4vw 24px 4vw; }
+            .logo-bb { width: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <img src="../logo/logobb.png" alt="Banco do Brasil" class="logo-bb">
+        <h1>Quiz Banco do Brasil</h1>
+        <div class="score" id="score">Pontuação: 0</div>
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+        <div class="feedback" id="feedback"></div>
+        <button class="next-btn" id="nextBtn" style="display:none">Próxima</button>
+    </div>
+    <script>
+// Perguntas extraídas do roteiro (exemplo, pode adicionar mais)
+const perguntas = [
+  {
+    pergunta: "A operação que transfere um bem móvel ou imóvel do devedor ao credor como garantia em compra a crédito é:",
+    opcoes: [
+      "Hipoteca",
+      "Fiança bancária",
+      "Alienação fiduciária",
+      "Penhor",
+      "Aval bancário"
+    ],
+    correta: 2
+  },
+  {
+    pergunta: "O acesso bancário realizado via terminais de computador, caixas eletrônicos e bancos 24h é chamado de:",
+    opcoes: [
+      "Banco de Dados",
+      "Débito Automático",
+      "Home Office Banking",
+      "Internet Banking",
+      "Remote Banking"
+    ],
+    correta: 3
+  },
+  {
+    pergunta: "O tipo de 'dinheiro de plástico' mais comum no comércio de rua é o:",
+    opcoes: [
+      "cartão cidadão",
+      "cartão de crédito",
+      "cartão de senhas",
+      "talão de cheques",
+      "internet banking"
+    ],
+    correta: 1
+  },
+  {
+    pergunta: "Nesse regime, com alta mobilidade de capitais, ocorre que:",
+    opcoes: [
+      "diferenças de inflação não alteram câmbio real",
+      "políticas expansionistas nos EUA causam recessão no Brasil",
+      "políticas monetárias seriam sempre contracionistas",
+      "câmbio com a moeda europeia seria fixo",
+      "as taxas de juros entre Brasil e EUA se aproximariam"
+    ],
+    correta: 4
+  },
+  {
+    pergunta: "Uma redução da taxa de juros dos EUA em relação ao Brasil tenderia a:",
+    opcoes: [
+      "valorizar o Real em relação ao Dólar",
+      "estimular exportações",
+      "reduzir reservas cambiais",
+      "aumentar fluxo de capitais ao exterior",
+      "desestimular importações dos EUA"
+    ],
+    correta: 0
+  },
+  // Adicione mais perguntas aqui seguindo o mesmo padrão
+];
+
+let score = 0;
+let perguntasRestantes = [...perguntas];
+let perguntaAtual = null;
+
+function sortearPergunta() {
+  if (perguntasRestantes.length === 0) {
+    document.getElementById('question').innerHTML = 'Quiz finalizado!';
+    document.getElementById('options').innerHTML = '';
+    document.getElementById('feedback').innerHTML = `Pontuação final: <b>${score}</b> de ${perguntas.length}`;
+    document.getElementById('nextBtn').style.display = 'none';
+    // Adiciona botão de jogar novamente
+    if (!document.getElementById('restartBtn')) {
+      const restartBtn = document.createElement('button');
+      restartBtn.textContent = 'Jogar Novamente';
+      restartBtn.className = 'next-btn';
+      restartBtn.id = 'restartBtn';
+      restartBtn.onclick = reiniciarQuiz;
+      document.querySelector('.quiz-container').appendChild(restartBtn);
+    }
+    return;
+  }
+  // Remove botão de jogar novamente se estiver visível
+  const restartBtn = document.getElementById('restartBtn');
+  if (restartBtn) restartBtn.remove();
+  const idx = Math.floor(Math.random() * perguntasRestantes.length);
+  perguntaAtual = perguntasRestantes.splice(idx, 1)[0];
+  mostrarPergunta(perguntaAtual);
+}
+
+function reiniciarQuiz() {
+  score = 0;
+  perguntasRestantes = [...perguntas];
+  document.getElementById('score').textContent = `Pontuação: ${score}`;
+  sortearPergunta();
+}
+
+function mostrarPergunta(perguntaObj) {
+  document.getElementById('question').textContent = perguntaObj.pergunta;
+  const optionsDiv = document.getElementById('options');
+  optionsDiv.innerHTML = '';
+  document.getElementById('feedback').textContent = '';
+  document.getElementById('nextBtn').style.display = 'none';
+  perguntaObj.opcoes.forEach((op, i) => {
+    const btn = document.createElement('div');
+    btn.className = 'option';
+    btn.textContent = op;
+    btn.onclick = () => responder(i, btn);
+    optionsDiv.appendChild(btn);
+  });
+}
+
+function responder(indice, btn) {
+  const opcoes = document.querySelectorAll('.option');
+  opcoes.forEach(o => o.onclick = null);
+  if (indice === perguntaAtual.correta) {
+    btn.classList.add('correct');
+    document.getElementById('feedback').textContent = 'Correto!';
+    score++;
+    document.getElementById('score').textContent = `Pontuação: ${score}`;
+  } else {
+    btn.classList.add('wrong');
+    opcoes[perguntaAtual.correta].classList.add('correct');
+    document.getElementById('feedback').textContent = `Errado! A resposta correta é: "${perguntaAtual.opcoes[perguntaAtual.correta]}"`;
+  }
+  document.getElementById('nextBtn').style.display = 'inline-block';
+}
+
+document.getElementById('nextBtn').onclick = sortearPergunta;
+
+// Iniciar quiz
+sortearPergunta();
+    </script>
+</body>
+</html> 
