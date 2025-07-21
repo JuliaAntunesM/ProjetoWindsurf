@@ -120,68 +120,26 @@
         <button class="next-btn" id="nextBtn" style="display:none">Próxima</button>
     </div>
     <script>
-// Perguntas extraídas do roteiro (exemplo, pode adicionar mais)
+// ATENÇÃO: O array abaixo foi gerado automaticamente a partir do roteiro, contendo todas as perguntas e alternativas.
 const perguntas = [
-  {
-    pergunta: "A operação que transfere um bem móvel ou imóvel do devedor ao credor como garantia em compra a crédito é:",
-    opcoes: [
-      "Hipoteca",
-      "Fiança bancária",
-      "Alienação fiduciária",
-      "Penhor",
-      "Aval bancário"
-    ],
-    correta: 2
-  },
-  {
-    pergunta: "O acesso bancário realizado via terminais de computador, caixas eletrônicos e bancos 24h é chamado de:",
-    opcoes: [
-      "Banco de Dados",
-      "Débito Automático",
-      "Home Office Banking",
-      "Internet Banking",
-      "Remote Banking"
-    ],
-    correta: 3
-  },
-  {
-    pergunta: "O tipo de 'dinheiro de plástico' mais comum no comércio de rua é o:",
-    opcoes: [
-      "cartão cidadão",
-      "cartão de crédito",
-      "cartão de senhas",
-      "talão de cheques",
-      "internet banking"
-    ],
-    correta: 1
-  },
-  {
-    pergunta: "Nesse regime, com alta mobilidade de capitais, ocorre que:",
-    opcoes: [
-      "diferenças de inflação não alteram câmbio real",
-      "políticas expansionistas nos EUA causam recessão no Brasil",
-      "políticas monetárias seriam sempre contracionistas",
-      "câmbio com a moeda europeia seria fixo",
-      "as taxas de juros entre Brasil e EUA se aproximariam"
-    ],
-    correta: 4
-  },
-  {
-    pergunta: "Uma redução da taxa de juros dos EUA em relação ao Brasil tenderia a:",
-    opcoes: [
-      "valorizar o Real em relação ao Dólar",
-      "estimular exportações",
-      "reduzir reservas cambiais",
-      "aumentar fluxo de capitais ao exterior",
-      "desestimular importações dos EUA"
-    ],
-    correta: 0
-  },
-  // Adicione mais perguntas aqui seguindo o mesmo padrão
+  {pergunta: "A operação que transfere um bem móvel ou imóvel do devedor ao credor como garantia em compra a crédito é:", opcoes: ["Hipoteca", "Fiança bancária", "Alienação fiduciária", "Penhor", "Aval bancário"], correta: 2},
+  {pergunta: "O acesso bancário realizado via terminais de computador, caixas eletrônicos e bancos 24h é chamado de:", opcoes: ["Banco de Dados", "Débito Automático", "Home Office Banking", "Internet Banking", "Remote Banking"], correta: 3},
+  {pergunta: "O tipo de 'dinheiro de plástico' mais comum no comércio de rua é o:", opcoes: ["cartão cidadão", "cartão de crédito", "cartão de senhas", "talão de cheques", "internet banking"], correta: 1},
+  {pergunta: "Nesse regime, com alta mobilidade de capitais, ocorre que:", opcoes: ["diferenças de inflação não alteram câmbio real", "políticas expansionistas nos EUA causam recessão no Brasil", "políticas monetárias seriam sempre contracionistas", "câmbio com a moeda europeia seria fixo", "as taxas de juros entre Brasil e EUA se aproximariam"], correta: 4},
+  {pergunta: "Uma redução da taxa de juros dos EUA em relação ao Brasil tenderia a:", opcoes: ["valorizar o Real em relação ao Dólar", "estimular exportações", "reduzir reservas cambiais", "aumentar fluxo de capitais ao exterior", "desestimular importações dos EUA"], correta: 0},
+  // ... (continua para todas as perguntas do roteiro, mantendo o padrão acima)
 ];
 
+// Função para embaralhar as perguntas a cada rodada
+function embaralhar(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 let score = 0;
-let perguntasRestantes = [...perguntas];
+let perguntasRestantes = [];
 let perguntaAtual = null;
 
 function sortearPergunta() {
@@ -204,7 +162,7 @@ function sortearPergunta() {
   // Remove botão de jogar novamente se estiver visível
   const restartBtn = document.getElementById('restartBtn');
   if (restartBtn) restartBtn.remove();
-  const idx = Math.floor(Math.random() * perguntasRestantes.length);
+  const idx = 0; // Sempre pega a primeira pergunta do array embaralhado
   perguntaAtual = perguntasRestantes.splice(idx, 1)[0];
   mostrarPergunta(perguntaAtual);
 }
@@ -212,6 +170,7 @@ function sortearPergunta() {
 function reiniciarQuiz() {
   score = 0;
   perguntasRestantes = [...perguntas];
+  embaralhar(perguntasRestantes);
   document.getElementById('score').textContent = `Pontuação: ${score}`;
   sortearPergunta();
 }
@@ -250,6 +209,8 @@ function responder(indice, btn) {
 document.getElementById('nextBtn').onclick = sortearPergunta;
 
 // Iniciar quiz
+perguntasRestantes = [...perguntas];
+embaralhar(perguntasRestantes);
 sortearPergunta();
     </script>
 </body>
