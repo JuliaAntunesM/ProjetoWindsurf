@@ -137,9 +137,27 @@ function getBlocoPerguntas() {
 
 function sortearPergunta() {
   if (perguntasBloco.length === 0) {
-    document.getElementById('question').innerHTML = 'Quiz finalizado!';
+    const total = score;
+    const max = perguntasBloco.length || perguntasPorRodada;
+    let mensagem = '';
+    if (total === max) {
+      mensagem = '🏆 Parabéns! Você acertou todas as perguntas!';
+    } else if (total >= Math.floor(max * 0.7)) {
+      mensagem = '👏 Muito bom! Você foi muito bem!';
+    } else if (total >= Math.floor(max * 0.4)) {
+      mensagem = '👍 Você pode melhorar! Continue praticando!';
+    } else {
+      mensagem = '💡 Não desanime! Tente novamente para melhorar sua pontuação!';
+    }
+    document.getElementById('question').innerHTML = '';
     document.getElementById('options').innerHTML = '';
-    document.getElementById('feedback').innerHTML = `Pontuação final: <b>${score}</b> de ${perguntasBloco.length}`;
+    document.getElementById('feedback').innerHTML = `
+      <div style="background: #fffbe6; border: 2px solid #FFCC00; color: #003399; border-radius: 14px; padding: 28px 18px; margin-top: 18px; text-align: center; font-size: 1.25rem; font-weight: 700; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <span style="font-size:2.2rem;">⭐</span><br>
+        <span style="font-size:1.5rem;">Pontuação final: <b>${score}</b> de ${max}</span><br>
+        <span style="display:block; margin-top: 12px;">${mensagem}</span>
+      </div>
+    `;
     document.getElementById('nextBtn').style.display = 'none';
     // Adiciona botão de jogar novamente
     if (!document.getElementById('restartBtn')) {
