@@ -1,4 +1,4 @@
-/* Main Styles for NatáliaFit Quiz */
+/* Main Styles for TREINE JÁ Quiz */
 * {
     margin: 0;
     padding: 0;
@@ -108,7 +108,7 @@ body {
 }
 
 .logo-image {
-    max-height: 60px;
+    max-height: 100px;
     max-width: 100%;
     object-fit: contain;
 }
@@ -987,6 +987,11 @@ p {
     }
     .logo-container h1 {
         font-size: 1.8rem;
+    }
+    
+    /* Aumenta a logo mantendo proporção em telas pequenas */
+    .logo-image {
+        max-height: 80px;
     }
     
     .content {

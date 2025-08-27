@@ -1,7 +1,7 @@
 {
   "id": 37095,
   "user_id": null,
-  "name": "NatáliaFit Site",
+  "name": "TREINE JÁ Site",
   "nodes": [
     {
       "id": "e52dee90-d631-4045-9402-bf924c51e5ea",
@@ -766,7 +766,7 @@
               "size": "text-xl",
               "style": "default",
               "title": "<span style=\"color: rgb(3, 7, 18)\">Você sente que sua barriga está estufada e flácida?</span>",
-              "subtitle": "O Método Natália Fit acelera o seu metabolismo restirando qualquer retenção de líquido!",
+              "subtitle": "O Método TREINE JÁ acelera o seu metabolismo restirando qualquer retenção de líquido!",
               "alignment": "center",
               "animation": "fade-in",
               "titleSize": "text-lg"
@@ -924,7 +924,7 @@
               "size": "text-xl",
               "style": "default",
               "title": "<span style=\"color: rgb(3, 7, 18)\">Você sente que sua barriga está estufada e flácida?</span>",
-              "subtitle": "O Método Natália Fit acelera o seu metabolismo restirando qualquer retenção de líquido!",
+              "subtitle": "O Método TREINE JÁ acelera o seu metabolismo restirando qualquer retenção de líquido!",
               "alignment": "center",
               "animation": "fade-in",
               "titleSize": "text-lg"
@@ -1328,7 +1328,7 @@
               "size": "text-xl",
               "style": "default",
               "title": "<span style=\"color: rgb(3, 7, 18)\">Você sente que suas pernas estão com celulites ?</span>",
-              "subtitle": "O Método Natália Fit ativa seus músculos do jeito certo para substituir gordura por firmeza!",
+              "subtitle": "O Método TREINE JÁ ativa seus músculos do jeito certo para substituir gordura por firmeza!",
               "alignment": "center",
               "animation": "fade-in",
               "titleSize": "text-lg"
@@ -2022,7 +2022,7 @@
                   "id": "dcc0798e-ce04-419b-a128-d2311fcb7edc",
                   "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\"><path d=\"M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z\"/></svg>",
                   "title": null,
-                  "result": "<span style=\"color: rgb(0, 0, 0)\"><strong>O segredo</strong> das mulheres que conseguiram um corpo firme e sem flacidez <strong>está no método exclusivo</strong> de exercícios de 7 minutinhos diários da Natália Fit.</span>"
+                  "result": "<span style=\"color: rgb(0, 0, 0)\"><strong>O segredo</strong> das mulheres que conseguiram um corpo firme e sem flacidez <strong>está no método exclusivo</strong> de exercícios de 7 minutinhos diários do TREINE JÁ.</span>"
                 },
                 {
                   "id": "4bc32dbb-d2b1-4314-9b1a-02550ec3e643",
@@ -2084,7 +2084,7 @@
             "id": "29ba4244-d5f6-45be-8509-7ee73278d613",
             "data": {
               "size": "text-base",
-              "text": "<p><strong>Isso já foi comprovado cientificamente</strong>, e a Profª Natália Fit criou um <strong>método que ativa os músculos de forma estratégica</strong> para eliminar gordura e substituir por massa magra!</p>",
+              "text": "<p><strong>Isso já foi comprovado cientificamente</strong>, e a Profª do TREINE JÁ criou um <strong>método que ativa os músculos de forma estratégica</strong> para eliminar gordura e substituir por massa magra!</p>",
               "style": "default",
               "alignment": "center",
               "animation": "fade-in"
@@ -2980,7 +2980,7 @@
               "size": "text-xl",
               "style": "default",
               "title": "<span style=\"color: rgb(3, 7, 18)\">Você sente que suas pernas estão com celulites ?</span>",
-              "subtitle": "O Método Natália Fit ativa seus músculos do jeito certo para substituir gordura por firmeza!",
+              "subtitle": "O Método TREINE JÁ ativa seus músculos do jeito certo para substituir gordura por firmeza!",
               "alignment": "center",
               "animation": "fade-in",
               "titleSize": "text-lg"
@@ -3142,7 +3142,7 @@
                   "id": "536c91c9-65f7-4271-8ead-657e4bdc5f15",
                   "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\"><path d=\"M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z\"/></svg>",
                   "title": null,
-                  "result": "<span style=\"color: rgb(0, 0, 0)\"><strong>O segredo</strong> das mulheres que conseguiram um corpo firme e sem flacidez <strong>está no método exclusivo</strong> de exercícios de 7 minutinhos diários da Natália Fit.</span>"
+                  "result": "<span style=\"color: rgb(0, 0, 0)\"><strong>O segredo</strong> das mulheres que conseguiram um corpo firme e sem flacidez <strong>está no método exclusivo</strong> de exercícios de 7 minutinhos diários do TREINE JÁ.</span>"
                 },
                 {
                   "id": "13fb3995-bbb8-466c-ac92-ff77229edd56",
@@ -3204,7 +3204,7 @@
             "id": "97ae11f2-0d2b-44fa-8483-cdd0f9a8bded",
             "data": {
               "size": "text-base",
-              "text": "<p><strong>Isso já foi comprovado cientificamente</strong>, e a Profª Natália Fit criou um <strong>método que ativa os músculos de forma estratégica</strong> para eliminar gordura e substituir por massa magra!</p>",
+              "text": "<p><strong>Isso já foi comprovado cientificamente</strong>, e a Profª do TREINE JÁ criou um <strong>método que ativa os músculos de forma estratégica</strong> para eliminar gordura e substituir por massa magra!</p>",
               "style": "default",
               "alignment": "center",
               "animation": "fade-in"
@@ -4306,7 +4306,7 @@
             "id": "59afcd98-8f74-4fa2-938b-937e0f005e77",
             "data": {
               "size": "text-base",
-              "text": "<p><span style=\"color: rgb(51, 51, 51)\"><strong>Treinos da Natália Fit de 7 minutos</strong></span></p>",
+              "text": "<p><span style=\"color: rgb(51, 51, 51)\"><strong>Treinos do TREINE JÁ de 7 minutos</strong></span></p>",
               "style": "default",
               "alignment": "center",
               "animation": "fade-in"
@@ -5004,7 +5004,7 @@
     }
   },
   "settings": {
-    "title": "Natália Fit",
+    "title": "TREINE JÁ",
     "cloaker": false,
     "domains": [],
     "tracking": true,

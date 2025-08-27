@@ -1,9 +1,9 @@
 {
-  "name": "NatáliaFit Site",
+  "name": "TREINE JÁ Site",
   "pages": [
     {
       "id": "welcome",
-      "title": "Bem-vinda ao Desafio NatáliaFit!",
+      "title": "Bem-vinda ao Desafio TREINE JÁ!",
       "subtitle": "Descubra como transformar seu corpo em apenas 15 minutos por dia!",
       "progress": 0,
       "content": {

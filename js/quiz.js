@@ -1,4 +1,4 @@
-// Quiz functionality for NatáliaFit
+// Quiz functionality for TREINE JÁ
 
 // Variáveis para armazenar as respostas do usuário
 let userAnswers = {
