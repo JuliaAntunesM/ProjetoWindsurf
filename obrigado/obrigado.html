@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área de Treinos Treine Já: treinos guiados, dicas e suporte para sua jornada fitness.">
+    <title>Treine Já - Área de Treinos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f0f2;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e6d1d8;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            max-width: 200px;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e6187c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .main {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+        
+        .menu {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .menu-title {
+            background-color: #e6187c;
+            color: white;
+            padding: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .menu-items {
+            list-style: none;
+        }
+        
+        .menu-item {
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-item a {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #444;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .menu-item a:hover {
+            background-color: #fce8ef;
+            color: #e6187c;
+        }
+        
+        .menu-item.active a {
+            background-color: #fce8ef;
+            color: #e6187c;
+            font-weight: 600;
+        }
+        
+        .content {
+            flex-grow: 1;
+        }
+        
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+        
+        .welcome-box {
+            background-color: #e6187c;
+            color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .welcome-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-text {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #e6187c;
+            font-weight: 600;
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .course-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .course-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        
+        .course-content {
+            padding: 15px;
+        }
+        
+        .course-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .course-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .course-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .course-button {
+            display: block;
+            background-color: #e6187c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .course-button:hover {
+            background-color: #c41068;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            margin-bottom: 20px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        
+        .recipe-card {
+            background-color: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .recipe-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #e6187c;
+        }
+        
+        .recipe-description {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .recipe-section {
+            margin-bottom: 15px;
+        }
+        
+        .recipe-section-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .recipe-list {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .recipe-list li {
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+        
+        .recipe-steps {
+            list-style-type: decimal;
+        }
+        
+        .recipe-tip {
+            background-color: #fce8ef;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../Logo/logo.png" alt="Treine Já" class="logo">
+            <div class="user-profile">
+                <div class="avatar">A</div>
+                <div class="user-name">Aluna</div>
+            </div>
+        </div>
+        
+        <div class="main">
+            <div class="sidebar">
+                <div class="menu">
+                    <div class="menu-title">Menu Principal</div>
+                    <ul class="menu-items">
+                        <li class="menu-item active"><a href="#"><span>🏠</span> Início</a></li>
+                        <li class="menu-item"><a href="#treinos"><span>🏋️‍♀️</span> Treinos</a></li>
+                        <li class="menu-item"><a href="#dicas"><span>✨</span> Dicas</a></li>
+                        <li class="menu-item"><a href="#suporte"><span>💬</span> Suporte</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="welcome-box">
+                    <h2 class="welcome-title">Bem-vinda à Área de Treinos Treine Já!</h2>
+                    <p class="welcome-text">Aqui você encontra treinos guiados, do aquecimento ao avançado, para treinar onde estiver. Siga a playlist e evolua no seu ritmo.</p>
+                    <p>Comece dando play no primeiro treino abaixo:</p>
+                </div>
+                
+                <div class="content-box">
+                    <div class="video-container">
+                        <iframe data-player="main" src="https://www.youtube.com/embed/videoseries?list=PLCfK6csmL7x-ZeXyjs4QM6puzHcTDn7BA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Playlist de Treinos Treine Já"></iframe>
+                    </div>
+                    <h3>Playlist de Treinos Treine Já</h3>
+                    <p>Siga a ordem dos vídeos da playlist para maximizar seus resultados. Você pode abrir a playlist no YouTube se preferir.</p>
+                    <p><a href="https://www.youtube.com/playlist?list=PLCfK6csmL7x-ZeXyjs4QM6puzHcTDn7BA" target="_blank" class="course-button" style="display:inline-block;">Abrir playlist no YouTube</a></p>
+                </div>
+                
+                <div class="content-box" id="treinos">
+                    <h2 class="section-title">Treinos</h2>
+                    <div class="video-container">
+                        <iframe data-player="main" src="https://www.youtube.com/embed/videoseries?list=PLCfK6csmL7x-ZeXyjs4QM6puzHcTDn7BA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Playlist de Treinos Treine Já"></iframe>
+                    </div>
+                    <p>Use os controles do player para navegar pelos vídeos da playlist. Bons treinos!</p>
+                </div>
+                
+                <div class="content-box" id="lista-videos">
+                    <h2 class="section-title">Todos os Vídeos</h2>
+                    <div class="courses-grid">
+                        <div class="course-card video-item" data-video-id="qLqGhiqF5ik">
+                            <img class="course-img" src="https://img.youtube.com/vi/qLqGhiqF5ik/hqdefault.jpg" alt="Vídeo qLqGhiqF5ik">
+                            <div class="course-content">
+                                <h3 class="course-title">Vídeo 1</h3>
+                                <a href="#treinos" class="course-button">Assistir</a>
+                            </div>
+                        </div>
+                        <div class="course-card video-item" data-video-id="V7p9LDYHZCI">
+                            <img class="course-img" src="https://img.youtube.com/vi/V7p9LDYHZCI/hqdefault.jpg" alt="Vídeo V7p9LDYHZCI">
+                            <div class="course-content">
+                                <h3 class="course-title">Vídeo 2</h3>
+                                <a href="#treinos" class="course-button">Assistir</a>
+                            </div>
+                        </div>
+                        <div class="course-card video-item" data-video-id="YFX8489U2M8">
+                            <img class="course-img" src="https://img.youtube.com/vi/YFX8489U2M8/hqdefault.jpg" alt="Vídeo YFX8489U2M8">
+                            <div class="course-content">
+                                <h3 class="course-title">Vídeo 3</h3>
+                                <a href="#treinos" class="course-button">Assistir</a>
+                            </div>
+                        </div>
+                        <div class="course-card video-item" data-video-id="Pgmjhi13J-M">
+                            <img class="course-img" src="https://img.youtube.com/vi/Pgmjhi13J-M/hqdefault.jpg" alt="Vídeo Pgmjhi13J-M">
+                            <div class="course-content">
+                                <h3 class="course-title">Vídeo 4</h3>
+                                <a href="#treinos" class="course-button">Assistir</a>
+                            </div>
+                        </div>
+                        <div class="course-card video-item" data-video-id="N-QdzBxEF7U">
+                            <img class="course-img" src="https://img.youtube.com/vi/N-QdzBxEF7U/hqdefault.jpg" alt="Vídeo N-QdzBxEF7U">
+                            <div class="course-content">
+                                <h3 class="course-title">Vídeo 5</h3>
+                                <a href="#treinos" class="course-button">Assistir</a>
+                            </div>
+                        </div>
+                        <div class="course-card video-item" data-video-id="UrownbBATXc">
+                            <img class="course-img" src="https://img.youtube.com/vi/UrownbBATXc/hqdefault.jpg" alt="Vídeo UrownbBATXc">
+                            <div class="course-content">
+                                <h3 class="course-title">Vídeo 6</h3>
+                                <a href="#treinos" class="course-button">Assistir</a>
+                            </div>
+                        </div>
+                        <div class="course-card video-item" data-video-id="aR-VnkkWe3A">
+                            <img class="course-img" src="https://img.youtube.com/vi/aR-VnkkWe3A/hqdefault.jpg" alt="Vídeo aR-VnkkWe3A">
+                            <div class="course-content">
+                                <h3 class="course-title">Vídeo 7</h3>
+                                <a href="#treinos" class="course-button">Assistir</a>
+                            </div>
+                        </div>
+                        <div class="course-card video-item" data-video-id="h3iWhH_ECm4">
+                            <img class="course-img" src="https://img.youtube.com/vi/h3iWhH_ECm4/hqdefault.jpg" alt="Vídeo h3iWhH_ECm4">
+                            <div class="course-content">
+                                <h3 class="course-title">Vídeo 8</h3>
+                                <a href="#treinos" class="course-button">Assistir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-box" id="dicas">
+                    <h2 class="section-title">Dicas de Treino</h2>
+                    <div class="recipe-card">
+                        <h3 class="recipe-title">Antes de começar</h3>
+                        <ul class="recipe-list">
+                            <li>Faça um aquecimento leve de 5 a 10 minutos.</li>
+                            <li>Mantenha-se hidratada ao longo do treino.</li>
+                            <li>Adapte a intensidade conforme seu nível.</li>
+                        </ul>
+                    </div>
+                    <div class="recipe-card">
+                        <h3 class="recipe-title">Durante o treino</h3>
+                        <ul class="recipe-list">
+                            <li>Mantenha a postura e execute os movimentos com controle.</li>
+                            <li>Respeite os intervalos indicados.</li>
+                            <li>Se sentir dor aguda, interrompa e ajuste.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="content-box" id="suporte">
+                    <h2 class="section-title">Suporte</h2>
+                    <div class="recipe-card">
+                        <p class="recipe-description">Precisa de ajuda? Entre em contato pelo Instagram ou pelo canal oficial do programa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simular login/autenticação básica
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar se já tem um nome salvo
+            const savedName = localStorage.getItem('alunaName');
+            if (savedName) {
+                document.querySelector('.user-name').textContent = savedName;
+                document.querySelector('.avatar').textContent = savedName.charAt(0);
+            } else {
+                // Se não tiver, pede para inserir
+                setTimeout(() => {
+                    const userName = prompt('Olá! Como gostaria de ser chamada?', 'Aluna');
+                    if (userName && userName.trim() !== '') {
+                        document.querySelector('.user-name').textContent = userName;
+                        document.querySelector('.avatar').textContent = userName.charAt(0);
+                        localStorage.setItem('alunaName', userName);
+                    }
+                }, 1000);
+            }
+            
+            // Navegação suave para links internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    // Remove a classe active de todos os itens do menu
+                    document.querySelectorAll('.menu-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Adiciona a classe active ao item clicado
+                    this.parentElement.classList.add('active');
+                    
+                    if (targetId === '#') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Troca de vídeo no(s) player(es) principal(is) ao clicar em um item da lista
+            const mainPlayers = document.querySelectorAll('iframe[data-player="main"]');
+            document.querySelectorAll('.video-item').forEach(card => {
+                card.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video-id');
+                    if (!videoId) return;
+                    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                    mainPlayers.forEach(iframe => {
+                        iframe.src = embedUrl;
+                        iframe.setAttribute('title', `Treino ${videoId}`);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
