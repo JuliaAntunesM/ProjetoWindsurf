@@ -1,4 +1,4 @@
-# TREINE JÁ Quiz
+# NATÁLIA FIT Quiz
 
 Um site de quiz interativo para o TREINE JÁ, desenvolvido para ser hospedado no GitHub Pages.
 
@@ -6,7 +6,7 @@ Um site de quiz interativo para o TREINE JÁ, desenvolvido para ser hospedado no
 
 Este projeto é um site de quiz interativo baseado no arquivo JSON "XQUIZ-NatáliaFit Site.json". O site consiste em 3 telas principais:
 
-1. **Tela de Boas-vindas**: Apresenta o desafio TREINE JÁ e seus benefícios
+1. **Tela de Boas-vindas**: Apresenta o desafio NATÁLIA FIT e seus benefícios
 2. **Tela de Perguntas**: Permite que o usuário selecione opções sobre suas inseguranças corporais
 3. **Tela de Resultados**: Mostra uma análise das respostas e oferece uma solução
 
