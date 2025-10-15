@@ -1,0 +1,104 @@
+/* Override de tema para alinhar o rosa ao da logo Treina Já */
+:root {
+  /* Ajuste aqui se quiser refinar os tons */
+  --pink: #ff4d73;          /* rosa principal (texto JÁ) */
+  --pink-600: #ff456c;      /* hover/acentos */
+  --pink-400: #ff7fa0;      /* claro 1 para gradientes */
+  --pink-300: #ff9ab5;      /* claro 2 */
+  --pink-200: #ffb9ca;      /* claro 3/bordas suaves */
+  --pink-100: #ffe6ef;      /* fundo muito claro */
+  --pink-050: #fff2f6;      /* fundo mais claro ainda */
+  --pink-rgba-15: rgba(255, 77, 115, 0.15);
+  --pink-rgba-20: rgba(255, 77, 115, 0.20);
+  --pink-rgba-30: rgba(255, 77, 115, 0.30);
+}
+
+/* Plano de fundo geral com tom claro da paleta */
+body {
+  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-050) 100%) !important;
+}
+
+/* Container */
+.quiz-container {
+  box-shadow: 0 15px 35px var(--pink-rgba-15) !important;
+  border: 1px solid var(--pink-200) !important;
+}
+
+.quiz-container::before {
+  background: linear-gradient(45deg, var(--pink), var(--pink-400), var(--pink-300), var(--pink-200), var(--pink)) !important;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, var(--pink), var(--pink-400)) !important;
+}
+
+/* Títulos e sublinhados */
+h2 { color: var(--pink) !important; text-shadow: 1px 1px 1px var(--pink-rgba-15) !important; }
+h2::after { background: linear-gradient(to right, var(--pink), var(--pink-300)) !important; }
+
+/* Imagem destacada com borda gradiente */
+.image-container { background: linear-gradient(to right, var(--pink), var(--pink-300)) !important; }
+.rounded-image:hover { box-shadow: 0 15px 35px var(--pink-rgba-30) !important; }
+
+/* Cards/benefícios */
+.benefits { box-shadow: 0 5px 15px var(--pink-rgba-15) !important; border-left: 4px solid var(--pink) !important; }
+.benefits h3 { color: var(--pink) !important; }
+.benefits li:before { color: var(--pink) !important; }
+
+/* Opções do quiz */
+.option { box-shadow: 0 4px 15px rgba(255, 185, 200, 0.08) !important; }
+.option:hover { border-color: var(--pink-400) !important; box-shadow: 0 8px 20px var(--pink-rgba-15) !important; }
+.option::after { background: linear-gradient(135deg, var(--pink-rgba-15) 0%, rgba(255, 185, 200, 0.05) 100%) !important; }
+.option.selected { border-color: var(--pink) !important; background-color: var(--pink-100) !important; box-shadow: 0 5px 20px var(--pink-rgba-20) !important; }
+.option.selected::before { background: linear-gradient(to bottom, var(--pink), var(--pink-300)) !important; }
+.option.selected .emoji { background: linear-gradient(135deg, var(--pink-400), var(--pink-300)) !important; border-color: var(--pink) !important; box-shadow: 0 5px 15px var(--pink-rgba-20) !important; color: #fff !important; }
+.option.selected .option-text { color: var(--pink) !important; }
+
+/* Checkbox */
+.checkbox { border: 2px solid var(--pink-200) !important; box-shadow: 0 2px 8px var(--pink-rgba-15) !important; }
+.option.selected .checkbox { background-color: var(--pink) !important; border-color: var(--pink) !important; box-shadow: 0 3px 10px var(--pink-rgba-20) !important; }
+
+/* Formulários */
+.form-group label { color: var(--pink) !important; }
+.form-group label::before { color: var(--pink-400) !important; }
+.form-input { border: 2px solid var(--pink-200) !important; box-shadow: 0 4px 15px rgba(255, 185, 200, 0.08) !important; }
+.form-input:focus { border-color: var(--pink) !important; box-shadow: 0 5px 20px var(--pink-rgba-15) !important; }
+
+/* Botões principais */
+.primary-btn { background: linear-gradient(to right, var(--pink), var(--pink-300)) !important; color: #fff !important; box-shadow: 0 4px 15px var(--pink-rgba-15) !important; }
+.primary-btn:hover { background: linear-gradient(to right, var(--pink-600), var(--pink-400)) !important; box-shadow: 0 8px 25px var(--pink-rgba-20) !important; }
+
+/* Loader e barras */
+.spinner { border-top: 5px solid var(--pink) !important; box-shadow: 0 0 20px var(--pink-rgba-20) !important; }
+.progress-bar-animated:after { background: linear-gradient(to right, transparent, var(--pink), transparent) !important; }
+
+/* Dicas/Tip */
+.tip { border-left: 4px solid var(--pink-400) !important; }
+
+/* Página de vendas */
+.sales-header { background: linear-gradient(to right, var(--pink), var(--pink-300)) !important; }
+.headline, .sub-headline, .section-title, .cta-title { color: var(--pink) !important; text-shadow: 1px 1px 1px var(--pink-rgba-15) !important; }
+.section-title::after { background: linear-gradient(to right, var(--pink), var(--pink-300)) !important; }
+.check-list li:before, .results-list li:before, .offer-list li:before { color: var(--pink) !important; }
+
+/* Testemunhos */
+.testimonial { background: linear-gradient(135deg, var(--pink-050), var(--pink-100)) !important; box-shadow: 0 3px 8px var(--pink-rgba-15) !important; }
+.testimonial:hover { box-shadow: 0 5px 15px var(--pink-rgba-20) !important; }
+.testimonial-image img { border-color: var(--pink) !important; box-shadow: 0 3px 10px var(--pink-rgba-20) !important; }
+.testimonial cite { color: var(--pink) !important; }
+
+/* Visual cards */
+.visual-card { box-shadow: 0 10px 30px var(--pink-rgba-15) !important; }
+.visual-card::before { background: linear-gradient(90deg, var(--pink-400) 0%, var(--pink-200) 100%) !important; }
+.icon-container { background: linear-gradient(135deg, var(--pink-400) 0%, var(--pink-200) 100%) !important; box-shadow: 0 5px 15px var(--pink-rgba-20) !important; }
+.card-title { color: var(--pink) !important; }
+.benefit-icon { background: linear-gradient(135deg, var(--pink-400) 0%, var(--pink-200) 100%) !important; }
+
+/* Sub-headline (arquivo separado) */
+.sub-headline-section { 
+  background: linear-gradient(135deg, var(--pink-400) 0%, var(--pink-200) 100%) !important; 
+  box-shadow: 0 10px 30px var(--pink-rgba-20) !important; 
+}
+.icon-circle { box-shadow: 0 5px 15px var(--pink-rgba-20) !important; }
+.icon-circle i, .pain-title { color: var(--pink) !important; }

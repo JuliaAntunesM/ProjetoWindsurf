@@ -1,0 +1,276 @@
+/* Tema Moderno: Rosa + Turquesa (Clean/Glass) */
+:root {
+  --teal: #00c2a8;
+  --teal-600: #00b39a;
+  --teal-300: #6fe5d7;
+  --ink: #1f2937;        /* texto principal */
+  --muted: #6b7280;      /* texto secundário */
+  --surface: #ffffff;    /* cards */
+  --surface-opaque: rgba(255,255,255,0.75);
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.06);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Fundo mais clean, removendo padrões visuais e brilho excessivo */
+body {
+  background: radial-gradient(1200px 800px at 10% 0%, var(--pink-050), transparent 60%),
+              radial-gradient(1000px 700px at 100% 10%, rgba(0, 194, 168, 0.10), transparent 60%),
+              linear-gradient(135deg, var(--pink-100) 0%, #f7fbfb 100%) !important;
+  background-image: none !important; /* remove padrões SVG do styles.css */
+  color: var(--ink) !important;
+}
+
+/* Container com leve glassmorphism */
+.quiz-container {
+  background: var(--surface-opaque) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Remove o brilho externo multicolorido do container */
+.quiz-container::before { display: none !important; }
+
+/* Header com gradiente rosa -> turquesa, mais sóbrio */
+.header,
+.sales-header {
+  background: linear-gradient(90deg, var(--pink) 0%, var(--teal) 100%) !important;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.15) !important;
+}
+
+/* Remover textura/overlay do header para não poluir a área da logo */
+.header::after { display: none !important; }
+.sales-header::after { display: none !important; }
+
+/* Dar contraste à logo com um badge branco sutil atrás dela */
+.logo-image {
+  background: rgba(255,255,255,0.98) !important;
+  border-radius: 12px !important;
+  padding: 8px 12px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06) !important;
+}
+
+/* Títulos mais limpos, sem sombra forte */
+h2 { color: var(--pink) !important; text-shadow: none !important; }
+h2::after { background: linear-gradient(90deg, var(--pink), var(--teal)) !important; }
+
+/* Texto geral mais neutro */
+p, .option-text, .pain-text, .offer-list li, .results-list li { color: var(--muted) !important; }
+
+/* Imagens com moldura sutil */
+.image-container { background: linear-gradient(90deg, var(--pink), var(--teal)) !important; }
+.rounded-image { box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important; }
+
+/* Opções do quiz: bordas mais neutras e hover com acento turquesa */
+.option {
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important;
+}
+.option:hover { border-color: var(--teal-300) !important; box-shadow: var(--shadow-md) !important; }
+.option::after { background: linear-gradient(135deg, rgba(0, 194, 168, 0.06), rgba(255, 77, 115, 0.06)) !important; }
+.option.selected {
+  border-color: var(--pink) !important;
+  background: rgba(255, 77, 115, 0.06) !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08) !important;
+}
+.option.selected::before { background: linear-gradient(180deg, var(--pink), var(--teal)) !important; }
+.option.selected .emoji { background: linear-gradient(135deg, var(--pink), var(--teal)) !important; border-color: transparent !important; color: #fff !important; }
+.option.selected .option-text { color: var(--ink) !important; }
+
+/* Checkbox com acento turquesa ao selecionar */
+.checkbox { border-color: var(--border) !important; }
+.option.selected .checkbox { background-color: var(--teal) !important; border-color: var(--teal) !important; }
+
+/* Inputs e labels mais limpos */
+.form-group label { color: var(--ink) !important; }
+.form-group label::before { color: var(--teal) !important; }
+.form-input {
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+}
+.form-input:focus { border-color: var(--teal) !important; box-shadow: 0 0 0 4px rgba(0, 194, 168, 0.12) !important; }
+
+/* Botões: gradiente rosa -> turquesa, mais flat */
+.primary-btn,
+.btn.primary-btn {
+  background: linear-gradient(90deg, var(--pink) 0%, var(--teal) 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(0, 194, 168, 0.18) !important;
+}
+.primary-btn:hover,
+.btn.primary-btn:hover {
+  filter: brightness(1.05) !important;
+  transform: translateY(-2px) !important;
+}
+.primary-btn:active,
+.btn.primary-btn:active { transform: translateY(0) !important; }
+
+/* Barra de progresso mais clean */
+.progress { background: linear-gradient(90deg, var(--pink), var(--teal)) !important; box-shadow: none !important; }
+.progress-bar { background-color: rgba(15, 23, 42, 0.06) !important; }
+.progress-bar::before { opacity: 0.2 !important; }
+
+/* Tip/alerta discreto */
+.tip { background: #ffffff !important; border-left: 4px solid var(--teal) !important; box-shadow: var(--shadow-md) !important; }
+
+/* Visual cards e benefits com acentos bicolores */
+.visual-card { box-shadow: var(--shadow-md) !important; border: 1px solid var(--border) !important; }
+.visual-card::before { background: linear-gradient(90deg, var(--pink) 0%, var(--teal) 100%) !important; }
+.icon-container { background: linear-gradient(135deg, var(--pink) 0%, var(--teal) 100%) !important; box-shadow: var(--shadow-md) !important; }
+.card-title { color: var(--ink) !important; }
+.benefit-icon { background: linear-gradient(135deg, var(--pink) 0%, var(--teal) 100%) !important; }
+.benefit-text { color: var(--muted) !important; }
+
+/* Sub-headline com nova paleta */
+.sub-headline-section { background: linear-gradient(135deg, var(--pink) 0%, var(--teal) 100%) !important; }
+.support-text, .icon-text { color: #fff !important; }
+
+/* Seções da página de vendas mais limpas */
+.sales-section { background: transparent !important; border-bottom: 1px solid var(--border) !important; }
+.section-title, .cta-title { color: var(--ink) !important; }
+.section-title::after { background: linear-gradient(90deg, var(--pink), var(--teal)) !important; }
+.testimonial { background: #ffffff !important; border: 1px solid var(--border) !important; box-shadow: var(--shadow-md) !important; }
+.testimonial cite { color: var(--teal) !important; }
+
+/* Loading/progress */
+.spinner { border-top-color: var(--teal) !important; }
+.progress-bar-animated:after { background: linear-gradient(to right, transparent, var(--teal), transparent) !important; }
+
+/* Score board: substituir inline por um estilo consistente */
+#score-board {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  background: rgba(255,255,255,0.85) !important;
+  color: var(--ink) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  border-radius: 12px !important;
+  padding: 6px 12px !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--border) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+#score-board i { color: var(--teal) !important; }
+
+/* Mobile refinements */
+@media (max-width: 480px) {
+  .content { padding: 22px 16px !important; }
+  h2 { font-size: 1.25rem !important; }
+  .option { padding: 16px !important; }
+  .emoji { font-size: 1.6rem !important; min-width: 36px !important; }
+  .primary-btn, .btn.primary-btn { padding: 14px 16px !important; font-size: 1rem !important; }
+  #score-board { font-size: 0.9rem !important; top: 10px !important; right: 10px !important; }
+}
+
+/* ===================================== */
+/* THEME V2: Branco + Turquesa clarinho  */
+/* ===================================== */
+/* Paleta: base branca, acentos turquesa, sem rosa */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f7fbfb;           /* leve tom água muito claro */
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --teal: #00c2a8;
+  --teal-600: #00ad96;
+  --teal-100: #d9f4ef;          /* turquesa bem clarinho para fundos */
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 22px rgba(0,0,0,0.06);
+}
+
+/* Fundo totalmente branco (com fallback suave) */
+body { background: var(--bg) !important; color: var(--ink) !important; }
+
+/* Header branco sólido com borda inferior sutil */
+.header, .sales-header {
+  background: var(--bg) !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+.header::after, .sales-header::after { display: none !important; }
+
+/* Logo sem badge/fundo extra */
+.logo-image { background: transparent !important; padding: 0 !important; box-shadow: none !important; }
+
+/* Container branco com leve sombra e borda suave */
+.quiz-container {
+  background: var(--bg) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.quiz-container::before { display: none !important; }
+
+/* Títulos discretos (usar cor primária turquesa apenas no sublinhado) */
+h2 { color: var(--ink) !important; text-shadow: none !important; }
+h2::after { background: var(--teal) !important; }
+
+/* Texto */
+p, .option-text, .pain-text, .offer-list li, .results-list li { color: var(--muted) !important; }
+
+/* Imagens com borda sutil (sem gradiente) */
+.image-container { background: transparent !important; border: 1px solid var(--border) !important; }
+.rounded-image { box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important; }
+
+/* Opções do quiz: cartõezinhos brancos */
+.option {
+  background: var(--bg) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04) !important;
+}
+.option:hover { border-color: var(--teal) !important; box-shadow: var(--shadow-md) !important; transform: translateY(-2px) !important; }
+.option::after { background: transparent !important; }
+.option.selected { border-color: var(--teal) !important; background: var(--teal-100) !important; }
+.option.selected::before { background: var(--teal) !important; }
+.option.selected .emoji { background: var(--teal) !important; color: #fff !important; border-color: var(--teal) !important; }
+.option.selected .option-text { color: var(--ink) !important; }
+
+/* Checkbox */
+.checkbox { border: 2px solid var(--border) !important; box-shadow: none !important; }
+.option.selected .checkbox { background-color: var(--teal) !important; border-color: var(--teal) !important; }
+
+/* Inputs/labels */
+.form-group label { color: var(--ink) !important; }
+.form-group label::before { color: var(--teal) !important; }
+.form-input { border: 1px solid var(--border) !important; box-shadow: none !important; }
+.form-input:focus { border-color: var(--teal) !important; box-shadow: 0 0 0 4px rgba(0, 194, 168, 0.12) !important; }
+
+/* Botões (CTAs) – sólido turquesa, mais atraente */
+.primary-btn, .btn.primary-btn {
+  background: var(--teal) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 14px 18px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.3px !important;
+  box-shadow: 0 10px 24px rgba(0, 194, 168, 0.22) !important;
+}
+.primary-btn:hover, .btn.primary-btn:hover { background: var(--teal-600) !important; transform: translateY(-2px) !important; box-shadow: 0 12px 28px rgba(0, 173, 150, 0.24) !important; }
+.primary-btn:active, .btn.primary-btn:active { transform: translateY(0) !important; }
+
+/* Barra de progresso turquesa flat */
+.progress { background: var(--teal) !important; box-shadow: none !important; }
+.progress-bar { background-color: rgba(2, 132, 128, 0.10) !important; }
+.progress-bar::before { opacity: 0.15 !important; }
+
+/* Seções de vendas e cards brancos */
+.sales-section { background: transparent !important; border-bottom: 1px solid var(--border) !important; }
+.section-title, .cta-title { color: var(--ink) !important; }
+.section-title::after { background: var(--teal) !important; }
+.testimonial { background: var(--bg) !important; border: 1px solid var(--border) !important; box-shadow: var(--shadow-sm) !important; }
+.testimonial cite { color: var(--teal) !important; }
+
+/* Score board discreto */
+#score-board { background: rgba(255,255,255,0.9) !important; border: 1px solid var(--border) !important; color: var(--ink) !important; }
+#score-board i { color: var(--teal) !important; }
+
+/* Sub-headline clean */
+.sub-headline-section { background: var(--bg) !important; box-shadow: none !important; border: 1px solid var(--border) !important; }
+.support-text, .icon-text { color: var(--ink) !important; }
