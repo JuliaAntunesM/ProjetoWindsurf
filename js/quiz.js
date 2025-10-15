@@ -176,9 +176,9 @@ function showLoading() {
     // Mostra a tela de carregamento
     nextPage('loading-screen');
     
-    // Após 4 segundos, redireciona para a página de resultados (vendas)
+    // Após 4 segundos, redireciona para a nova página de vendas
     setTimeout(() => {
-        nextPage('results-screen');
+        window.location.href = 'vendas.html';
     }, 4000);
 }
 

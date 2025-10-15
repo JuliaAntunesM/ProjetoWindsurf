@@ -33,6 +33,11 @@
     <!-- End Meta Pixel Code -->
 </head>
 <body>
+    <!-- Botão fixo para Página de Vendas -->
+    <a href="vendas.html" class="sales-fixed-link" style="position:fixed; top:16px; left:16px; z-index:1000; background: linear-gradient(90deg, #ff69b4 0%, #ffa6d8 100%); color:#fff; font-weight:800; padding:10px 14px; border-radius:10px; text-decoration:none; box-shadow:0 4px 14px rgba(255,105,180,0.25); display:inline-flex; align-items:center; gap:8px;">
+      <i class="fas fa-shopping-cart"></i>
+      Página de Vendas
+    </a>
     <div class="quiz-container">
         <div id="score-board" style="position: absolute; top: 18px; right: 18px; background: linear-gradient(90deg, #ff69b4 60%, #ffe0f7 100%); color: #fff; font-weight: 800; font-size: 1.1rem; border-radius: 10px; padding: 4px 12px; box-shadow: 0 2px 10px rgba(255,105,180,0.10); z-index: 10; display: flex; align-items: center; gap: 6px;"><i class="fas fa-star"></i> Pontos: <span id="score-value">0</span></div>
         <!-- Tela 1: Boas-vindas -->
@@ -40,6 +45,25 @@
             <div class="header">
                 <div class="logo-container">
                     <img src="Logo/logo.png" alt="Natália Fit Logo" class="logo-image">
+                </div>
+            <script>
+            document.addEventListener('DOMContentLoaded', function(){
+              try {
+                var root = document.getElementById('results-screen');
+                if (!root) return;
+                var count = root.querySelectorAll('.testimonial').length;
+                var badge = root.querySelector('.comment-count-badge');
+                if (badge && count > 0) {
+                  badge.textContent = count + ' comentários';
+                }
+              } catch (e) { /* no-op */ }
+            });
+            </script>
+
+                <!-- CTA Final Clean -->
+                <div class="sales-section cta-band animate__animated animate__fadeIn animate__delay-1s">
+                    <h3 class="cta-band-title">Pronta para começar hoje?</h3>
+                    <button class="btn primary-btn large-btn" onclick="document.getElementById('pricing-section') ? document.getElementById('pricing-section').scrollIntoView({behavior:'smooth'}) : nextPage('results-screen')">Quero treinar agora</button>
                 </div>
                 <div class="progress-bar">
                     <div class="progress" style="width: 0%"></div>
@@ -458,6 +482,20 @@
             </div>
             <div class="content sales-content">
 
+                <!-- Sales Hero Moderno -->
+                <div class="sales-section sales-hero animate__animated animate__fadeIn">
+                    <div class="sales-hero-inner">
+                        <h1 class="hero-title">Plano Treine Já</h1>
+                        <p class="hero-sub">Treinos em casa, no seu tempo, com resultados reais e autoestima lá em cima.</p>
+                        <button class="btn primary-btn hero-cta" onclick="document.querySelector('.testimonial-section').scrollIntoView({behavior:'smooth'})">Ver depoimentos</button>
+                        <div class="hero-accents">
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                            <span class="bubble"></span>
+                        </div>
+                    </div>
+                </div>
+
 
                 <!-- Sub-headline de apoio com ícones -->
                 <div class="sales-section sub-headline-section animate__animated animate__fadeIn animate__delay-1s">
@@ -497,15 +535,39 @@
 
                 <!-- Prova Social -->
                 <div class="sales-section testimonial-section animate__animated animate__fadeIn animate__delay-3s">
-                    <h3 class="section-title">📈 O QUE DIZEM NOSSAS ALUNAS</h3>
+                    <h3 class="section-title">📈 O QUE DIZEM NOSSAS ALUNAS <span class="comment-count-badge">6 comentários</span></h3>
                     <div class="testimonial">
                         <div class="testimonial-image">
                             <img src="FotosComentarios/1.jpg" alt="Foto de Ana Paula" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #ff69b4; object-fit: cover;">
                         </div>
                         <div class="testimonial-content">
                             <blockquote>
-                                <p><strong>"Depois de anos tentando dietas e treinos difíceis, finalmente encontrei algo que consigo fazer! Meu corpo mudou muito em poucas semanas!"</strong></p>
-                                <cite>— Ana Paula, 47 anos</cite>
+                                <p><strong>"Estou super feliz por ter entrado no Treine Já! Treino em casa todos os dias, no meu horário, e já vejo resultados no corpo e na autoestima. É libertador não depender de academia cara e lotada."</strong></p>
+                                <cite>— Ana Paula, 34 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="FotosComentarios/2.png" alt="Foto de Mariana" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #ff69b4; object-fit: cover;">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Com os meus filhos em casa, eu treino quando quero e como posso. Em poucas semanas me sinto mais leve, confiante e feliz. O Treine Já mudou minha rotina sem pesar no bolso!"</strong></p>
+                                <cite>— Mariana, 35 anos</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-image">
+                            <img src="FotosComentarios/3.png" alt="Foto de Carla" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #ff69b4; object-fit: cover;">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p><strong>"Amo poder treinar no horário que eu quiser, sem fila de aparelho e sem mensalidade absurda. Meu bumbum está mais firme e minha autoestima lá em cima. Recomendo de olhos fechados!"</strong></p>
+                                <cite>— Carla, 29 anos</cite>
                             </blockquote>
                         </div>
                     </div>
@@ -604,7 +666,23 @@
                     </div>
                 </div>
 
-                    <h3 class="section-title">🎯 O QUE VOCÊ VAI RECEBER</h3>
+                    <!-- Alunas Treinando - Galeria Clean -->
+                <div class="sales-section training-section animate__animated animate__fadeIn animate__delay-3s">
+                    <h3 class="section-title">💪 Alunas treinando em casa</h3>
+                    <div class="training-gallery">
+                        <figure class="training-tile"><img src="AlunasTreinando/1.jpg" alt="Aluna treinando em casa 1" loading="lazy"><figcaption>Treine no seu horário</figcaption></figure>
+                        <figure class="training-tile"><img src="AlunasTreinando/2.jpg" alt="Aluna treinando em casa 2" loading="lazy"><figcaption>Resultados reais</figcaption></figure>
+                        <figure class="training-tile"><img src="AlunasTreinando/3.jpg" alt="Aluna treinando em casa 3" loading="lazy"><figcaption>Autoestima em alta</figcaption></figure>
+                        <figure class="training-tile"><img src="AlunasTreinando/4.jpg" alt="Aluna treinando em casa 4" loading="lazy"><figcaption>10 min por dia</figcaption></figure>
+                        <figure class="training-tile"><img src="AlunasTreinando/5.jpg" alt="Aluna treinando em casa 5" loading="lazy"><figcaption>Em casa, sem filas</figcaption></figure>
+                        <figure class="training-tile"><img src="AlunasTreinando/6.jpg" alt="Aluna treinando em casa 6" loading="lazy"><figcaption>Com os filhos por perto</figcaption></figure>
+                        <figure class="training-tile"><img src="AlunasTreinando/7.jpg" alt="Aluna treinando em casa 7" loading="lazy"><figcaption>Economize com academia</figcaption></figure>
+                        <figure class="training-tile"><img src="AlunasTreinando/8.jpg" alt="Aluna treinando em casa 8" loading="lazy"><figcaption>Constância diária</figcaption></figure>
+                        <figure class="training-tile"><img src="AlunasTreinando/9.jpg" alt="Aluna treinando em casa 9" loading="lazy"><figcaption>Confiança e bem-estar</figcaption></figure>
+                    </div>
+                </div>
+
+                <h3 class="section-title">🎯 O QUE VOCÊ VAI RECEBER</h3>
                     
                     <div class="image-container animate__animated animate__fadeIn animate__delay-1s">
                         <img src="images/imagem3.jpg" alt="Kit completo da Natália Fit" class="rounded-image">

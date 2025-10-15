@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treine Já — Página de Vendas</title>
+  <!-- CSS externos removidos para evitar conflito de estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header class="lp-header">
+    <div class="wrap">
+      <a href="index.html" class="brand"><img src="Logo/logo.png" alt="Treine Já" /><span>Treine Já</span></a>
+      <button class="hamb" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="menu" class="top-nav">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero hero-dark animate__animated animate__fadeIn">
+      <div class="wrap hero-center">
+        <h1>Transforme seu corpo em 10 minutos por dia</h1>
+        <p>Treinos 100% em casa, sem equipamentos e pensados para iniciantes. Resultados reais, com leveza e constância.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#planos">Começar agora</a>
+          <a class="btn ghost invert" href="#depoimentos">Ver depoimentos</a>
+        </div>
+        <div class="hero-social">
+          <div class="avatars">
+            <img src="AlunasTreinando/1.jpg" alt="Aluna" loading="lazy" />
+            <img src="AlunasTreinando/4.jpg" alt="Aluna" loading="lazy" />
+            <img src="AlunasTreinando/6.jpg" alt="Aluna" loading="lazy" />
+            <img src="AlunasTreinando/8.jpg" alt="Aluna" loading="lazy" />
+          </div>
+          <span class="kpi"><i class="fas fa-star"></i> 4.9/5 por alunas</span>
+        </div>
+        <div class="trust invert">
+          <span><i class="fas fa-bolt"></i> 10 min/dia</span>
+          <span><i class="fas fa-house"></i> 100% em casa</span>
+          <span><i class="fas fa-shield-heart"></i> Iniciantes</span>
+        </div>
+      </div>
+      <div class="bubbles"><span></span><span></span><span></span></div>
+    </section>
+
+    <!-- Faixa de avatares (marquee) -->
+    <section class="avatar-strip" aria-label="Alunas reais">
+      <div class="track">
+        <div class="row">
+          <img src="AlunasTreinando/1.jpg" alt="Aluna 1" loading="lazy" />
+          <img src="AlunasTreinando/2.jpg" alt="Aluna 2" loading="lazy" />
+          <img src="AlunasTreinando/3.jpg" alt="Aluna 3" loading="lazy" />
+          <img src="AlunasTreinando/4.jpg" alt="Aluna 4" loading="lazy" />
+          <img src="AlunasTreinando/5.jpg" alt="Aluna 5" loading="lazy" />
+          <img src="AlunasTreinando/6.jpg" alt="Aluna 6" loading="lazy" />
+          <img src="AlunasTreinando/7.jpg" alt="Aluna 7" loading="lazy" />
+          <img src="AlunasTreinando/8.jpg" alt="Aluna 8" loading="lazy" />
+          <img src="AlunasTreinando/9.jpg" alt="Aluna 9" loading="lazy" />
+        </div>
+        <div class="row clone" aria-hidden="true">
+          <img src="AlunasTreinando/1.jpg" alt="" />
+          <img src="AlunasTreinando/2.jpg" alt="" />
+          <img src="AlunasTreinando/3.jpg" alt="" />
+          <img src="AlunasTreinando/4.jpg" alt="" />
+          <img src="AlunasTreinando/5.jpg" alt="" />
+          <img src="AlunasTreinando/6.jpg" alt="" />
+          <img src="AlunasTreinando/7.jpg" alt="" />
+          <img src="AlunasTreinando/8.jpg" alt="" />
+          <img src="AlunasTreinando/9.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Colagem sobreposta -->
+    <section class="collage">
+      <div class="wrap">
+        <div class="stack">
+          <img class="ph a" src="AlunasTreinando/3.jpg" alt="Colagem 1" loading="lazy" />
+          <img class="ph b" src="AlunasTreinando/7.jpg" alt="Colagem 2" loading="lazy" />
+          <img class="ph c" src="AlunasTreinando/5.jpg" alt="Colagem 3" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Alunas treinando (carrossel) -->
+    <section class="carousel-section">
+      <div class="wrap">
+        <h2>Alunas treinando agora</h2>
+        <p class="subtitle">Inspirações reais de quem treina em casa, no próprio ritmo</p>
+      </div>
+      <div class="carousel" aria-label="Galeria de alunas">
+        <article class="slide"><img src="AlunasTreinando/1.jpg" alt="Aluna 1 treinando" loading="lazy" /><div class="overlay">No seu horário</div></article>
+        <article class="slide"><img src="AlunasTreinando/2.jpg" alt="Aluna 2 treinando" loading="lazy" /><div class="overlay">Sem equipamento</div></article>
+        <article class="slide"><img src="AlunasTreinando/3.jpg" alt="Aluna 3 treinando" loading="lazy" /><div class="overlay">Em casa</div></article>
+        <article class="slide"><img src="AlunasTreinando/4.jpg" alt="Aluna 4 treinando" loading="lazy" /><div class="overlay">10 min/dia</div></article>
+        <article class="slide"><img src="AlunasTreinando/5.jpg" alt="Aluna 5 treinando" loading="lazy" /><div class="overlay">Rotina leve</div></article>
+        <article class="slide"><img src="AlunasTreinando/6.jpg" alt="Aluna 6 treinando" loading="lazy" /><div class="overlay">Progresso real</div></article>
+        <article class="slide"><img src="AlunasTreinando/7.jpg" alt="Aluna 7 treinando" loading="lazy" /><div class="overlay">Autoestima</div></article>
+        <article class="slide"><img src="AlunasTreinando/8.jpg" alt="Aluna 8 treinando" loading="lazy" /><div class="overlay">Praticidade</div></article>
+        <article class="slide"><img src="AlunasTreinando/9.jpg" alt="Aluna 9 treinando" loading="lazy" /><div class="overlay">Constância</div></article>
+      </div>
+      <div class="carousel-ui wrap">
+        <div class="hint">Deslize para o lado</div>
+        <div class="dots" role="tablist" aria-label="Navegação da galeria"></div>
+      </div>
+    </section>
+
+    <!-- Antes e Depois removido: imagens não existem no projeto atual, evitando bloco vazio -->
+
+    <!-- Benefícios -->
+    <section id="beneficios" class="benefits">
+      <div class="wrap">
+        <h2>Resultados que você sente e vê</h2>
+        <div class="cards">
+          <article class="card animate__animated animate__fadeInUp"><i class="fas fa-venus"></i><h3>Barriga mais firme</h3><p>Ativações de core sem impacto.</p></article>
+          <article class="card animate__animated animate__fadeInUp animate__delay-1s"><i class="fas fa-hourglass"></i><h3>Cintura marcada</h3><p>Sequências que afinam e modelam.</p></article>
+          <article class="card animate__animated animate__fadeInUp animate__delay-2s"><i class="fas fa-fire"></i><h3>Bumbum durinho</h3><p>Progressão segura e eficaz.</p></article>
+          <article class="card animate__animated animate__fadeInUp animate__delay-3s"><i class="fas fa-face-smile"></i><h3>Autoestima em alta</h3><p>Mais energia e confiança.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="testimonials">
+      <div class="wrap">
+        <h2>O que nossas alunas dizem <span class="comment-count-badge">0 comentários</span></h2>
+        <div class="list">
+          <article class="t"><img src="FotosComentarios/1.jpg" alt="Ana" loading="lazy" /><blockquote>"Treino no meu ritmo e já vejo resultados no corpo e na autoestima."</blockquote><cite>— Ana, 34</cite></article>
+          <article class="t"><img src="FotosComentarios/2.png" alt="Mariana" loading="lazy" /><blockquote>"Ficou fácil treinar mesmo com os filhos em casa."</blockquote><cite>— Mariana, 35</cite></article>
+          <article class="t"><img src="FotosComentarios/3.png" alt="Carla" loading="lazy" /><blockquote>"Sem academia lotada e com resultados de verdade!"</blockquote><cite>— Carla, 29</cite></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Oferta/Planos -->
+    <section id="planos" class="pricing">
+      <div class="wrap grid-two">
+        <div class="offer">
+          <h2>Plano Treine Já</h2>
+          <ul>
+            <li><i class="fas fa-circle-check"></i> Rotina guiada de 10 min/dia</li>
+            <li><i class="fas fa-circle-check"></i> Foco em barriga, cintura e bumbum</li>
+            <li><i class="fas fa-circle-check"></i> 100% em casa, sem equipamentos</li>
+            <li><i class="fas fa-circle-check"></i> Atualizações e suporte</li>
+          </ul>
+        </div>
+        <aside class="cards">
+          <div class="p">
+            <h3>Mensal</h3>
+            <div class="price">R$ 29,99</div>
+            <a class="btn outline" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">Assinar Mensal</a>
+          </div>
+          <div class="p hit">
+            <div class="flag">Mais vantajoso</div>
+            <h3>Anual</h3>
+            <div class="price">R$ 99,99</div>
+            <a class="btn primary" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">Assinar Anual</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Garantia + FAQ -->
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="guarantee"><i class="fas fa-shield"></i><div><h3>Garantia de 7 dias</h3><p>Teste sem riscos. Não gostou? Devolvemos seu dinheiro.</p></div></div>
+        <h2>Dúvidas frequentes</h2>
+        <details><summary>Preciso de equipamentos?</summary><p>Não. Todos os treinos foram pensados para serem feitos em casa.</p></details>
+        <details><summary>Quanto tempo por dia?</summary><p>Apenas 10 minutos por dia, com constância.</p></details>
+        <details><summary>Sou iniciante, consigo acompanhar?</summary><p>Sim. Treinos progressivos e seguros.</p></details>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="final">
+      <div class="wrap">
+        <h2>Pronta para começar hoje?</h2>
+        <p>Entre para o Treine Já e inicie sua transformação agora.</p>
+        <a class="btn primary big" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">Quero treinar agora</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky CTA para mobile -->
+  <div class="sticky-cta">
+    <a class="btn primary big" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">
+      Começar agora
+    </a>
+  </div>
+
+  <footer class="lp-footer">
+    <div class="wrap">
+      <small>© <span id="year"></span> Treine Já</small>
+      <nav><a href="#hero">Topo</a><a href="#planos">Planos</a><a href="#faq">FAQ</a></nav>
+    </div>
+  </footer>
+
+  <script>
+    // contador de depoimentos
+    (function(){
+      var s=document.querySelector('.testimonials'); if(!s) return;
+      var n=s.querySelectorAll('.t').length; var b=s.querySelector('.comment-count-badge');
+      if(b&&n>0) b.textContent=n+" comentários";
+    })();
+    // ano rodapé
+    document.getElementById('year').textContent=new Date().getFullYear();
+    // scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href');if(id.length>1){e.preventDefault();document.querySelector(id)?.scrollIntoView({behavior:'smooth'});}})});
+
+    // Menu hambúrguer mobile
+    (function(){
+      var btn=document.querySelector('.hamb'); var nav=document.getElementById('menu'); if(!btn||!nav) return;
+      btn.addEventListener('click',function(){
+        var open=nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open?'true':'false');
+      });
+      // Fechar ao clicar em link
+      nav.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');});});
+    })();
+
+    // Dots do carrossel + sincronização
+    (function(){
+      var track=document.querySelector('.carousel'); if(!track) return;
+      var slides=Array.from(track.querySelectorAll('.slide'));
+      var dotsWrap=document.querySelector('.carousel-ui .dots'); if(!dotsWrap) return;
+      slides.forEach(function(_,i){var b=document.createElement('button'); b.setAttribute('aria-label','Ir para slide '+(i+1)); b.addEventListener('click',function(){track.scrollTo({left:slides[i].offsetLeft- track.firstElementChild.offsetLeft, behavior:'smooth'});}); dotsWrap.appendChild(b);});
+      function update(){
+        var idx=Math.round(track.scrollLeft / (track.firstElementChild.getBoundingClientRect().width + 10));
+        var bs=dotsWrap.querySelectorAll('button'); bs.forEach(function(x,j){x.classList.toggle('active', j===idx)});
+      }
+      track.addEventListener('scroll', function(){window.requestAnimationFrame(update)});
+      update();
+    })();
+  </script>
+
+  <style>
+    :root{--ink:#0b1220;--muted:#6b7280;--bg:#f8fafc;--soft:#ffffff;--teal:#10b981;--pink:#ff69b4;--bd:#e5e7eb;--sh:0 6px 18px rgba(2,6,23,.05);--headerH:56px;--stickyH:68px}
+    html,body{height:100%}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:Poppins,system-ui,sans-serif;color:var(--ink);background: var(--bg); overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+    main{flex:1; padding-bottom: calc(var(--stickyH) + 12px)}
+    img{max-width:100%;display:block}
+    /* Força proporção/tamanho de celular em qualquer tela */
+    .wrap{width:100%;max-width:420px;margin-inline:auto;padding-inline:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:900}
+    .btn.primary{background:#10b981;color:#fff;box-shadow:0 6px 16px rgba(16,185,129,.20);border:1px solid #0ea772}
+    .btn.primary.big{padding:14px 18px;font-size:1.05rem}
+    .btn.ghost{border:1px solid var(--bd);color:var(--ink);background:#fff}
+    .btn.outline{border:2px solid var(--teal);color:var(--teal);background:transparent}
+
+    .lp-header{position:sticky;top:0;background:#fff;backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--bd);z-index:100;box-shadow:0 4px 14px rgba(2,6,23,.04)}
+    .lp-header .wrap{display:flex;align-items:center;justify-content:space-between;padding:8px 0;position:relative;min-height:var(--headerH)}
+    .brand{display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none}
+    .brand img{height:28px}
+    .brand span{font-weight:900}
+    .hamb{display:inline-flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:8px}
+    .hamb span{display:block;width:18px;height:2px;background:#0f172a;border-radius:2px}
+    /* Dropdown do menu logo abaixo do header */
+    .top-nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border:1px solid var(--bd);border-radius:12px;box-shadow:var(--sh);padding:10px;margin-top:8px}
+    .top-nav a{display:block;padding:10px 8px;border-radius:8px}
+    .top-nav a:hover{background:var(--soft)}
+    .top-nav.open{display:block}
+    .lp-header nav a{color:inherit;text-decoration:none;font-weight:700}
+
+    .hero{position:relative;padding:36px 0 28px;min-height:68vh;display:flex;align-items:flex-end; background:#0b1720}
+    .hero.hero-dark{background-image:url('AlunasTreinando/3.jpg'); background-size:cover; background-position:center;}
+    .hero.hero-dark::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,6,23,.35) 0%, rgba(2,6,23,.45) 35%, rgba(2,6,23,.65) 100%)}
+    .hero .wrap{position:relative; z-index:1}
+    .hero-center{text-align:center}
+    .hero h1{font-size:clamp(24px,7vw,32px);line-height:1.12;margin:0 0 8px;font-weight:900;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+    .hero p{color:rgba(255,255,255,.9);margin:0 0 14px;font-size:1rem}
+    .ctas{display:flex;gap:8px;flex-wrap:wrap}
+    .btn.ghost.invert{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+    .hero-social{display:flex; align-items:center; justify-content:center; gap:10px; margin-top:10px}
+    .hero-social .avatars{display:flex; align-items:center}
+    .hero-social .avatars img{width:28px;height:28px;object-fit:cover;border-radius:999px;border:2px solid rgba(255,255,255,.9); margin-left:-6px}
+    .hero-social .avatars img:first-child{margin-left:0}
+    .hero-social .kpi{color:#fff; font-weight:800; display:inline-flex; align-items:center; gap:6px}
+    .trust{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-weight:800;margin-top:12px;justify-content:center}
+    .trust.invert span{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18); color:#e5f7f0}
+    .trust span{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--bd);border-radius:999px;background:#fff}
+    /* removido media no hero */
+    .bubbles{pointer-events:none;position:absolute;inset:0;overflow:hidden;display:none}
+    .bubbles span{position:absolute;width:12px;height:12px;background:radial-gradient(circle at 30% 30%,#34d399,#10b981);border-radius:999px;opacity:.2;animation:float 14s ease-in-out infinite}
+    .bubbles span:nth-child(1){left:8%;top:22%}
+    .bubbles span:nth-child(2){left:70%;top:12%;animation-duration:14s}
+    .bubbles span:nth-child(3){left:50%;top:70%;animation-duration:10s}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+    /* Carousel */
+    .carousel-section{padding:10px 0 6px}
+    .carousel-section .wrap{display:flex;flex-direction:column;gap:4px}
+    .carousel-section h2{margin:0}
+    .carousel-section .subtitle{margin:0;color:var(--muted);font-size:.95rem}
+    .carousel{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4% 2px;scrollbar-width:none;-ms-overflow-style:none}
+    .carousel::-webkit-scrollbar{display:none}
+    .slide{position:relative;border:1px solid var(--bd);border-radius:14px;overflow:hidden;scroll-snap-align:center;box-shadow:var(--sh);background:#fff}
+    .slide img{width:100%;height:220px;object-fit:cover;display:block}
+    .slide .overlay{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 100%);color:#fff;font-weight:800;letter-spacing:.2px}
+    .carousel-ui{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
+    .carousel-ui .hint{color:var(--muted);font-size:12px}
+    .carousel-ui .dots{display:flex;gap:6px}
+    .carousel-ui .dots button{width:8px;height:8px;border-radius:999px;border:0;background:#d1fae5;opacity:.6;transition:transform .2s ease, opacity .2s ease}
+    .carousel-ui .dots button.active{background:#10b981;opacity:1;transform:scale(1.25);box-shadow:0 0 0 4px rgba(16,185,129,.12);}
+
+    /* Avatar strip (marquee) */
+    .avatar-strip{padding:8px 0; overflow:hidden}
+    .avatar-strip .track{display:flex; gap:16px}
+    .avatar-strip .row{display:flex; align-items:center; gap:10px; animation:marq 22s linear infinite}
+    .avatar-strip .row.clone{animation:marq 22s linear infinite}
+    .avatar-strip img{width:44px; height:44px; object-fit:cover; border-radius:999px; border:2px solid #e6fbf5; box-shadow:0 4px 12px rgba(2,6,23,.08)}
+    @keyframes marq { from{ transform:translateX(0)} to{ transform:translateX(-100%) } }
+
+    /* Collage sobreposta */
+    .collage{padding:14px 0}
+    .collage .stack{position:relative; height:220px}
+    .collage .ph{position:absolute; width:55%; height:200px; object-fit:cover; border-radius:14px; box-shadow:0 12px 26px rgba(2,6,23,.10); border:1px solid var(--bd)}
+    .collage .ph.a{left:4%; top:10%; transform:rotate(-4deg)}
+    .collage .ph.b{right:4%; top:0; transform:rotate(3deg)}
+    .collage .ph.c{left:24%; bottom:-4px; width:52%; height:180px; transform:rotate(1deg)}
+
+    /* Mosaico inclinado */
+    .mosaic{padding:10px 0}
+    .mosaic .grid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    .mosaic .tile{position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--bd); box-shadow:0 10px 24px rgba(2,6,23,.10)}
+    .mosaic .tile img{width:100%; height:150px; object-fit:cover; display:block; transform:scale(1.03)}
+    .mosaic .tile figcaption{position:absolute; left:8px; bottom:8px; background:rgba(0,0,0,.55); color:#fff; padding:4px 8px; border-radius:8px; font-weight:800; font-size:12px}
+    .mosaic .tile.r1{transform:rotate(-1.5deg)}
+    .mosaic .tile.r2{transform:rotate(1.2deg)}
+    .mosaic .tile.r3{transform:rotate(-.8deg)}
+    .mosaic .tile.r4{transform:rotate(1.6deg)}
+
+    /* Antes e Depois */
+    .before-after{padding:18px 0}
+    .before-after h2{text-align:center;margin:0 0 10px}
+    .ba-grid{display:grid;grid-template-columns:1fr;gap:10px}
+    .ba{margin:0;border:1px solid var(--bd);border-radius:12px;overflow:hidden;box-shadow:var(--sh);background:#fff}
+    .ba img{width:100%;height:240px;object-fit:cover}
+    .ba figcaption{padding:8px 10px;color:var(--muted)}
+
+    .benefits{padding:22px 0}
+    .benefits h2{text-align:center;margin:0 0 14px}
+    .benefits .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .benefits .card{border:1px solid var(--bd);border-radius:12px;padding:12px;text-align:center;box-shadow:var(--sh);background:#fff}
+    .benefits .card i{color:var(--teal);font-size:20px}
+    .benefits .card h3{margin:6px 0}
+    .benefits .card p{margin:0;color:var(--muted)}
+
+    .testimonials{padding:20px 0;background:#fff}
+    .testimonials h2{text-align:center;margin:0 0 14px}
+    .testimonials .list{display:grid;grid-template-columns:1fr;gap:12px}
+    .testimonials .t{border:1px solid var(--bd);border-radius:12px;padding:12px;background:#fff;box-shadow:var(--sh)}
+    .testimonials img{width:52px;height:52px;border-radius:50%;border:3px solid var(--pink);object-fit:cover}
+    .testimonials blockquote{margin:6px 0;color:var(--ink);font-weight:600}
+    .testimonials cite{color:var(--muted)}
+
+    .pricing{padding:22px 0 90px;background:#f3f4f6}
+    .grid-two{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
+    .offer h2{margin:0 0 8px}
+    .offer ul{margin:0;padding:0;list-style:none;color:var(--muted);display:grid;gap:6px}
+    .offer li i{color:var(--teal)}
+    .pricing .cards{display:grid;grid-template-columns:1fr;gap:10px}
+    .p{border:1px solid var(--bd);border-radius:12px;padding:12px;background:#fff;text-align:center;box-shadow:var(--sh)}
+    .p .price{font-size:1.5rem;font-weight:900;color:var(--teal);margin:6px 0 8px}
+    .p.hit{border:2px solid var(--teal);box-shadow:0 10px 28px rgba(16,185,129,.12)}
+    .p .flag{position:relative;top:-6px;display:inline-block;background:#e6fbf5;color:#065f46;border:1px solid #c7f5e9;border-radius:999px;padding:4px 8px;font-weight:800;font-size:12px}
+
+    .faq{padding:22px 0}
+    .guarantee{display:flex;gap:10px;align-items:center;border:1px solid var(--bd);border-radius:12px;padding:12px;background:#fff;box-shadow:var(--sh);margin-bottom:12px}
+    .guarantee i{font-size:22px;color:var(--teal)}
+    details{border:1px solid var(--bd);border-radius:12px;padding:10px 12px;background:#fff;box-shadow:var(--sh);margin:6px 0}
+    summary{cursor:pointer;font-weight:800}
+    details p{color:var(--muted)}
+
+    .final{padding:26px 0;background:#fff;text-align:center}
+    .final h2{margin:0 0 6px}
+    .final p{margin:0 0 12px;color:var(--muted)}
+
+    .lp-footer{border-top:1px solid var(--bd);padding:14px 0 14px;background:#fff}
+    .lp-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .lp-footer nav{display:flex;gap:12px}
+    .lp-footer a{color:inherit;text-decoration:none}
+
+    /* Sticky CTA bar */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#fff;backdrop-filter:saturate(140%) blur(6px);border-top:1px solid var(--bd);padding:10px env(safe-area-inset-right) calc(10px + env(safe-area-inset-bottom)) env(safe-area-inset-left);display:flex;justify-content:center;z-index:60;min-height:var(--stickyH);box-shadow:0 -6px 16px rgba(2,6,23,.04)}
+    .sticky-cta .btn{width:100%;max-width:640px;justify-content:center}
+
+    /* Em telas grandes, manter visual de celular (sem upgrade de layout) */
+    @media (min-width: 900px){
+      .wrap{width:min(60vw, 520px)}
+      .top-nav{display:none}
+      .hamb{display:inline-flex}
+      .hero{padding:32px 0 20px}
+      .hero .grid{grid-template-columns:1fr}
+      .hero h1{font-size:30px}
+      .benefits .cards{grid-template-columns:repeat(2,1fr);gap:10px}
+      .testimonials .list{grid-template-columns:1fr;gap:12px}
+      .grid-two{grid-template-columns:1fr}
+      .pricing .cards{grid-template-columns:1fr}
+      .sticky-cta{display:flex}
+      .pricing{padding-bottom:90px}
+    }
+  </style>
+</body>
+</html>
