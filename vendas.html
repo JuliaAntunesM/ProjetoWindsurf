@@ -134,9 +134,10 @@
       <div class="wrap">
         <h2>O que nossas alunas dizem <span class="comment-count-badge">0 comentários</span></h2>
         <div class="list">
-          <article class="t"><img src="FotosComentarios/1.jpg" alt="Ana" loading="lazy" /><blockquote>"Treino no meu ritmo e já vejo resultados no corpo e na autoestima."</blockquote><cite>— Ana, 34</cite></article>
-          <article class="t"><img src="FotosComentarios/2.png" alt="Mariana" loading="lazy" /><blockquote>"Ficou fácil treinar mesmo com os filhos em casa."</blockquote><cite>— Mariana, 35</cite></article>
-          <article class="t"><img src="FotosComentarios/3.png" alt="Carla" loading="lazy" /><blockquote>"Sem academia lotada e com resultados de verdade!"</blockquote><cite>— Carla, 29</cite></article>
+          <article class="t"><img src="FotosComentarios/1.png" alt="Ana" loading="lazy" /><div class="tx"><blockquote>"Treino no meu ritmo e já vejo resultados no corpo e na autoestima."</blockquote><cite>— Ana, 34</cite></div></article>
+          <article class="t"><img src="FotosComentarios/2.png" alt="Mariana" loading="lazy" /><div class="tx"><blockquote>"Ficou fácil treinar mesmo com os filhos em casa."</blockquote><cite>— Mariana, 35</cite></div></article>
+          <article class="t"><img src="FotosComentarios/3.png" alt="Carla" loading="lazy" /><div class="tx"><blockquote>"Sem academia lotada e com resultados de verdade!"</blockquote><cite>— Carla, 29</cite></div></article>
+          <article class="t"><img src="FotosComentarios/4.png" alt="Jéssica" loading="lazy" /><div class="tx"><blockquote>"10 min por dia já fizeram diferença na minha disposição!"</blockquote><cite>— Jéssica, 31</cite></div></article>
         </div>
       </div>
     </section>
@@ -145,7 +146,8 @@
     <section id="planos" class="pricing">
       <div class="wrap grid-two">
         <div class="offer">
-          <h2>Plano Treine Já</h2>
+          <h2>Planos Treina Já</h2>
+          <p class="subtitle">Escolha o plano ideal para o seu ritmo</p>
           <ul>
             <li><i class="fas fa-circle-check"></i> Rotina guiada de 10 min/dia</li>
             <li><i class="fas fa-circle-check"></i> Foco em barriga, cintura e bumbum</li>
@@ -154,14 +156,16 @@
           </ul>
         </div>
         <aside class="cards">
-          <div class="p">
+          <div class="p plan-pink">
             <h3>Mensal</h3>
+            <p class="subtitle">Acesso mês a mês</p>
             <div class="price">R$ 29,99</div>
             <a class="btn outline" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">Assinar Mensal</a>
           </div>
-          <div class="p hit">
+          <div class="p hit plan-green">
             <div class="flag">Mais vantajoso</div>
             <h3>Anual</h3>
+            <p class="subtitle">Acesso 12 meses • Economize</p>
             <div class="price">R$ 99,99</div>
             <a class="btn primary" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">Assinar Anual</a>
           </div>
@@ -302,19 +306,22 @@
     .carousel-section .wrap{display:flex;flex-direction:column;gap:4px}
     .carousel-section h2{margin:0}
     .carousel-section .subtitle{margin:0;color:var(--muted);font-size:.95rem}
-    .carousel{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4% 2px;scrollbar-width:none;-ms-overflow-style:none}
+    .carousel{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0;scrollbar-width:none;-ms-overflow-style:none;max-width:420px;margin:0 auto}
     .carousel::-webkit-scrollbar{display:none}
-    .slide{position:relative;border:1px solid var(--bd);border-radius:14px;overflow:hidden;scroll-snap-align:center;box-shadow:var(--sh);background:#fff}
-    .slide img{width:100%;height:220px;object-fit:cover;display:block}
-    .slide .overlay{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 100%);color:#fff;font-weight:800;letter-spacing:.2px}
-    .carousel-ui{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
+    .slide{position:relative;border:1.5px solid transparent;border-radius:16px;overflow:hidden;scroll-snap-align:center;box-shadow:0 8px 24px rgba(2,6,23,.10);background:
+        linear-gradient(#ffffff,#ffffff) padding-box,
+        linear-gradient(135deg,#e6fbf5,#fde7f3) border-box}
+    .slide img{width:100%;height:auto;object-fit:contain;display:block;background:#fff;border-radius:16px}
+    .slide:hover{box-shadow:0 12px 30px rgba(2,6,23,.14)}
+    .slide .overlay{display:none}
+    .carousel-ui{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;margin-top:8px;max-width:420px;margin-left:auto;margin-right:auto;text-align:center}
     .carousel-ui .hint{color:var(--muted);font-size:12px}
     .carousel-ui .dots{display:flex;gap:6px}
     .carousel-ui .dots button{width:8px;height:8px;border-radius:999px;border:0;background:#d1fae5;opacity:.6;transition:transform .2s ease, opacity .2s ease}
     .carousel-ui .dots button.active{background:#10b981;opacity:1;transform:scale(1.25);box-shadow:0 0 0 4px rgba(16,185,129,.12);}
 
     /* Avatar strip (marquee) */
-    .avatar-strip{padding:8px 0; overflow:hidden}
+    .avatar-strip{padding:8px 0; overflow:hidden; max-width:420px; margin:0 auto}
     .avatar-strip .track{display:flex; gap:16px}
     .avatar-strip .row{display:flex; align-items:center; gap:10px; animation:marq 22s linear infinite}
     .avatar-strip .row.clone{animation:marq 22s linear infinite}
@@ -323,7 +330,7 @@
 
     /* Collage sobreposta */
     .collage{padding:14px 0}
-    .collage .stack{position:relative; height:220px}
+    .collage .stack{position:relative; height:220px; max-width:420px; margin:0 auto}
     .collage .ph{position:absolute; width:55%; height:200px; object-fit:cover; border-radius:14px; box-shadow:0 12px 26px rgba(2,6,23,.10); border:1px solid var(--bd)}
     .collage .ph.a{left:4%; top:10%; transform:rotate(-4deg)}
     .collage .ph.b{right:4%; top:0; transform:rotate(3deg)}
@@ -348,31 +355,56 @@
     .ba img{width:100%;height:240px;object-fit:cover}
     .ba figcaption{padding:8px 10px;color:var(--muted)}
 
-    .benefits{padding:22px 0}
-    .benefits h2{text-align:center;margin:0 0 14px}
-    .benefits .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .benefits .card{border:1px solid var(--bd);border-radius:12px;padding:12px;text-align:center;box-shadow:var(--sh);background:#fff}
-    .benefits .card i{color:var(--teal);font-size:20px}
-    .benefits .card h3{margin:6px 0}
+    .benefits{padding:24px 0}
+    .benefits h2{text-align:center;margin:0 0 12px;position:relative}
+    .benefits h2::after{content:"";display:block;width:90px;height:4px;border-radius:999px;background:linear-gradient(90deg,#10b981,#ec4899);margin:8px auto 0}
+    .benefits .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .benefits .card{position:relative;border:1px solid transparent;border-radius:16px;padding:14px 12px;text-align:center;box-shadow:0 10px 26px rgba(2,6,23,.06);
+      background:linear-gradient(#ffffff,#ffffff) padding-box, linear-gradient(135deg,#e6fbf5,#fde7f3) border-box;transition:transform .18s ease, box-shadow .18s ease}
+    .benefits .card:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(2,6,23,.10)}
+    .benefits .card i{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;background:#e6fbf5;border:1px solid #c7f5e9;color:#0f766e;font-size:18px}
+    .benefits .card h3{margin:8px 0 6px;font-weight:800}
     .benefits .card p{margin:0;color:var(--muted)}
+    .benefits .card:nth-child(2) i{background:#ffe4f1;border-color:#ffd1e7;color:#be185d}
+    .benefits .card:nth-child(3) i{background:#e7f5ff;border-color:#cfeaff;color:#0369a1}
+    .benefits .card:nth-child(4) i{background:#fff7e6;border-color:#ffe7bd;color:#b45309}
 
-    .testimonials{padding:20px 0;background:#fff}
-    .testimonials h2{text-align:center;margin:0 0 14px}
+    .testimonials{padding:24px 0;background:#fff}
+    .testimonials h2{text-align:center;margin:0 0 14px;position:relative}
+    .testimonials h2::after{content:"";display:block;width:80px;height:4px;border-radius:999px;background:linear-gradient(90deg,#10b981,#34d399);margin:8px auto 0}
     .testimonials .list{display:grid;grid-template-columns:1fr;gap:12px}
-    .testimonials .t{border:1px solid var(--bd);border-radius:12px;padding:12px;background:#fff;box-shadow:var(--sh)}
-    .testimonials img{width:52px;height:52px;border-radius:50%;border:3px solid var(--pink);object-fit:cover}
-    .testimonials blockquote{margin:6px 0;color:var(--ink);font-weight:600}
-    .testimonials cite{color:var(--muted)}
+    .testimonials .t{display:flex;align-items:flex-start;gap:12px;border:1px solid transparent;border-radius:16px;padding:12px 12px;background:linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg,#e6fbf5,#fde7f3) border-box;box-shadow:0 10px 26px rgba(2,6,23,.06)}
+    .testimonials .t .tx{display:flex;flex-direction:column}
+    .testimonials img{width:64px;height:64px;border-radius:50%;border:3px solid #e6fbf5;object-fit:cover;flex:0 0 auto}
+    .testimonials blockquote{margin:2px 0 6px;color:var(--ink);font-weight:700;position:relative;padding-left:22px;line-height:1.35}
+    .testimonials blockquote::before{content:"\201C";position:absolute;left:0;top:-2px;color:#10b981;font-size:22px;font-weight:900}
+    .testimonials cite{color:var(--muted);font-weight:600}
 
-    .pricing{padding:22px 0 90px;background:#f3f4f6}
+    .pricing{padding:22px 0 90px;background:linear-gradient(180deg,#f7fafc 0%, #f3f4f6 100%)}
     .grid-two{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
-    .offer h2{margin:0 0 8px}
-    .offer ul{margin:0;padding:0;list-style:none;color:var(--muted);display:grid;gap:6px}
-    .offer li i{color:var(--teal)}
-    .pricing .cards{display:grid;grid-template-columns:1fr;gap:10px}
-    .p{border:1px solid var(--bd);border-radius:12px;padding:12px;background:#fff;text-align:center;box-shadow:var(--sh)}
-    .p .price{font-size:1.5rem;font-weight:900;color:var(--teal);margin:6px 0 8px}
-    .p.hit{border:2px solid var(--teal);box-shadow:0 10px 28px rgba(16,185,129,.12)}
+    .offer{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:14px;box-shadow:0 10px 26px rgba(2,6,23,.06)}
+    .offer h2{margin:0 0 4px;position:relative}
+    .offer h2::after{content:"";display:block;width:80px;height:4px;border-radius:999px;background:linear-gradient(90deg,#10b981,#34d399);margin-top:6px}
+    .offer .subtitle{margin:4px 0 10px;color:var(--muted)}
+    .offer ul{margin:0;padding:0;list-style:none;color:var(--ink);display:grid;gap:8px}
+    .offer ul li{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;background:linear-gradient(180deg,#ffffff 0%, #fbfdfc 100%);font-weight:600}
+    .offer li i{color:var(--teal);background:#e6fbf5;border:1px solid #c7f5e9;width:26px;height:26px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center}
+    .pricing .cards{display:grid;grid-template-columns:1fr;gap:14px}
+    .p{position:relative;border:1px solid var(--bd);border-radius:16px;padding:16px 14px;background:#fff;text-align:center;box-shadow:0 10px 28px rgba(2,6,23,.06)}
+    .p h3{margin:4px 0 2px}
+    .p .subtitle{margin:0;color:var(--muted);font-size:.9rem}
+    .p .price{font-size:1.8rem;font-weight:900;margin:8px 0 12px;letter-spacing:.2px}
+    .pricing .p .btn{width:100%;justify-content:center}
+    /* Plano Mensal - Rosa */
+    .plan-pink{border-color:#f9a8d4;background:linear-gradient(180deg,#fff 0%, #fff0f7 100%);box-shadow:0 12px 28px rgba(236,72,153,.12)}
+    .plan-pink .price{color:#ec4899}
+    .plan-pink .btn{border-color:#ec4899;color:#ec4899}
+    .plan-pink .btn:hover{background:#ec4899;color:#fff}
+    /* Plano Anual - Verde */
+    .plan-green{border:2px solid var(--teal);background:linear-gradient(180deg,#fff 0%, #e9fff6 100%);box-shadow:0 14px 30px rgba(16,185,129,.14)}
+    .plan-green .price{color:var(--teal)}
+    .plan-green .btn.primary{background:#10b981;border:1px solid #0ea772}
+    .plan-green .flag{background:#e6fbf5;color:#065f46;border:1px solid #c7f5e9}
     .p .flag{position:relative;top:-6px;display:inline-block;background:#e6fbf5;color:#065f46;border:1px solid #c7f5e9;border-radius:999px;padding:4px 8px;font-weight:800;font-size:12px}
 
     .faq{padding:22px 0}
@@ -393,7 +425,7 @@
 
     /* Sticky CTA bar */
     .sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#fff;backdrop-filter:saturate(140%) blur(6px);border-top:1px solid var(--bd);padding:10px env(safe-area-inset-right) calc(10px + env(safe-area-inset-bottom)) env(safe-area-inset-left);display:flex;justify-content:center;z-index:60;min-height:var(--stickyH);box-shadow:0 -6px 16px rgba(2,6,23,.04)}
-    .sticky-cta .btn{width:100%;max-width:640px;justify-content:center}
+    .sticky-cta .btn{width:100%;max-width:420px;justify-content:center}
 
     /* Em telas grandes, manter visual de celular (sem upgrade de layout) */
     @media (min-width: 900px){
