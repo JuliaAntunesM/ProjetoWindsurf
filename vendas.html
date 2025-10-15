@@ -157,17 +157,27 @@
         </div>
         <aside class="cards">
           <div class="p plan-pink">
-            <h3>Mensal</h3>
-            <p class="subtitle">Acesso mês a mês</p>
+            <h3>Plano Mensal</h3>
+            <p class="subtitle">por mês, cancele quando quiser</p>
             <div class="price">R$ 29,99</div>
-            <a class="btn outline" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">Assinar Mensal</a>
+            <ul class="features" aria-label="Recursos do plano mensal">
+              <li><span class="tick">✓</span> Acesso total ao programa</li>
+              <li><span class="tick">✓</span> Suporte e atualizações</li>
+            </ul>
+            <a class="btn primary" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">Assinar Mensal</a>
+            <small class="guarantee-note">Garantia de 7 dias</small>
           </div>
           <div class="p hit plan-green">
-            <div class="flag">Mais vantajoso</div>
-            <h3>Anual</h3>
-            <p class="subtitle">Acesso 12 meses • Economize</p>
+            <h3>Plano Anual</h3>
+            <p class="subtitle">por ano, economia de 72%</p>
             <div class="price">R$ 99,99</div>
+            <ul class="features" aria-label="Recursos do plano anual">
+              <li><span class="tick">✓</span> Acesso total ao programa</li>
+              <li><span class="tick">✓</span> Suporte e atualizações</li>
+              <li><span class="tick">✓</span> Melhor custo-benefício</li>
+            </ul>
             <a class="btn primary" target="_blank" href="https://lastlink.com/p/C7DF51811/checkout-payment/">Assinar Anual</a>
+            <small class="guarantee-note">Garantia de 7 dias</small>
           </div>
         </aside>
       </div>
@@ -369,54 +379,95 @@
     .benefits .card:nth-child(3) i{background:#e7f5ff;border-color:#cfeaff;color:#0369a1}
     .benefits .card:nth-child(4) i{background:#fff7e6;border-color:#ffe7bd;color:#b45309}
 
-    .testimonials{padding:24px 0;background:#fff}
+    .testimonials{padding:24px 0;background:#fff;position:relative;overflow:hidden}
+    .testimonials::before{content:"";position:absolute;inset:-20% -30%;background:radial-gradient(700px 400px at 10% 0%, rgba(236,72,153,.08), transparent 60%), radial-gradient(600px 380px at 110% 20%, rgba(236,72,153,.05), transparent 60%);pointer-events:none}
     .testimonials h2{text-align:center;margin:0 0 14px;position:relative}
-    .testimonials h2::after{content:"";display:block;width:80px;height:4px;border-radius:999px;background:linear-gradient(90deg,#10b981,#34d399);margin:8px auto 0}
-    .testimonials .list{display:grid;grid-template-columns:1fr;gap:12px}
-    .testimonials .t{display:flex;align-items:flex-start;gap:12px;border:1px solid transparent;border-radius:16px;padding:12px 12px;background:linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg,#e6fbf5,#fde7f3) border-box;box-shadow:0 10px 26px rgba(2,6,23,.06)}
+    .testimonials h2::after{content:"";display:block;width:90px;height:4px;border-radius:999px;background:hsl(330, 93%, 84%);margin:10px auto 0}
+    .testimonials .list{display:grid;grid-template-columns:1fr;gap:14px}
+    .testimonials .t{display:flex;align-items:flex-start;gap:12px;border:1px solid transparent;border-radius:18px;padding:14px 14px;background:
+        linear-gradient(#ffffff,#ffffff) padding-box,
+        linear-gradient(135deg, hsl(167, 95%, 76%), #ffd1e7) border-box;box-shadow:0 12px 28px rgba(2,6,23,.08);transition:transform .18s ease, box-shadow .18s ease}
+    .testimonials .t:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(2,6,23,.12)}
     .testimonials .t .tx{display:flex;flex-direction:column}
-    .testimonials img{width:64px;height:64px;border-radius:50%;border:3px solid #e6fbf5;object-fit:cover;flex:0 0 auto}
-    .testimonials blockquote{margin:2px 0 6px;color:var(--ink);font-weight:700;position:relative;padding-left:22px;line-height:1.35}
+    .testimonials img{width:64px;height:64px;border-radius:50%;border:3px solid #ffd1e7;object-fit:cover;flex:0 0 auto;box-shadow:0 6px 16px rgba(236,72,153,.15)}
+    .testimonials blockquote{margin:2px 0 6px;color:var(--ink);font-weight:700;position:relative;padding-left:22px;line-height:1.4}
     .testimonials blockquote::before{content:"\201C";position:absolute;left:0;top:-2px;color:#10b981;font-size:22px;font-weight:900}
-    .testimonials cite{color:var(--muted);font-weight:600}
+    .testimonials cite{color:hsl(0, 0%, 23%);font-weight:800}
 
-    .pricing{padding:22px 0 90px;background:linear-gradient(180deg,#f7fafc 0%, #f3f4f6 100%)}
-    .grid-two{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
-    .offer{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:14px;box-shadow:0 10px 26px rgba(2,6,23,.06)}
-    .offer h2{margin:0 0 4px;position:relative}
-    .offer h2::after{content:"";display:block;width:80px;height:4px;border-radius:999px;background:linear-gradient(90deg,#10b981,#34d399);margin-top:6px}
-    .offer .subtitle{margin:4px 0 10px;color:var(--muted)}
-    .offer ul{margin:0;padding:0;list-style:none;color:var(--ink);display:grid;gap:8px}
-    .offer ul li{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;background:linear-gradient(180deg,#ffffff 0%, #fbfdfc 100%);font-weight:600}
-    .offer li i{color:var(--teal);background:#e6fbf5;border:1px solid #c7f5e9;width:26px;height:26px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center}
-    .pricing .cards{display:grid;grid-template-columns:1fr;gap:14px}
-    .p{position:relative;border:1px solid var(--bd);border-radius:16px;padding:16px 14px;background:#fff;text-align:center;box-shadow:0 10px 28px rgba(2,6,23,.06)}
-    .p h3{margin:4px 0 2px}
-    .p .subtitle{margin:0;color:var(--muted);font-size:.9rem}
-    .p .price{font-size:1.8rem;font-weight:900;margin:8px 0 12px;letter-spacing:.2px}
+    /* Badge de contagem de comentários (pílula gradiente) */
+    .comment-count-badge{display:inline-block;margin-left:8px;padding:5px 10px;font-size:.85rem;font-weight:800;line-height:1;color:#fff;background:linear-gradient(90deg,#f472b6,#ec4899);border-radius:999px;vertical-align:middle;box-shadow:0 6px 14px rgba(236,72,153,.18)}
+
+    .pricing{padding:26px 0 96px;background:#fff;position:relative;overflow:hidden}
+    .pricing::before{content:"";position:absolute;inset:-30% -40%;background:radial-gradient(900px 520px at 0% 0%, rgba(236,72,153,.07), transparent 60%), radial-gradient(780px 460px at 120% 10%, rgba(16,185,129,.06), transparent 60%);pointer-events:none}
+    .grid-two{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+    .offer{border:1px solid transparent;border-radius:18px;padding:16px;background:
+      linear-gradient(#ffffff,#ffffff) padding-box,
+      linear-gradient(135deg,#e6fbf5,#fde7f3) border-box;box-shadow:0 12px 28px rgba(2,6,23,.06)}
+    .offer h2{margin:0 0 6px;position:relative}
+    .offer h2::after{content:"";display:block;width:90px;height:4px;border-radius:999px;background:#ec4899;margin-top:8px}
+    .offer .subtitle{margin:6px 0 12px;color:var(--muted)}
+    .offer ul{margin:0;padding:0;list-style:none;color:var(--ink);display:grid;gap:10px}
+    .offer ul li{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--bd);border-radius:12px;background:#fff;font-weight:700;transition:transform .18s ease, box-shadow .18s ease}
+    .offer ul li:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(16,185,129,.10)}
+    .offer li i{color:#fff;background:#10b981;border:1px solid #0ea772;width:26px;height:26px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center}
+    .pricing .cards{display:grid;grid-template-columns:1fr;gap:16px}
+    .p{position:relative;border:1px solid transparent;border-radius:18px;padding:18px 16px;background:#fff; text-align:center; box-shadow:0 12px 30px rgba(2,6,23,.08); transition:transform .2s ease, box-shadow .2s ease}
+    .p:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(2,6,23,.12)}
+    .p h3{margin:6px 0 4px;font-weight:900}
+    .p .subtitle{margin:0;color:var(--muted);font-size:.92rem}
+    .p .price{font-size:2rem;font-weight:900;margin:10px 0 14px;letter-spacing:.2px}
     .pricing .p .btn{width:100%;justify-content:center}
-    /* Plano Mensal - Rosa */
-    .plan-pink{border-color:#f9a8d4;background:linear-gradient(180deg,#fff 0%, #fff0f7 100%);box-shadow:0 12px 28px rgba(236,72,153,.12)}
+    /* Recursos dentro dos cards */
+    .p .features{margin:12px 0 14px;padding:0;list-style:none;display:grid;gap:10px;text-align:left}
+    .p .features li{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--ink);border:1px solid var(--bd);border-radius:14px;padding:12px;background:#fff}
+    .p .features .tick{width:auto;height:auto;border-radius:0;display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#111827;font-size:16px;line-height:1;flex:0 0 auto}
+    .p .guarantee-note{display:block;margin-top:10px;color:var(--muted);font-weight:700;opacity:.9}
+    /* Esconde lista geral para evitar repetição (agora os cards têm seus próprios itens) */
+    .offer ul{display:none}
+    /* Ribbon diagonal (destaque no Anual) */
+    .p .ribbon{position:absolute;top:14px;right:-42px;transform:rotate(45deg);background:linear-gradient(90deg,#00c2a8,#10b981);color:#fff;font-weight:900;font-size:12px;padding:6px 50px;box-shadow:0 8px 18px rgba(16,185,129,.18)}
+    /* Destaque do plano */
+    .p.hit{transform:translateY(-2px);box-shadow:0 18px 44px rgba(16,185,129,.18)}
+    .p.hit .price{color:var(--teal)}
+    .p.hit .flag{background:#e6fbf5;color:#065f46;border:1px solid #c7f5e9}
+    /* Plano Mensal - Rosa (card pastel) */
+    .plan-pink{background:#ffeaf3;border:1px solid #ffd1e7;box-shadow:0 12px 28px rgba(236,72,153,.10)}
     .plan-pink .price{color:#ec4899}
-    .plan-pink .btn{border-color:#ec4899;color:#ec4899}
-    .plan-pink .btn:hover{background:#ec4899;color:#fff}
-    /* Plano Anual - Verde */
-    .plan-green{border:2px solid var(--teal);background:linear-gradient(180deg,#fff 0%, #e9fff6 100%);box-shadow:0 14px 30px rgba(16,185,129,.14)}
+    .plan-pink .features li{border-color:#ffd1e7}
+    .plan-pink .btn.primary{background:#ec4899;border:1px solid #db2777;color:#fff}
+    .plan-pink .btn.primary:hover{filter:brightness(1.05)}
+    /* Plano Anual - Turquesa (card pastel) */
+    .plan-green{border-width:1px; background:#e9fff6; border:1px solid #c7f5e9}
     .plan-green .price{color:var(--teal)}
     .plan-green .btn.primary{background:#10b981;border:1px solid #0ea772}
     .plan-green .flag{background:#e6fbf5;color:#065f46;border:1px solid #c7f5e9}
-    .p .flag{position:relative;top:-6px;display:inline-block;background:#e6fbf5;color:#065f46;border:1px solid #c7f5e9;border-radius:999px;padding:4px 8px;font-weight:800;font-size:12px}
+    .plan-green .features li{border-color:#c7f5e9}
+    .p .flag{position:relative;top:-6px;display:inline-block;border-radius:999px;padding:4px 8px;font-weight:800;font-size:12px}
 
-    .faq{padding:22px 0}
-    .guarantee{display:flex;gap:10px;align-items:center;border:1px solid var(--bd);border-radius:12px;padding:12px;background:#fff;box-shadow:var(--sh);margin-bottom:12px}
-    .guarantee i{font-size:22px;color:var(--teal)}
-    details{border:1px solid var(--bd);border-radius:12px;padding:10px 12px;background:#fff;box-shadow:var(--sh);margin:6px 0}
-    summary{cursor:pointer;font-weight:800}
-    details p{color:var(--muted)}
+    .faq{padding:28px 0}
+    .faq h2{text-align:center;margin:0 0 12px;position:relative}
+    .faq h2::after{content:"";display:block;width:90px;height:4px;border-radius:999px;background:linear-gradient(90deg,#10b981,#ec4899);margin:8px auto 0}
+    /* Cartão de Garantia premium */
+    .guarantee{display:flex;gap:12px;align-items:center;border:1px solid transparent;border-radius:16px;padding:14px 12px;background:
+      linear-gradient(#ffffff,#ffffff) padding-box,
+      linear-gradient(135deg,#e6fbf5,#fde7f3) border-box;box-shadow:0 12px 26px rgba(2,6,23,.06);margin-bottom:14px}
+    .guarantee i{font-size:22px;color:#0f766e;background:#e6fbf5;border:1px solid #c7f5e9;width:38px;height:38px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center}
+    .guarantee h3{margin:0 0 4px}
+    .guarantee p{margin:0;color:var(--muted)}
+    /* Acordeão FAQ clean */
+    details{border:1px solid var(--bd);border-radius:14px;padding:10px 12px;background:#fff;box-shadow:var(--sh);margin:8px 0;transition:border-color .2s ease, box-shadow .2s ease}
+    details[open]{border-color:#c7f5e9;box-shadow:0 10px 24px rgba(16,185,129,.10)}
+    summary{list-style:none;cursor:pointer;font-weight:900;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-weight:900;color:#0f766e;background:#e6fbf5;border:1px solid #c7f5e9;width:22px;height:22px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center}
+    details[open] summary::after{content:"−"}
+    details p{color:var(--muted);margin:8px 0 0}
 
-    .final{padding:26px 0;background:#fff;text-align:center}
-    .final h2{margin:0 0 6px}
-    .final p{margin:0 0 12px;color:var(--muted)}
+    /* CTA final premium */
+    .final{padding:30px 0;background:radial-gradient(700px 300px at 10% 0%, rgba(236,72,153,.06), transparent 60%), radial-gradient(600px 260px at 100% 20%, rgba(16,185,129,.06), transparent 60%), #fff;text-align:center}
+    .final h2{margin:0 0 8px}
+    .final p{margin:0 0 14px;color:var(--muted)}
+    .final .btn.big{border-radius:999px;padding:14px 22px;font-size:1.06rem;box-shadow:0 10px 24px rgba(16,185,129,.20)}
 
     .lp-footer{border-top:1px solid var(--bd);padding:14px 0 14px;background:#fff}
     .lp-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
