@@ -26,13 +26,18 @@ function updateScore(points) {
 
 // Função para navegar entre as páginas
 function nextPage(screenId) {
-    // Esconde todas as telas
+    // Esconde todas as telas (classe + display explícito)
     document.querySelectorAll('.screen').forEach(screen => {
         screen.classList.remove('active');
+        screen.style.display = 'none';
     });
     
     // Mostra a tela selecionada
-    document.getElementById(screenId).classList.add('active');
+    const target = document.getElementById(screenId);
+    if (target) {
+        target.classList.add('active');
+        target.style.display = 'block';
+    }
     
     // Adiciona animação de entrada para os elementos
     animateElements(screenId);
@@ -196,6 +201,21 @@ async function loadQuizData() {
 
 // Inicializa o quiz quando a página carrega
 document.addEventListener('DOMContentLoaded', async () => {
+    // Garante que apenas a tela ativa esteja visível no carregamento
+    (function enforceScreenVisibility(){
+        const screens = document.querySelectorAll('.screen');
+        let anyActive = false;
+        screens.forEach(s => {
+            const isActive = s.classList.contains('active');
+            s.style.display = isActive ? 'block' : 'none';
+            anyActive = anyActive || isActive;
+        });
+        // Se nenhuma estiver ativa por algum motivo, ativa a primeira
+        if (!anyActive && screens.length > 0) {
+            screens[0].classList.add('active');
+            screens[0].style.display = 'block';
+        }
+    })();
     // Carrega os dados do quiz
     const quizData = await loadQuizData();
     if (quizData) {

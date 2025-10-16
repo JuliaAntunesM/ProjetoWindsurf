@@ -13,6 +13,10 @@
   --pink-rgba-30: rgba(255, 77, 115, 0.30);
 }
 
+/* Força visibilidade correta das telas do quiz */
+.screen { display: none !important; }
+.screen.active { display: block !important; }
+
 /* Plano de fundo geral com tom claro da paleta */
 body {
   background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-050) 100%) !important;
